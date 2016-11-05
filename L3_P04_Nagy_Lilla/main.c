@@ -10,7 +10,6 @@ int nrOfBits(int numar, int baza)
         numar /= baza;
     }
     nr++;
-    //printf("nrOfBits: %d\n", nr);
     return nr;
 }
 
