@@ -10,7 +10,6 @@ unsigned int create_mask(int pozitie_start, int nr_biti)
     {
         numar += pow(2, i);
     }
-    printf("%d\n", numar);
     return numar;
 }
 
@@ -20,10 +19,16 @@ unsigned int inversare_biti(unsigned int numar, int pozitie_start, int nr_biti)
     return masca ^ numar;
 }
 
-
-
 int main()
 {
-    printf("Result: %d", inversare_biti(139,2,4));
+    unsigned int number;
+    int pozitie_start, nr_biti;
+    printf("Please input number! ");
+    scanf("%d", &number);
+    printf("Please input start position! ");
+    scanf("%d", &pozitie_start);
+    printf("Please input number of bits! ");
+    scanf("%d", &nr_biti);
+    printf("Result: %d", inversare_biti(number, pozitie_start, nr_biti));
     return 0;
 }

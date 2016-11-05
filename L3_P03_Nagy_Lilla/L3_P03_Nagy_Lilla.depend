@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1478361190 source:c:\users\lilla\documents\github\bitdefenderc\l3_p03_nagy_lilla\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
