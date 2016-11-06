@@ -3,6 +3,11 @@
 
 int nrOfBits(int numar, int baza)
 {
+    if (baza <= 1 || baza > 36)
+    {
+        printf("The number is not correct! Aborting...\n");
+        return 0;
+    }
     int nr = 0;
     while (numar / baza != 0)
     {
@@ -16,6 +21,11 @@ int nrOfBits(int numar, int baza)
 void itob(int numar, char sir[], int baza)
 {
     int i = nrOfBits(numar, baza) - 1;
+    if (baza <= 1 || baza > 36)
+    {
+        printf("The number is not correct! Aborting...");
+        return 0;
+    }
     while (numar != 0)
     {
         if (numar % baza >= 10)
@@ -35,22 +45,30 @@ int main()
 {
     int number, base, i;
     char *sir;
-    printf("Please input the number!");
+    printf("Please input the number! ");
     scanf("%d", &number);
-    printf("Please input the base!");
+    printf("Please input the base! ");
     scanf("%d", &base);
-    sir = malloc(sizeof(char) * nrOfBits(number, base));
-    itob(number, sir, base);
-    printf("Result:\n");
-    for (i = 0; i < nrOfBits(number, base); i++)
+    if (base <= 1 || base > 36)
     {
-        if (sir[i] >= 'A' && sir[i] <= 'Z')
+        printf("The inputted number is not good! You have to input a number between 2 and 36!\n");
+        scanf("%d", &base);
+    }
+    if (nrOfBits(number, base) != 0)
+    {
+        sir = malloc(sizeof(char) * nrOfBits(number, base));
+        itob(number, sir, base);
+        printf("Result:\n");
+        for (i = 0; i < nrOfBits(number, base); i++)
         {
-            printf("%c", sir[i]);
-        }
-        else
-        {
-            printf("%d", sir[i]);
+            if (sir[i] >= 'A' && sir[i] <= 'Z')
+            {
+                printf("%c", sir[i]);
+            }
+            else
+            {
+                printf("%d", sir[i]);
+            }
         }
     }
     return 0;
