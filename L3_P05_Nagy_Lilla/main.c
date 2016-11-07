@@ -3,6 +3,23 @@
 #include <limits.h>
 #include <math.h>
 
+void convert(int x)
+{
+    int i;
+    for (i = 0; i < 32; i++)
+    {
+        if (x & 1 == 1)
+        {
+            printf("1");
+        }
+        else
+        {
+            printf("0");
+        }
+        x = x >> 1;
+    }
+}
+
 void introduc(int a[], int *n)
 {
     int i,x, max = INT_MIN;
@@ -17,16 +34,17 @@ void introduc(int a[], int *n)
             max = x;
         }
     }
-    *n = max / 32 + 1;
+    *n = max / 32;
     return;
 }
 
 void afis(int a[], int n)
 {
     int i;
-    for (i = 0; i < n; i++)
+    for (i = 0; i <= n; i++)
     {
-        printf("%d ", a[i]);
+        convert(a[i]);
+        printf(" ");
     }
     return;
 }
