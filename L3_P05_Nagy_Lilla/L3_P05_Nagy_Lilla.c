@@ -97,7 +97,6 @@ void reuniune(int a[], int n1, int b[], int n2)
 void intersectie(int a[], int n1, int b[], int n2)
 {
     int *c, i;
-    printf("n1 = %d, n2 = %d\n", n1, n2);
     if (n1 > n2)
     {
         c = (int*) malloc(n1 * sizeof(int));
@@ -106,7 +105,6 @@ void intersectie(int a[], int n1, int b[], int n2)
     {
         c = (int*) malloc(n2 * sizeof(int));
     }
-    printf("sizeof(c) / sizeof(int) = %d \n", sizeof(c) / sizeof(int));
     for (i = 0; i <= (sizeof(c) / sizeof(int)); i++)
     {
         c[i] = a[i] & b[i];
