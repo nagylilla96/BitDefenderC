@@ -20,6 +20,15 @@ void convert(int x)
     }
 }
 
+void nullify(int a[])
+{
+    int i;
+    for (i = 0; i < sizeof(a) / sizeof(int); i++)
+    {
+        a[i] = 0;
+    }
+}
+
 void introduc(int a[], int *n)
 {
     int i,x, max = INT_MIN;
@@ -78,16 +87,17 @@ void reuniune(int a[], int n1, int b[], int n2)
     {
         c =(int*) malloc(n2 * sizeof(int));
     }
-    for (i = 0; i < sizeof(c); i++)
+    for (i = 0; i <= sizeof(c) / sizeof(int); i++)
     {
         c[i] = a[i] | b[i];
     }
-    afis(c, sizeof(c) - 1);
+    afis(c, sizeof(c) /sizeof(int));
 }
 
 void intersectie(int a[], int n1, int b[], int n2)
 {
     int *c, i;
+    printf("n1 = %d, n2 = %d\n", n1, n2);
     if (n1 > n2)
     {
         c = (int*) malloc(n1 * sizeof(int));
@@ -96,11 +106,12 @@ void intersectie(int a[], int n1, int b[], int n2)
     {
         c = (int*) malloc(n2 * sizeof(int));
     }
-    for (i = 0; i < sizeof(c); i++)
+    printf("sizeof(c) / sizeof(int) = %d \n", sizeof(c) / sizeof(int));
+    for (i = 0; i <= (sizeof(c) / sizeof(int)); i++)
     {
         c[i] = a[i] & b[i];
     }
-    afis(c, sizeof(c) - 1);
+    afis(c, sizeof(c) / sizeof(int));
 }
 
 void dif(int a[], int n1, int b[], int n2)
@@ -114,7 +125,7 @@ void dif(int a[], int n1, int b[], int n2)
     {
         c = (int*) malloc(n2 * sizeof(int));
     }
-    for (i = 0; i < sizeof(c); i++)
+    for (i = 0; i <= sizeof(c) / sizeof(int); i++)
     {
         x = a[i];
         y = b[i];
@@ -129,7 +140,7 @@ void dif(int a[], int n1, int b[], int n2)
             y = y >> 1;
         }
     }
-    afis(c, sizeof(c) - 1);
+    afis(c, sizeof(c) / sizeof(int));
 }
 
 int apartine(int a[], int n, int x)
@@ -144,11 +155,11 @@ int apartine(int a[], int n, int x)
 
 int main()
 {
-    int size = INT_MAX / 32;
+    int size = INT_MAX / sizeof(int);
     int answer, *a, *b, n1, n2 = 0, x;
     a = (int*) malloc(size * sizeof(int));
     b = (int*) malloc(size * sizeof(int));
-    printf("Ce vrei sa faci?\n1. Introduc o multime\n2. Afisarea multimii\n3. Cardinalitatea multimii\n4. Reuniunea a doua multimi\n5. Intersectia a doua multimi\n6. Diferenta a doua multimi\n7. Interogarea daca un numar apartine unei multimi\n8. Iesire\nScrie numarul!\n");
+    printf("Ce vrei sa faci?\n1. Introduc o multime\n2. Afisarea multimii\n3. Cardinalitatea multimii\n4. Reuniunea a doua multimi\n5. Intersectia a doua multimi\n6. Diferenta a doua multimi\n7. Interogarea daca un numar apartine multimii A\n8. Iesire\nScrie numarul!\n");
     while (scanf("%d", &answer) >= 0)
     {
         switch(answer)
@@ -165,34 +176,59 @@ int main()
             printf("card(A) = %d\n", card(a,n1));
             break;
         case 4:
-            printf("Introduce o alta multime!\n");
-            introduc(b, &n2);
-            printf("\nB:\n");
-            afis(b, n2);
-            printf("\ncard(B) = %d\n", card(b,n2));
+            if (card(a, n1) == 0)
+            {
+                introduc(a, &n1);
+            }
+            if (card(b, n2) == 0)
+            {
+                printf("Introduce o alta multime!\n");
+                introduc(b, &n2);
+                printf("\nB:\n");
+                afis(b, n2);
+                printf("\ncard(B) = %d\n", card(b,n2));
+            }
             printf("Reuniunea: \n");
             reuniune(a,n1,b,n2);
             break;
         case 5:
-            printf("Introduce o alta multime!\n");
-            introduc(b, &n2);
-            printf("\nB:\n");
-            afis(b, n2);
-            printf("\ncard(B) = %d\n", card(b,n2));
+            if (card(a, n1) == 0)
+            {
+                introduc(a, &n1);
+            }
+            if (card(b, n2) == 0)
+            {
+                printf("Introduce o alta multime!\n");
+                introduc(b, &n2);
+                printf("\nB:\n");
+                afis(b, n2);
+                printf("\ncard(B) = %d\n", card(b,n2));
+            }
             printf("Intersectia: \n");
             intersectie(a,n1,b,n2);
             break;
         case 6:
-            printf("Introduce o alta multime!\n");
-            introduc(b, &n2);
-            printf("\nB:\n");
-            afis(b, n2);
-            printf("\ncard(B) = %d\n", card(b,n2));
+            if (card(a, n1) == 0)
+            {
+                introduc(a, &n1);
+            }
+            if (card(b, n2) == 0)
+            {
+                printf("Introduce o alta multime!\n");
+                introduc(b, &n2);
+                printf("\nB:\n");
+                afis(b, n2);
+                printf("\ncard(B) = %d\n", card(b,n2));
+            }
             printf("Diferenta: \n");
             dif(a,n1,b,n2);
             break;
         case 7:
-            printf("Ce numar vrei sa verifici?");
+            if (card(a, n1) == 0)
+            {
+                introduc(a, &n1);
+            }
+            printf("Ce numar vrei sa verifici?\n");
             scanf("%d", &x);
             if (apartine(a, n1, x) == 1)
             {
@@ -209,7 +245,7 @@ int main()
         default:
             break;
         }
-        printf("Ce vrei sa faci?\n1. Introduc o multime\n2. Afisarea multimii\n3. Cardinalitatea multimii\n4. Reuniunea a doua multimi\n5. Intersectia a doua multimi\n6. Diferenta a doua multimi\n7. Interogarea daca un numar apartine unei multim\n8. Iesire\nScrie numarul!\n");
+        printf("Ce vrei sa faci?\n1. Introduc o multime\n2. Afisarea multimii\n3. Cardinalitatea multimii\n4. Reuniunea a doua multimi\n5. Intersectia a doua multimi\n6. Diferenta a doua multimi\n7. Interogarea daca un numar apartine multimii A\n8. Iesire\nScrie numarul!\n");
     }
 
     return 0;
