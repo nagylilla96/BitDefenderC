@@ -52,8 +52,7 @@ void afis(int a[], int n)
 int card(int a[], int n)
 {
     int i, j, nr = 0, x;
-    printf("n = %d\n", n);
-    for (i = 0; i < n; i++)
+    for (i = 0; i <= n; i++)
     {
         x = a[i];
         for (j = 0; j < 32; j++)
@@ -83,7 +82,7 @@ void reuniune(int a[], int n1, int b[], int n2)
     {
         c[i] = a[i] | b[i];
     }
-    afis(c, sizeof(c));
+    afis(c, sizeof(c) - 1);
 }
 
 void intersectie(int a[], int n1, int b[], int n2)
@@ -101,7 +100,7 @@ void intersectie(int a[], int n1, int b[], int n2)
     {
         c[i] = a[i] & b[i];
     }
-    afis(c, sizeof(c));
+    afis(c, sizeof(c) - 1);
 }
 
 void dif(int a[], int n1, int b[], int n2)
@@ -122,18 +121,15 @@ void dif(int a[], int n1, int b[], int n2)
         c[i] = 0;
         for (j = 0; j < 32; j++)
         {
-            printf("x= %d, y= %d\n", x, y);
             if ((x%2 == 1) && (y % 2 == 0))
             {
                 c[i] += pow(2, j);
-                printf("*");
             }
             x = x >> 1;
             y = y >> 1;
         }
-        printf("\n");
     }
-    afis(c, sizeof(c));
+    afis(c, sizeof(c) - 1);
 }
 
 int apartine(int a[], int n, int x)
@@ -159,36 +155,40 @@ int main()
         {
         case 1:
             introduc(a, &n1);
-            printf("n1 = %d\n", n1);
             break;
         case 2:
+            printf("\nA:\n");
             afis(a,n1);
+            printf("\n");
             break;
         case 3:
-            printf("%d\n", card(a,n1));
+            printf("card(A) = %d\n", card(a,n1));
             break;
         case 4:
             printf("Introduce o alta multime!\n");
             introduc(b, &n2);
-            printf("n2 = %d\n", n2);
+            printf("\nB:\n");
             afis(b, n2);
-            printf("%d\n", card(b,n2));
+            printf("\ncard(B) = %d\n", card(b,n2));
+            printf("Reuniunea: \n");
             reuniune(a,n1,b,n2);
             break;
         case 5:
             printf("Introduce o alta multime!\n");
             introduc(b, &n2);
-            printf("n2 = %d\n", n2);
+            printf("\nB:\n");
             afis(b, n2);
-            printf("%d\n", card(b,n2));
+            printf("\ncard(B) = %d\n", card(b,n2));
+            printf("Intersectia: \n");
             intersectie(a,n1,b,n2);
             break;
         case 6:
             printf("Introduce o alta multime!\n");
             introduc(b, &n2);
-            printf("n2 = %d\n", n2);
+            printf("\nB:\n");
             afis(b, n2);
-            printf("%d\n", card(b,n2));
+            printf("\ncard(B) = %d\n", card(b,n2));
+            printf("Diferenta: \n");
             dif(a,n1,b,n2);
             break;
         case 7:

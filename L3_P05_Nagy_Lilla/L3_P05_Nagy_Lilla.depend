@@ -1,5 +1,11 @@
 # depslib dependency file v1.0
-1478558131 source:c:\users\lilla\documents\github\bitdefenderc\l3_p05_nagy_lilla\main.c
+1478595276 source:c:\users\lilla\documents\github\bitdefenderc\l3_p05_nagy_lilla\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	<math.h>
+
+1478607111 source:/home/lilla/Desktop/BitDefenderC/L3_P05_Nagy_Lilla/main.c
 	<stdio.h>
 	<stdlib.h>
 	<limits.h>
