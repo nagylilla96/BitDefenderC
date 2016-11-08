@@ -44,7 +44,7 @@ void afis(int a[], int n)
     for (i = 0; i <= n; i++)
     {
         convert(a[i]);
-        printf(" ");
+        printf("\n");
     }
     return;
 }
@@ -73,11 +73,11 @@ void reuniune(int a[], int n1, int b[], int n2)
     int *c, i;
     if (n1 > n2)
     {
-        c = malloc(n1);
+        c =(int*) malloc(n1 * sizeof(int));
     }
     else
     {
-        c = malloc(n2);
+        c =(int*) malloc(n2 * sizeof(int));
     }
     for (i = 0; i < sizeof(c); i++)
     {
@@ -91,11 +91,11 @@ void intersectie(int a[], int n1, int b[], int n2)
     int *c, i;
     if (n1 > n2)
     {
-        c = malloc(n1);
+        c = (int*) malloc(n1 * sizeof(int));
     }
     else
     {
-        c = malloc(n2);
+        c = (int*) malloc(n2 * sizeof(int));
     }
     for (i = 0; i < sizeof(c); i++)
     {
@@ -109,11 +109,11 @@ void dif(int a[], int n1, int b[], int n2)
     int *c, i, j, nr = 0, x, y;
     if (n1 > n2)
     {
-        c = malloc(n1);
+        c = (int*) malloc(n1 * sizeof(int));
     }
     else
     {
-        c = malloc(n2);
+        c = (int*) malloc(n2 * sizeof(int));
     }
     for (i = 0; i < sizeof(c); i++)
     {
@@ -150,8 +150,8 @@ int main()
 {
     int size = INT_MAX / 32;
     int answer, *a, *b, n1, n2 = 0, x;
-    a = malloc(size);
-    b = malloc(size);
+    a = (int*) malloc(size * sizeof(int));
+    b = (int*) malloc(size * sizeof(int));
     printf("Ce vrei sa faci?\n1. Introduc o multime\n2. Afisarea multimii\n3. Cardinalitatea multimii\n4. Reuniunea a doua multimi\n5. Intersectia a doua multimi\n6. Diferenta a doua multimi\n7. Interogarea daca un numar apartine unei multimi\n8. Iesire\nScrie numarul!\n");
     while (scanf("%d", &answer) >= 0)
     {
