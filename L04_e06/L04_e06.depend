@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1479285552 source:/home/lilla/Desktop/BitDefenderC/L04_e06/main.c
+	"NUMERE.h"
+
+1479285547 /home/lilla/Desktop/BitDefenderC/L04_e06/NUMERE.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+	<limits.h>
+
+1479285879 source:/home/lilla/Desktop/BitDefenderC/L04_e06/NUMERE.c
+	"NUMERE.h"
+
