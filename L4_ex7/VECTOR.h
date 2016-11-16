@@ -12,5 +12,6 @@ int minFunc(int *a, int n);
 int maxFunc(int *a, int n);
 void majoritar(int *a, int n);
 void intercalare(int *a, int *b, int sizeA, int sizeB);
+int compare(const void *a, const void *b);
 
 #endif

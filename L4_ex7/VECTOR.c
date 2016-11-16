@@ -97,8 +97,15 @@ void majoritar(int *a, int n)
     }
 }
 
+int compare(const void *a, const void *b)
+{
+    return ( *(int*)a - *(int*)b);
+}
+
 void intercalare(int *a, int *b, int sizeA, int sizeB)
 {
+    qsort(a, sizeA, sizeof(int), compare);
+    qsort(b, sizeB, sizeof(int), compare);
     int i = 0, j = 0;
     printf("\nUnion: \n");
     while (i < sizeA && j < sizeB)
