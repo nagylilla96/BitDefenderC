@@ -11,3 +11,14 @@
 	<stdio.h>
 	<math.h>
 
+1479739616 source:/home/lilla/Desktop/BitDefenderC/L5_e2/header.c
+	"header.h"
+
+1479739616 /home/lilla/Desktop/BitDefenderC/L5_e2/header.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
+1479739616 source:/home/lilla/Desktop/BitDefenderC/L5_e2/main.c
+	"header.h"
+
