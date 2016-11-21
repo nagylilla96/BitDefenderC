@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1479719089 source:c:\users\lilla\documents\github\bitdefenderc\l5_e2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1479719061 source:c:\users\lilla\documents\github\bitdefenderc\l5_e2\header.c
+	"header.h"
+
+1479719061 c:\users\lilla\documents\github\bitdefenderc\l5_e2\header.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
