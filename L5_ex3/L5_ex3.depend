@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1479743069 source:/home/lilla/Desktop/BitDefenderC/L5_ex3/main.c
+1479747560 source:/home/lilla/Desktop/BitDefenderC/L5_ex3/main.c
 	"ex3.h"
 
-1479743069 /home/lilla/Desktop/BitDefenderC/L5_ex3/ex3.h
+1479747560 /home/lilla/Desktop/BitDefenderC/L5_ex3/ex3.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
 
-1479742934 source:/home/lilla/Desktop/BitDefenderC/L5_ex3/ex3.c
+1479748451 source:/home/lilla/Desktop/BitDefenderC/L5_ex3/ex3.c
 	"ex3.h"
 

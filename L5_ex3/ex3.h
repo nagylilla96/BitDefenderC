@@ -10,5 +10,6 @@ void sumaLinii(int **a, int n);
 void sumaColoane(int **a, int n);
 void sumaMainDiagonal(int **a, int n);
 void sumaSecondaryDiagonal(int **a, int n);
+void rings(int **a, int n);
 
 #endif

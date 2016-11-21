@@ -13,5 +13,6 @@ int main()
     sumaColoane(a, n);
     sumaMainDiagonal(a, n);
     sumaSecondaryDiagonal(a, n);
+    rings(a, n);
     return 0;
 }

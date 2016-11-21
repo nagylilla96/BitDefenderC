@@ -91,3 +91,49 @@ void sumaSecondaryDiagonal(int **a, int n) // prints the sum of elements from th
     }
     printf("The sum of members from the secondary diagonal is %d\n", suma);
 }
+
+void rings(int **a, int n)
+{
+    printf("Entered rings\n");
+    int x, sum, p = 1;
+    if (n % 2 == 0)
+    {
+        x = n / 2;
+        printf("x = %d\n", x);
+    }
+    else
+    {
+        x = (n / 2) + 1;
+        printf("x = %d\n", x);
+        p = 0;
+    }
+    int i, j, k = 0;
+    while (k < x)
+    {
+        if (k == x - 1 && p == 0)
+        {
+            sum = a[x - 1][x - 1];
+        }
+        else
+        {
+            printf("k = %d\n", k);
+            sum = 0;
+            for (i = k; i < (n - k); i++)
+            {
+                printf("first for i = %d\n", i);
+                sum += a[i][k];
+                sum += a[k][i];
+            }
+            sum -= a[k][k];
+            for (i = k + 1; i < (n - k); i++)
+            {
+                printf("second for i = %d\n", i);
+                sum += a[i][n - k - 1];
+                sum += a[n - k - 1][i];
+            }
+            sum -= a[n - k - 1][n - k - 1];
+        }
+        printf("The sum of numbers in ring %d: %d\n", k, sum);
+        k++;
+    }
+}
