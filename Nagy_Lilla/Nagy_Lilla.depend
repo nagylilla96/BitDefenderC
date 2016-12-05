@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1479908092 source:/home/lilla/Desktop/BitDefenderC/Nagy_Lilla/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1479908142 source:/home/lilla/Desktop/BitDefenderC/Nagy_Lilla/modul.c
+	"modul.h"
+
+1479908101 /home/lilla/Desktop/BitDefenderC/Nagy_Lilla/modul.h
+	<stdlib.h>
+	<stdio.h>
+	<limits.h>
+	<math.h>
+

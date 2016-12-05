@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1480947855 source:/home/lilla/Desktop/BitDefenderC/lab06_ex03/main.c
+	"lab3.h"
+
+1480947541 /home/lilla/Desktop/BitDefenderC/lab06_ex03/lab3.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1480948107 source:/home/lilla/Desktop/BitDefenderC/lab06_ex03/lab3.c
+	"lab3.h"
+
