@@ -11,3 +11,15 @@
 	<stdio.h>
 	<stdlib.h>
 
+1481060982 source:/home/lilla/Desktop/BitDefenderC/lab6ex4/ex4.c
+	"ex4.h"
+
+1481063094 /home/lilla/Desktop/BitDefenderC/lab6ex4/ex4.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<limits.h>
+
+1481063094 source:/home/lilla/Desktop/BitDefenderC/lab6ex4/main.c
+	"ex4.h"
+

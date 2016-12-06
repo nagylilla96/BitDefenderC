@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 
-void read(FILE *f);
+void read(FILE *f, int n);
+int findstring(char **array, char *string, int nr);
 
 #endif
 
