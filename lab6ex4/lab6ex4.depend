@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1481045335 source:c:\users\lilla\documents\github\bitdefenderc\lab6ex4\ex4.c
+	"ex4.h"
+
+1481043050 c:\users\lilla\documents\github\bitdefenderc\lab6ex4\ex4.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1481043077 source:c:\users\lilla\documents\github\bitdefenderc\lab6ex4\main.c
+	<stdio.h>
+	<stdlib.h>
+
