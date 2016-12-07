@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="l06e06" />
+		<Option title="l06e07" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/l06e06" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/l06e07" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/l06e06" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/l06e07" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,10 +32,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="e06.c">
+		<Unit filename="e07.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="e06.h" />
+		<Unit filename="e07.h" />
 		<Unit filename="input.txt" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
