@@ -5,8 +5,6 @@
 #include <string.h>
 #include <limits.h>
 
-void read(FILE *f, int n);
-int findstring(char **array, char *string, int nr);
+void inverse(FILE *f, FILE *g);
 
 #endif
-
