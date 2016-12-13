@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1481628221 source:c:\users\lilla\documents\github\bitdefenderc\l07_e02\ex2.c
+	"e2.h"
+
+1481628074 c:\users\lilla\documents\github\bitdefenderc\l07_e02\e2.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1481628379 source:c:\users\lilla\documents\github\bitdefenderc\l07_e02\main.c
+	"e2.h"
+
