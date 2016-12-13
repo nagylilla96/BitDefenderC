@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/l07_e02/e2.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+
+/home/lilla/Desktop/BitDefenderC/l07_e02/ex2.c
+stdio.h
+-
+e2.h
+/home/lilla/Desktop/BitDefenderC/l07_e02/e2.h
+
+/home/lilla/Desktop/BitDefenderC/l07_e02/main.c
+e2.h
+/home/lilla/Desktop/BitDefenderC/l07_e02/e2.h
+

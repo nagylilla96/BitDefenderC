@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1481117133 source:/home/lilla/Desktop/BitDefenderC/l06e08/main.c
+	"e08.h"
+
+1481117133 /home/lilla/Desktop/BitDefenderC/l06e08/e08.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<limits.h>
+
