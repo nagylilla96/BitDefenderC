@@ -7,7 +7,6 @@ void new_entry(pb *phonebook, int nrOfElements) {
         size += size;
         phonebook = realloc(phonebook, sizeof(phonebook) * (size));
     }
-    printf("nr of el = %d\n", nrOfElements + 1);
     printf("Nume: ");
     getchar();
     fgets(nume, 100, stdin);
@@ -30,7 +29,6 @@ void new_entry(pb *phonebook, int nrOfElements) {
 int deleteReg(pb *phonebook, int nrOfElements) {
     char nume[100], prenume[100];
     int i = 0, j;
-    int found = 0;
     printf("Nume: ");
     getchar();
     fgets(nume, 100, stdin);
@@ -39,14 +37,11 @@ int deleteReg(pb *phonebook, int nrOfElements) {
     while (i < nrOfElements) {
         if (strcmp(nume, phonebook[i].nume) == 0 && strcmp(prenume, phonebook[i].prenume) == 0)
         {
-            printf("found\n");
             nrOfElements--;
-            found = 1;
             for (j = i; j < nrOfElements; j++)
             {
                 phonebook[j] = phonebook[j + 1];
             }
-            i = nrOfElements;
             return 1;
         }
         i++;
@@ -64,11 +59,10 @@ int findName(pb *phonebook, int nrOfElements) {
     fgets(prenume, 100, stdin);
     while (i < nrOfElements) {
         if (strcmp(nume, phonebook[i].nume) == 0 && strcmp(prenume, phonebook[i].prenume) == 0) {
-            printf("Nume: %s\n", phonebook[i].nume);
-            printf("Prenume: %s\n", phonebook[i].prenume);
-            printf("Adresa: %s\n", phonebook[i].adresa);
-            printf("Telefon: %s\n", phonebook[i].telefon);
-            i = nrOfElements;
+            printf("Nume: %s", phonebook[i].nume);
+            printf("Prenume: %s", phonebook[i].prenume);
+            printf("Adresa: %s", phonebook[i].adresa);
+            printf("Telefon: %s", phonebook[i].telefon);
             return 1;
         }
         i++;
@@ -84,11 +78,10 @@ int findPhone(pb *phonebook, int nrOfElements) {
     fgets(telefon, 10, stdin);
     while (i < nrOfElements) {
         if (strcmp(telefon, phonebook[i].telefon) == 0) {
-            printf("Nume: %s\n", phonebook[i].nume);
-            printf("Prenume: %s\n", phonebook[i].prenume);
-            printf("Adresa: %s\n", phonebook[i].adresa);
-            printf("Telefon: %s\n", phonebook[i].telefon);
-            i = nrOfElements;
+            printf("Nume: %s", phonebook[i].nume);
+            printf("Prenume: %s", phonebook[i].prenume);
+            printf("Adresa: %s", phonebook[i].adresa);
+            printf("Telefon: %s", phonebook[i].telefon);
             return 1;
         }
         i++;
@@ -104,10 +97,11 @@ int findFamily(pb *phonebook, int nrOfElements) {
     fgets(nume, 100, stdin);
     while (i < nrOfElements) {
         if (strcmp(nume, phonebook[i].nume) == 0) {
-            printf("Nume: %s\n", phonebook[i].nume);
-            printf("Prenume: %s\n", phonebook[i].prenume);
-            printf("Adresa: %s\n", phonebook[i].adresa);
-            printf("Telefon: %s\n", phonebook[i].telefon);
+            printf("Nume: %s", phonebook[i].nume);
+            printf("Prenume: %s", phonebook[i].prenume);
+            printf("Adresa: %s", phonebook[i].adresa);
+            printf("Telefon: %s", phonebook[i].telefon);
+            printf("\n");
             found = 1;
         }
         i++;
@@ -122,14 +116,14 @@ int findFamily(pb *phonebook, int nrOfElements) {
 
 
 void sortByName(pb *phonebook, int nrOfElements) {
-    int i, j, swapped, n = nrOfElements - 1;
+    int i, j, n = nrOfElements - 1;
     char fullName1[200], fullName2[200];
     for (i = 1; i < n; i++) {
         for (j = 0; j < n - i; j++) {
             strcpy(fullName1, phonebook[j].nume);
             strcat(fullName1, phonebook[j].prenume);
             strcpy(fullName2, phonebook[j+1].nume);
-            strcpy(fullName2, phonebook[j+1].prenume);
+            strcat(fullName2, phonebook[j+1].prenume);
             if (strcmp(fullName1, fullName2) > 0) {
                 pb temp = phonebook[j];
                 phonebook[j] = phonebook[j + 1];

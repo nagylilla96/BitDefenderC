@@ -48,7 +48,6 @@ int main()
                 break;
             case 8:
                 return 0;
-                break;
             default:
                 break;
         }
