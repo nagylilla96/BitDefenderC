@@ -41,7 +41,7 @@ int main()
                 }
                 break;
             case 6:
-                showAll(sortByName(phonebook, nrOfElements), nrOfElements);
+                sortByName(phonebook, nrOfElements);
                 break;
             case 7:
                 showAll(phonebook, nrOfElements);
