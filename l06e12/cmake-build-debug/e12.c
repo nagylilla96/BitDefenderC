@@ -4,12 +4,12 @@
 
 #include "e12.h"
 
-int evaluateExpression(char *expression, LINE *block) {
+int evaluateExpression(char *expression, LINE *block) { // we evaluate the expression
     int i, x = 0, result = 0, nextIsMinus = 0;
     char *number;
     number = malloc(sizeof(char) * 30);
     for (i = 0; i < strlen(expression); i++) {
-        if (expression[i] == '+') {
+        if (expression[i] == '+') { // we always check the previous operation and change result's value based on that
             if (nextIsMinus == 0) {
                 result += atoi(number);
             }
@@ -47,7 +47,7 @@ int evaluateExpression(char *expression, LINE *block) {
     return result;
 }
 
-void populateStruct(char *line, LINE *block, int *nrOfEx) {
+void populateStruct(char *line, LINE *block, int *nrOfEx) { //populate the structure (separate them by ';')
     int i, x = 0;
     char *expression;
     expression = malloc(sizeof(char) * 200);
@@ -68,7 +68,7 @@ void populateStruct(char *line, LINE *block, int *nrOfEx) {
     }
 }
 
-int readFile(FILE *f, int n, LINE *block) {
+int readFile(FILE *f, int n, LINE *block) { //read file and write in on the screen
     int i, nrOfEx = 0;
     char *line;
     line = malloc(sizeof(char) * 1000);
@@ -80,21 +80,21 @@ int readFile(FILE *f, int n, LINE *block) {
     return nrOfEx;
 }
 
-void sortStruct(LINE *block, int n) {
+void sortStruct(LINE *block, int n) { //sort the structure based on result
     int i, j;
     for (i = 1; i < n; i++) {
         for (j = 0; j < n - i; j++) {
             if (block[j].result > block[j + 1].result) { // if the numbers are not in the right order
                 LINE temp = block[j]; // we change the structure element's orders
-                block[j] = block[j + 1]; //note: I considered that nr matricol is always 10 digits long (so the length
-                block[j + 1] = temp; // doesn't differ, otherwise the comparison wouldn't be correct)
+                block[j] = block[j + 1];
+                block[j + 1] = temp;
             }
         }
     }
     showResults(block);
 }
 
-void showResults(LINE *block) {
+void showResults(LINE *block) { //print results (struct)
     int i = 0;
     while (block[i].expression != NULL) {
         printf("\nexpression: %s\n", block[i].expression);
@@ -103,7 +103,7 @@ void showResults(LINE *block) {
     }
 }
 
-void writeResults(FILE *f, LINE *block, int n) {
+void writeResults(FILE *f, LINE *block, int n) { //write results in a binary file
     rewind(f);
     fwrite(block, sizeof(block), n, f);
 }
