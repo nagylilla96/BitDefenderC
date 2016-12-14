@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/l06e08.dir/e08.c.o CMakeFiles/l06e08.dir/main.c.o  -o l06e08 
