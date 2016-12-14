@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/l06e12.dir/main.c.o CMakeFiles/l06e12.dir/e12.c.o  -o l06e12 

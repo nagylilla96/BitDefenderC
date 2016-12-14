@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/l06e12/cmake-build-debug/e12.c
+e12.h
+/home/lilla/Desktop/BitDefenderC/l06e12/cmake-build-debug/e12.h
+
+/home/lilla/Desktop/BitDefenderC/l06e12/cmake-build-debug/e12.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/lilla/Desktop/BitDefenderC/l06e12/cmake-build-debug/main.c
+e12.h
+/home/lilla/Desktop/BitDefenderC/l06e12/cmake-build-debug/e12.h
+
