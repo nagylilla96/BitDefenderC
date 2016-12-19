@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/Vector.dir/main.c.o CMakeFiles/Vector.dir/Vector.c.o  -o Vector 
