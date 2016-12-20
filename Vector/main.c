@@ -4,7 +4,16 @@
 
 #include "Vector.h"
 
-void printFunc(first* one) {
+void printFunc(first* one, int index) {
+    pb **phonebook = (pb**) one->pointer;
+    printf("Nume: %s", phonebook[index]->nume);
+    printf("Prenume: %s", phonebook[index]->prenume);
+    printf("Adresa: %s", phonebook[index]->adresa);
+    printf("Telefon: %s", phonebook[index]->telefon);
+    printf("\n");
+}
+
+void printAllFunc(first* one) {
     int i;
     pb **phonebook = (pb **) one->pointer;
     printf("Print func entered\n");
@@ -24,12 +33,30 @@ void printFunc(first* one) {
         else {
             printf("phonebook nume is not null\n");
         }
-        printf("Nume: %s", phonebook[i]->nume);
-        printf("Prenume: %s", phonebook[i]->prenume);
-        printf("Adresa: %s", phonebook[i]->adresa);
-        printf("Telefon: %s", phonebook[i]->telefon);
-        printf("\n");
+        printFunc(one, i);
     }
+}
+
+int ifEquals(void *a, void *b) {
+    pb *aa = (pb *) a;
+    pb *bb = (pb *) b;
+    if (strcmp(aa->nume, bb->nume) == 0 && strcmp(aa->prenume, bb->prenume) == 0
+    && strcmp(aa->adresa, bb->adresa) == 0 && strcmp(aa->telefon, bb->telefon) == 0) {
+        return 0;
+    }
+//    else {
+//        if (strcmp(aa->nume, bb->nume) > 0 && strcmp(aa->prenume, bb->prenume) > 0
+//            && strcmp(aa->adresa, bb->adresa) > 0 && strcmp(aa->telefon, bb->telefon) > 0) {
+//            return 1;
+//        }
+//        else {
+//            if (strcmp(aa->nume, bb->nume) < 0 && strcmp(aa->prenume, bb->prenume) < 0
+//                && strcmp(aa->adresa, bb->adresa) < 0 && strcmp(aa->telefon, bb->telefon) < 0) {
+//                return -1;
+//            }
+//
+//        }
+//    }
 }
 
 int main()
@@ -39,6 +66,10 @@ int main()
     pb* phonebook;
     char nume[100], prenume[100], adresa[500], telefon[10];
     stud *student = malloc(sizeof(student));
+    student->nume = malloc(sizeof(char) * 100);
+    student->prenume = malloc(sizeof(char) * 100);
+    student->adresa = malloc(sizeof(char) * 500);
+    student->telefon = malloc(sizeof(char) * 10);
     first *one = malloc(sizeof(one));
     //= malloc(size * sizeof(phonebook));
     CreateVector(one, size);
@@ -52,19 +83,15 @@ int main()
                 printf("Nume: ");
                 getchar();
                 fgets(nume, 100, stdin);
-                student->nume = malloc(strlen(nume));
                 strcpy(student->nume, nume);
                 printf("Prenume: ");
                 fgets(prenume, 100, stdin);
-                student->prenume = malloc(strlen(prenume));
                 strcpy(student->prenume, prenume);
                 printf("Adresa: ");
                 fgets(adresa, 500, stdin);
-                student->adresa = malloc(strlen(adresa));
                 strcpy(student->adresa, adresa);
                 printf("Telefon: ");
                 fgets(telefon, 10, stdin);
-                student->telefon = malloc(strlen(telefon));
                 strcpy(student->telefon, telefon);
                 new_entry(one, student, &size);
                 break;
@@ -79,8 +106,24 @@ int main()
                 }
                 break;
             case 3:
-                if (!findName(phonebook, nrOfElements)) {
+                printf("Nume: ");
+                getchar();
+                fgets(nume, 100, stdin);
+                strcpy(student->nume, nume);
+                printf("Prenume: ");
+                fgets(prenume, 100, stdin);
+                strcpy(student->prenume, prenume);
+                printf("Adresa: ");
+                fgets(adresa, 500, stdin);
+                strcpy(student->adresa, adresa);
+                printf("Telefon: ");
+                fgets(telefon, 10, stdin);
+                strcpy(student->telefon, telefon);
+                if (!findName(one, student, ifEquals, printFunc)) {
                     printf("Person not found\n");
+                }
+                else {
+                    printf("Person found at index %d\n", findName(one, student, ifEquals, printFunc));
                 }
                 break;
             case 4:
@@ -97,7 +140,7 @@ int main()
                 sortByName(phonebook, nrOfElements);
                 break;
             case 7:
-                PrintVector(one, printFunc);
+                PrintVector(one, printAllFunc);
                 break;
             case 8:
                 return 0;

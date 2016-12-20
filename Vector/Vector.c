@@ -51,20 +51,12 @@ int deleteReg(pb *phonebook, int nrOfElements) { //delete an entry based by nume
     return 0;
 }
 
-int findName(pb *phonebook, int nrOfElements) { // find name by nume and prenume
-    char nume[100], prenume[100];
+int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
     int i = 0;
-    printf("Nume: ");
-    getchar();
-    fgets(nume, 100, stdin);
-    printf("Prenume: ");
-    fgets(prenume, 100, stdin);
-    while (i < nrOfElements) {
-        if (strcmp(nume, phonebook[i].nume) == 0 && strcmp(prenume, phonebook[i].prenume) == 0) { // if nume and prenume found
-            printf("Nume: %s", phonebook[i].nume); //print the data about that person
-            printf("Prenume: %s", phonebook[i].prenume);
-            printf("Adresa: %s", phonebook[i].adresa);
-            printf("Telefon: %s", phonebook[i].telefon);
+    while (i < one->nrOfElements)
+    {
+        if (cmpFunc(one->pointer[i], node) == 0) { // if nume and prenume found
+            printFunc(one, i);
             return 1;
         }
         i++;
@@ -84,7 +76,7 @@ int findPhone(pb *phonebook, int nrOfElements) { // find data by phone number
             printf("Prenume: %s", phonebook[i].prenume);
             printf("Adresa: %s", phonebook[i].adresa);
             printf("Telefon: %s", phonebook[i].telefon);
-            return 1;
+            return i;
         }
         i++;
     }
