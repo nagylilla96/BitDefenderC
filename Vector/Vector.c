@@ -4,19 +4,27 @@
 
 #include "Vector.h"
 
-void CreateVector(void** vector, first* one, size_t size) {
-    *vector = malloc(size * sizeof(vector));
-    one->pointer = vector;
+void** allocateVect(first* one, size_t size) {
+    void **vector =  malloc(size * sizeof(one->pointer));
+    int i;
+    for (i = 0; i < size; i++) {
+        vector[i] = malloc(sizeof(void*));
+    }
+    return vector;
+}
+
+void CreateVector(first* one, size_t size) {
+    one->pointer = allocateVect(one, size);
     one->nrOfElements = 0;
 }
 
-void new_entry(void** vector, first* one, void* newNode, size_t *size) { // add a new entry
+void new_entry(first* one, void* newNode, size_t *size) { // add a new entry
     if (one->nrOfElements + 1 >= *size) {
         *size *= 2;
-        *vector = realloc(*vector, sizeof(*vector) * (*size)); // if the data amount exceeds the size, realloc space
+        one->pointer = realloc(one->pointer, sizeof(one->pointer) * (*size)); // if the data amount exceeds the size, realloc space
     }
-    vector[one->nrOfElements]= malloc(sizeof(one));
-    memcpy(vector[one->nrOfElements], one, *size);
+    one->pointer[one->nrOfElements]= malloc(sizeof(newNode));
+    one->pointer[one->nrOfElements] = newNode;
     one->nrOfElements++;
 }
 
@@ -107,8 +115,6 @@ int findFamily(pb *phonebook, int nrOfElements) { // find all people with a cert
     return 1;
 }
 
-
-
 void sortByName(pb *phonebook, int nrOfElements) { // sort data by name
     int i, j, n = nrOfElements - 1;
     char fullName1[200], fullName2[200];
@@ -125,20 +131,10 @@ void sortByName(pb *phonebook, int nrOfElements) { // sort data by name
             }
         }
     }
-    showAll(phonebook, nrOfElements);
+//    showAll(phonebook, nrOfElements);
 }
 
 
-void showAll(void** vector, first* one) { // show all elements from the phone book
-    int i;
-    for (i = 0; i < one->nrOfElements; i++) {
-        if (i % 30 == 0) { // show the page value based on i, which is the number of entries
-            printf("page %d\n", (i / 30) + 1);
-        }
-        printf("Nume: %s", phonebook[i].nume);
-        printf("Prenume: %s", phonebook[i].prenume);
-        printf("Adresa: %s", phonebook[i].adresa);
-        printf("Telefon: %s", phonebook[i].telefon);
-        printf("\n");
-    }
+void PrintVector(first* one, void(*printFunc)(first*)) { // show all elements from the phone book
+    printFunc(one);
 }

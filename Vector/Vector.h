@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int size;
+size_t size;
 
 typedef struct {
     char *nume;
@@ -18,13 +18,14 @@ typedef struct {
 } pb, stud;
 
 typedef struct {
-    void *pointer;
+    void **pointer;
     int nrOfElements;
 } first;
 
-void CreateVector(void** vector, first* one, size_t size);
-void new_entry(void** vector, first* one, void* newNode, size_t *size);
-void showAll(pb *phonebook, int nrOfElements);
+void CreateVector(first* one, size_t size);
+void** allocateVect(first* one, size_t size);
+void new_entry(first* one, void* newNode, size_t *size);
+void PrintVector(first* one, void(*printFunc)(first *one));
 int deleteReg(pb *phonebook, int nrOfElements);
 int findName(pb *phonebook, int nrOfElements);
 int findPhone(pb *phonebook, int nrOfElements);
