@@ -5,6 +5,7 @@
 #include "Vector.h"
 
 void printFunc(first* one, int index) {
+    printf("index = %d\n", index);
     pb **phonebook = (pb**) one->pointer;
     printf("Nume: %s", phonebook[index]->nume);
     printf("Prenume: %s", phonebook[index]->prenume);
@@ -65,14 +66,14 @@ int main()
     int nrOfElements = 0;
     pb* phonebook;
     char nume[100], prenume[100], adresa[500], telefon[10];
+    first *one = malloc(sizeof(one));
+    //= malloc(size * sizeof(phonebook));
     stud *student = malloc(sizeof(student));
     student->nume = malloc(sizeof(char) * 100);
     student->prenume = malloc(sizeof(char) * 100);
     student->adresa = malloc(sizeof(char) * 500);
     student->telefon = malloc(sizeof(char) * 10);
-    first *one = malloc(sizeof(one));
-    //= malloc(size * sizeof(phonebook));
-    CreateVector(one, size);
+    CreateVector(&one, size);
     int answer;
     printf("Ce vrei sa faci?\n1. Adauga inregistare\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
     printf("4. Cautare bazata pe numar de telefon\n5. Afisare bazata pe nume de familie\n6. Afisare in ordine alfabetica\n");
@@ -93,7 +94,7 @@ int main()
                 printf("Telefon: ");
                 fgets(telefon, 10, stdin);
                 strcpy(student->telefon, telefon);
-                new_entry(one, student, &size);
+                new_entry(&one, student, &size);
                 break;
             case 2:
                 if (deleteReg(phonebook, nrOfElements))

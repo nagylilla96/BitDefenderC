@@ -22,9 +22,9 @@ typedef struct {
     int nrOfElements;
 } first;
 
-void CreateVector(first* one, size_t size);
+void CreateVector(first** one, size_t size);
 void** allocateVect(first* one, size_t size);
-void new_entry(first* one, void* newNode, size_t *size);
+void new_entry(first** one, void* newNode, size_t *size);
 void PrintVector(first* one, void(*printFunc)(first *one));
 int deleteReg(pb *phonebook, int nrOfElements);
 int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index));

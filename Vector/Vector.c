@@ -13,19 +13,22 @@ void** allocateVect(first* one, size_t size) {
     return vector;
 }
 
-void CreateVector(first* one, size_t size) {
-    one->pointer = allocateVect(one, size);
-    one->nrOfElements = 0;
+void CreateVector(first** one, size_t size) {
+    printf("CreateVector entered\n");
+    (*one)->pointer = allocateVect(*one, size);
+    (*one)->nrOfElements = 0;
+    printf("nr of elements: %d\n", (*one)->nrOfElements);
 }
 
-void new_entry(first* one, void* newNode, size_t *size) { // add a new entry
-    if (one->nrOfElements + 1 >= *size) {
+void new_entry(first** one, void* newNode, size_t *size) { // add a new entry
+    if ((*one)->nrOfElements + 1 >= *size) {
         *size *= 2;
-        one->pointer = realloc(one->pointer, sizeof(one->pointer) * (*size)); // if the data amount exceeds the size, realloc space
+        (*one)->pointer = realloc((*one)->pointer, sizeof((*one)->pointer) * (*size)); // if the data amount exceeds the size, realloc space
     }
-    one->pointer[one->nrOfElements]= malloc(sizeof(newNode));
-    one->pointer[one->nrOfElements] = newNode;
-    one->nrOfElements++;
+    printf("NrOfElements = %d\n", (*one)->nrOfElements);
+    (*one)->pointer[(*one)->nrOfElements]= malloc(sizeof(newNode));
+    (*one)->pointer[(*one)->nrOfElements] = newNode;
+    (*one)->nrOfElements++;
 }
 
 int deleteReg(pb *phonebook, int nrOfElements) { //delete an entry based by nume and prenume
@@ -127,6 +130,6 @@ void sortByName(pb *phonebook, int nrOfElements) { // sort data by name
 }
 
 
-void PrintVector(first* one, void(*printFunc)(first*)) { // show all elements from the phone book
-    printFunc(one);
+void PrintVector(first* one, void(*printAllFunc)(first*)) { // show all elements from the phone book
+    printAllFunc(one);
 }
