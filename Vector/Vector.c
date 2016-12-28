@@ -33,6 +33,23 @@ void new_entry(first* one, void* newNode, size_t *size) { // add a new entry
     one->nrOfElements++;
 }
 
+void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) ) {
+    int i;
+    char nume[100], prenume[100], adresa[500], telefon[10];
+    for (i = 0; i < nrOfItems; i++) {
+        printf("Nume: ");
+        getchar();
+        fgets(nume, 100, stdin);
+        printf("Prenume: ");
+        fgets(prenume, 100, stdin);
+        printf("Adresa: ");
+        fgets(adresa, 500, stdin);
+        printf("Telefon: ");
+        fgets(telefon, 10, stdin);
+        newItem(nume, prenume, adresa, telefon, one, *size);
+    }
+}
+
 //int deleteReg(pb *phonebook, int nrOfElements) { //delete an entry based by nume and prenume
 //    char nume[100], prenume[100];
 //    int i = 0, j;

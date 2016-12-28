@@ -58,6 +58,11 @@ node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     return myNode;
 }
 
+void newItem(char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) {
+    node *student = createNode(nume, prenume, adresa, telefon);
+    new_entry(one, student, &size);
+}
+
 int ifEquals(void *a, void *b) {
     node *aa = (node *) a;
     node *bb = (node *) b;
@@ -74,6 +79,7 @@ int main()
     char nume[100], prenume[100], adresa[500], telefon[10];
     first *one = CreateVector(size);
     node *student;
+    int nrOfItems;
     int answer;
     printf("Ce vrei sa faci?\n1. Adauga inregistare\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
     printf("4. Cautare bazata pe numar de telefon\n5. Afisare bazata pe nume de familie\n6. Afisare in ordine alfabetica\n");
@@ -81,17 +87,9 @@ int main()
     while (scanf("%d", &answer) >= 0) {
         switch (answer) {
             case 1:
-                printf("Nume: ");
-                getchar();
-                fgets(nume, 100, stdin);
-                printf("Prenume: ");
-                fgets(prenume, 100, stdin);
-                printf("Adresa: ");
-                fgets(adresa, 500, stdin);
-                printf("Telefon: ");
-                fgets(telefon, 10, stdin);
-                student = createNode(nume, prenume, adresa, telefon);
-                new_entry(one, student, &size);
+                printf("How many new items do you want?\n");
+                scanf("%d", &nrOfItems);
+                AddVectorItems(nrOfItems, one, &size, newItem);
             case 2:
 //                if (deleteReg(phonebook, nrOfElements))
 //                {
