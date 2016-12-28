@@ -19,5 +19,6 @@ void** allocateVect(size_t size);
 first *CreateVector(size_t size);
 void new_entry(first* one, void* newNode, size_t *size);
 void PrintVector(first* one, void(*printAllFunc)(first*));
+int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index));
 
 #endif //VECTOR_VECTOR_H

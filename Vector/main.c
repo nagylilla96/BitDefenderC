@@ -58,6 +58,16 @@ node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     return myNode;
 }
 
+int ifEquals(void *a, void *b) {
+    node *aa = (node *) a;
+    node *bb = (node *) b;
+    if (strcmp(aa->nume, bb->nume) == 0 && strcmp(aa->prenume, bb->prenume) == 0
+        && strcmp(aa->adresa, bb->adresa) == 0 && strcmp(aa->telefon, bb->telefon) == 0) {
+            return 0;
+    }
+    return -1;
+}
+
 int main()
 {
     size = 50;
@@ -93,25 +103,20 @@ int main()
 //                }
                 break;
             case 3:
-//                printf("Nume: ");
-//                getchar();
-//                fgets(nume, 100, stdin);
-//                strcpy(student->nume, nume);
-//                printf("Prenume: ");
-//                fgets(prenume, 100, stdin);
-//                strcpy(student->prenume, prenume);
-//                printf("Adresa: ");
-//                fgets(adresa, 500, stdin);
-//                strcpy(student->adresa, adresa);
-//                printf("Telefon: ");
-//                fgets(telefon, 10, stdin);
-//                strcpy(student->telefon, telefon);
-//                if (!findName(one, student, ifEquals, printFunc)) {
-//                    printf("Person not found\n");
-//                }
-//                else {
-//                    printf("Person found at index %d\n", findName(one, student, ifEquals, printFunc));
-//                }
+                printf("Nume: ");
+                getchar();
+                fgets(nume, 100, stdin);
+                printf("Prenume: ");
+                fgets(prenume, 100, stdin);
+                printf("Adresa: ");
+                fgets(adresa, 500, stdin);
+                printf("Telefon: ");
+                fgets(telefon, 10, stdin);
+                student = createNode(nume, prenume, adresa, telefon);
+                int x = findName(one, student, ifEquals, printFunc);
+                if (x == -1) {
+                    printf("Person not found\n");
+                }
                 break;
             case 4:
 //                if (!findPhone(phonebook, nrOfElements)) {

@@ -55,20 +55,21 @@ void new_entry(first* one, void* newNode, size_t *size) { // add a new entry
 //    }
 //    return 0;
 //}
-//
-//int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
-//    int i = 0;
-//    while (i < one->nrOfElements)
-//    {
-//        if (cmpFunc(one->pointer[i], node) == 0) { // if nume and prenume found
-//            printFunc(one, i);
-//            return 1;
-//        }
-//        i++;
-//    }
-//    return 0;
-//}
-//
+
+int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
+    int i = 0;
+    while (i < one->nrOfElements)
+    {
+        if (cmpFunc(one->pointer[i], node) == 0) { // if nume and prenume found
+            printFunc(one, i);
+            printf("Person found at index %d\n", i);
+            return i;
+        }
+        i++;
+    }
+    return -1;
+}
+
 //int findPhone(pb *phonebook, int nrOfElements) { // find data by phone number
 //    char telefon[10];
 //    int i = 0;
