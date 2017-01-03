@@ -22,23 +22,34 @@ first *CreateVector(size_t size) {
     return array;
 }
 
-void new_entry(first* one, void* newNode, size_t *size) { // add a new entry
+void new_entry(first* one, void* newNode, size_t *size, int index) { // add a new entry
+    int i;
     if (one->nrOfElements + 1 >= *size) {
         *size *= 2;
         one->pointer = realloc(one->pointer, sizeof(one->pointer) * (*size)); // if the data amount exceeds the size, realloc space
     }
+    if (one->nrOfElements == index) {
+        one->pointer[one->nrOfElements]= malloc(sizeof(newNode));
+        one->pointer[one->nrOfElements] = newNode;
+    }
+    else {
+        for (i = one->nrOfElements; i > index; i--) {
+            one->pointer[i] = one->pointer[i - 1];
+        }
+        one->pointer[index] = newNode;
+    }
     printf("NrOfElements = %d\n", one->nrOfElements);
-    one->pointer[one->nrOfElements]= malloc(sizeof(newNode));
-    one->pointer[one->nrOfElements] = newNode;
     one->nrOfElements++;
 }
 
-void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) ) {
+void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size)) {
     int i;
     char nume[100], prenume[100], adresa[500], telefon[10];
     for (i = 0; i < nrOfItems; i++) {
         printf("Nume: ");
-        getchar();
+        if (i == 0) {
+            getchar();
+        }
         fgets(nume, 100, stdin);
         printf("Prenume: ");
         fgets(prenume, 100, stdin);
@@ -46,8 +57,35 @@ void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(char
         fgets(adresa, 500, stdin);
         printf("Telefon: ");
         fgets(telefon, 10, stdin);
-        newItem(nume, prenume, adresa, telefon, one, *size);
+        newItem(one->nrOfElements, nume, prenume, adresa, telefon, one, *size);
     }
+}
+
+void PutVectorItem(int index, first* one, size_t *size, void(*newItem)(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size)) {
+    char nume[100], prenume[100], adresa[500], telefon[10];
+    printf("Nume: ");
+    getchar();
+    fgets(nume, 100, stdin);
+    printf("Prenume: ");
+    fgets(prenume, 100, stdin);
+    printf("Adresa: ");
+    fgets(adresa, 500, stdin);
+    printf("Telefon: ");
+    fgets(telefon, 10, stdin);
+    newItem(index, nume, prenume, adresa, telefon, one, *size);
+}
+
+void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index)) {
+    printf("The vector item with index %d is:\n", index);
+    printFunc(one, index);
+}
+
+void DeleteVectorItem(first* one, int index) {
+    int i;
+    for (i = index; i < one->nrOfElements; i++) {
+        one->pointer[i] = one->pointer[i + 1];
+    }
+    one->nrOfElements--;
 }
 
 //int deleteReg(pb *phonebook, int nrOfElements) { //delete an entry based by nume and prenume

@@ -32,9 +32,6 @@ void printAllFunc(first* one) {
         else {
             printf("Double pointer is not null\n");
         }
-        if (i % 30 == 0) { // show the page value based on i, which is the number of entries
-            printf("page %d\n", (i / 30) + 1);
-        }
         if (phonebook[i]->nume == NULL) {
             printf("phonebook nume is null\n");
         }
@@ -58,9 +55,9 @@ node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     return myNode;
 }
 
-void newItem(char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) {
+void newItem(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) {
     node *student = createNode(nume, prenume, adresa, telefon);
-    new_entry(one, student, &size);
+    new_entry(one, student, &size, index);
 }
 
 int ifEquals(void *a, void *b) {
@@ -79,10 +76,10 @@ int main()
     char nume[100], prenume[100], adresa[500], telefon[10];
     first *one = CreateVector(size);
     node *student;
-    int nrOfItems;
+    int nrOfItems, index;
     int answer;
-    printf("Ce vrei sa faci?\n1. Adauga inregistare\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
-    printf("4. Cautare bazata pe numar de telefon\n5. Afisare bazata pe nume de familie\n6. Afisare in ordine alfabetica\n");
+    printf("Ce vrei sa faci?\n1. Adauga inregistari la final\n2. Sterge inregistrare\n3. Cautare\n");
+    printf("4. Returnare index\n5. Adaugare la index\n6. Afisare in ordine alfabetica\n");
     printf("7. Afisare tot\n8. Iesire\nScrie numarul!\n");
     while (scanf("%d", &answer) >= 0) {
         switch (answer) {
@@ -117,14 +114,14 @@ int main()
                 }
                 break;
             case 4:
-//                if (!findPhone(phonebook, nrOfElements)) {
-//                    printf("Phone number not found\n");
-//                }
+                printf("What index do you want? ");
+                scanf("%d", &index);
+                GetVectorItem(index, one, printFunc);
                 break;
             case 5:
-//                if (!findFamily(phonebook, nrOfElements)) {
-//                    printf("Family name not found\n");
-//                }
+                printf("Where do you want to insert the item?");
+                scanf("%d", &index);
+                PutVectorItem(index, one, &size, newItem);
                 break;
             case 6:
 //                sortByName(phonebook, nrOfElements);
@@ -137,8 +134,8 @@ int main()
             default:
                 break;
         }
-        printf("Ce vrei sa faci?\n1. Adauga inregistare\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
-        printf("4. Cautare bazata pe numar de telefon\n5. Afisare bazata pe nume de familie\n6. Afisare in ordine alfabetica\n");
+        printf("Ce vrei sa faci?\n1. Adauga inregistari la final\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
+        printf("4. Cautare\n5. Adaugare la index\n6. Afisare in ordine alfabetica\n");
         printf("7. Afisare tot\n8. Iesire\nScrie numarul!\n");
     }
     return 0;
