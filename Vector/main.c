@@ -49,20 +49,21 @@ node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     return myNode;
 }
 
-void newItem(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size) {
-    node *student = createNode(nume, prenume, adresa, telefon);
-    new_entry(one, student, &size, index);
+node *getNode(int i) {
+    char nume[100], prenume[100], adresa[500], telefon[10];
+    printf("Nume: ");
+    if (i == 0) {
+        getchar();
+    }
+    fgets(nume, 100, stdin);
+    printf("Prenume: ");
+    fgets(prenume, 100, stdin);
+    printf("Adresa: ");
+    fgets(adresa, 500, stdin);
+    printf("Telefon: ");
+    fgets(telefon, 10, stdin);
+    return createNode(nume, prenume, adresa, telefon);
 }
-
-//int ifEquals(void *a, void *b) {
-//    node *aa = (node *) a;
-//    node *bb = (node *) b;
-//    if (strcmp(aa->nume, bb->nume) == 0 && strcmp(aa->prenume, bb->prenume) == 0
-//        && strcmp(aa->adresa, bb->adresa) == 0 && strcmp(aa->telefon, bb->telefon) == 0) {
-//            return 0;
-//    }
-//    return -1;
-//}
 
 int cmpFunct(void *a, void *b) {
     node *aa = (node *) a;
@@ -118,7 +119,7 @@ int main()
             case 1:
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, one, &size, newItem);
+                AddVectorItems(nrOfItems, one, &size, getNode);
                 break;
             case 2:
                 printf("Which index do you want to delete?\n");
@@ -161,7 +162,7 @@ int main()
                     printf("You can't insert there!\n");
                     break;
                 }
-                PutVectorItem(index, one, &size, newItem);
+                PutVectorItem(index, one, &size, getNode(0));
                 break;
             case 6:
                 SortVector(one, cmpFunct);
@@ -170,7 +171,7 @@ int main()
                 printf("Add elements to vector2!");
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, two, &size, newItem);
+                AddVectorItems(nrOfItems, one, &size, getNode);
                 break;
             case 8:
                 printf("Vector1\n");
@@ -186,6 +187,7 @@ int main()
                 PrintVector(three, printAllFunc);
                 break;
             case 11:
+                DeleteVector(one, size);
                 return 0;
             default:
                 break;

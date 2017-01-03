@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/Lab08Ex03.dir/main.c.o CMakeFiles/Lab08Ex03.dir/lab8e3.c.o  -o Lab08Ex03 /home/lilla/Desktop/BitDefenderC/libraries/lib/liblibds.a 

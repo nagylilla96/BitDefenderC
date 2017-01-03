@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibds.a  CMakeFiles/libds.dir/Vector.c.o
+/usr/bin/ranlib liblibds.a

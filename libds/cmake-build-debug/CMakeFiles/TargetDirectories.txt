@@ -1,0 +1,3 @@
+/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir
