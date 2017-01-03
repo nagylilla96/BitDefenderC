@@ -12,5 +12,8 @@ typedef struct {
 } first;
 
 first* CreateArraySequence(int size);
+void ADD(int index, int element, first* list, int *size, void*(*getNode)(int i));
+void REMOVE(int index, first *list);
+
 
 #endif //LAB08EX03_LAB8E3_H

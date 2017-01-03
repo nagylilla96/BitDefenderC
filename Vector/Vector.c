@@ -77,6 +77,18 @@ int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), vo
     return -1;
 }
 
+void* ReturnByIndex(first *one, void* index, int(*cmpFunc)(void* a, void* b)) {
+    int i = 0;
+    while (i < one->nrOfElements)
+    {
+        if (cmpFunc(one->pointer[i], index) == 0) { // if nume and prenume found
+            return one->pointer[i];
+        }
+        i++;
+    }
+    return NULL;
+}
+
 void SortVector(first *one, int(*cmpFunct)(void *a, void *b)) { // sort data by name
     int i, j, n = one->nrOfElements;
     for (i = 1; i < n; i++) {

@@ -14,9 +14,13 @@ node *createNode(int index, int element) {
     return myNode;
 }
 
-void newItem(int index, int element, first *list, size_t size) {
-    node *myNode = createNode(index, element);
-    new_entry(list, myNode, &size, list->nrOfElements);
+node *getNode(int i) {
+    int index, element;
+    printf("Index: ");
+    scanf("%d", &index);
+    printf("Element: ");
+    scanf("%d", &element);
+    return createNode(index, element);
 }
 
 int main() {

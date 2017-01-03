@@ -20,6 +20,7 @@ first *CreateVector(size_t size);
 void new_entry(first* one, void* newNode, size_t *size, int index);
 void PrintVector(first* one, void(*printAllFunc)(first*));
 int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index));
+void* ReturnByIndex(first *one, void* index, int(*cmpFunc)(void* a, void* b));
 void AddVectorItems(int nrOfItems, first* one, size_t *size, void*(*getNode)(int i));
 void PutVectorItem(int index, first* one, size_t *size, void* newNode);
 void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index));

@@ -8,6 +8,12 @@ first* CreateArraySequence(int size) {
     return CreateVector((size_t) size);
 }
 
-void ADD(int index, int element, first* list, int *size, void(* newItem)(int index, int element, first *list, size_t size)) {
-    AddVectorItems(1, list, (size_t*) size, newItem);
+void ADD(int index, int element, first* list, int *size, void*(*getNode)(int i)) {
+    AddVectorItems(1, list, (size_t*) size, getNode(0));
 }
+
+void REMOVE(int index, first *list) {
+    DeleteVectorItem(list, index);
+}
+
+void GET
