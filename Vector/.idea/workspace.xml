@@ -11,12 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c5bde6d-ca65-4aa1-bfec-4b7590de9c65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Vector" afterPath="$PROJECT_DIR$/cmake-build-debug/Vector" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.c" afterPath="$PROJECT_DIR$/Vector.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.h" afterPath="$PROJECT_DIR$/Vector.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-    </list>
+    <list default="true" id="3c5bde6d-ca65-4aa1-bfec-4b7590de9c65" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,8 +82,8 @@
           <file leaf-file-name="Vector.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Vector.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="98">
-                  <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="44" />
+                <state relative-caret-position="332">
+                  <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -392,12 +387,12 @@
       <workItem from="1482323292888" duration="3133000" />
       <workItem from="1482912101221" duration="8123000" />
       <workItem from="1482955360218" duration="2578000" />
-      <workItem from="1483443589417" duration="6201000" />
+      <workItem from="1483443589417" duration="6884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38561000" />
+    <option name="totallyTimeSpent" value="39244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -757,8 +752,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Vector.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="44" />
+        <state relative-caret-position="332">
+          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
           <folding />
         </state>
       </provider>
