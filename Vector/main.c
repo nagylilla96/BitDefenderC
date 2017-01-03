@@ -54,14 +54,50 @@ void newItem(int index, char *nume, char *prenume, char *adresa, char *telefon, 
     new_entry(one, student, &size, index);
 }
 
-int ifEquals(void *a, void *b) {
+//int ifEquals(void *a, void *b) {
+//    node *aa = (node *) a;
+//    node *bb = (node *) b;
+//    if (strcmp(aa->nume, bb->nume) == 0 && strcmp(aa->prenume, bb->prenume) == 0
+//        && strcmp(aa->adresa, bb->adresa) == 0 && strcmp(aa->telefon, bb->telefon) == 0) {
+//            return 0;
+//    }
+//    return -1;
+//}
+
+int cmpFunct(void *a, void *b) {
     node *aa = (node *) a;
     node *bb = (node *) b;
-    if (strcmp(aa->nume, bb->nume) == 0 && strcmp(aa->prenume, bb->prenume) == 0
-        && strcmp(aa->adresa, bb->adresa) == 0 && strcmp(aa->telefon, bb->telefon) == 0) {
-            return 0;
+    if (strcmp(aa->nume, bb->nume) > 0) {
+        return 1;
     }
-    return -1;
+    else {
+        if (strcmp(aa->nume, bb->nume) == 0) {
+            if (strcmp(aa->prenume, bb->prenume) > 0) {
+                return 1;
+            }
+            else {
+                if (strcmp(aa->prenume, bb->prenume) == 0) {
+                    if (strcmp(aa->adresa, bb->adresa) > 0) {
+                        return 1;
+                    }
+                    else {
+                        if (strcmp(aa->adresa, bb->adresa) == 0) {
+                            return 0;
+                        }
+                        else {
+                            return -1;
+                        }
+                    }
+                }
+                else {
+                    return -1;
+                }
+            }
+        }
+        else {
+            return -1;
+        }
+    }
 }
 
 int main()
@@ -69,12 +105,14 @@ int main()
     size = 50;
     char nume[100], prenume[100], adresa[500], telefon[10];
     first *one = CreateVector(size);
+    first *two = CreateVector(size);
+    first *three;
     node *student;
     int nrOfItems, index;
     int answer;
     printf("Ce vrei sa faci?\n1. Adauga inregistari la final\n2. Sterge inregistrare\n3. Cautare\n");
-    printf("4. Returnare index\n5. Adaugare la index\n6. Afisare in ordine alfabetica\n");
-    printf("7. Afisare tot\n8. Iesire\nScrie numarul!\n");
+    printf("4. Returnare index\n5. Adaugare la index\n6. Sortare\n");
+    printf("7. Adauga inregistrari vector2\n8. Afisare tot vector1\n9. Afisare tot vector2\n10. Iesire\nScrie numarul!\n");
     while (scanf("%d", &answer) >= 0) {
         switch (answer) {
             case 1:
@@ -102,7 +140,7 @@ int main()
                 printf("Telefon: ");
                 fgets(telefon, 10, stdin);
                 student = createNode(nume, prenume, adresa, telefon);
-                int x = SearchVectorItem(1one, student, ifEquals, printFunc);
+                int x = SearchVectorItem(one, student, cmpFunct, printFunc);
                 if (x == -1) {
                     printf("Person not found\n");
                 }
@@ -126,19 +164,35 @@ int main()
                 PutVectorItem(index, one, &size, newItem);
                 break;
             case 6:
-//                sortByName(phonebook, nrOfElements);
+                SortVector(one, cmpFunct);
                 break;
             case 7:
-                PrintVector(one, printAllFunc);
+                printf("Add elements to vector2!");
+                printf("How many new items do you want?\n");
+                scanf("%d", &nrOfItems);
+                AddVectorItems(nrOfItems, two, &size, newItem);
                 break;
             case 8:
+                printf("Vector1\n");
+                PrintVector(one, printAllFunc);
+                break;
+            case 9:
+                printf("Vector2\n");
+                PrintVector(two, printAllFunc);
+                break;
+            case 10:
+                three = CreateVector((size_t) one->nrOfElements + two->nrOfElements);
+                three = MergeVectors(one, two, three, cmpFunct);
+                PrintVector(three, printAllFunc);
+                break;
+            case 11:
                 return 0;
             default:
                 break;
         }
-        printf("Ce vrei sa faci?\n1. Adauga inregistari la final\n2. Sterge inregistrare\n3. Cautare bazata pe nume + prenume\n");
-        printf("4. Cautare\n5. Adaugare la index\n6. Afisare in ordine alfabetica\n");
-        printf("7. Afisare tot\n8. Iesire\nScrie numarul!\n");
+        printf("Ce vrei sa faci?\n1. Adauga inregistari la final\n2. Sterge inregistrare\n3. Cautare\n");
+        printf("4. Returnare index\n5. Adaugare la index\n6. Sortare\n");
+        printf("7. Adauga inregistrari vector2\n8. Afisare tot vector1\n9. Afisare tot vector2\n10. Merge\n11. Iesire\nScrie numarul!\n");
     }
     return 0;
 }

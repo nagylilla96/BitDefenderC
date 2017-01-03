@@ -24,5 +24,8 @@ void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(int 
 void PutVectorItem(int index, first* one, size_t *size, void(*newItem)(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size));
 void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index));
 void DeleteVectorItem(first* one, int index);
+void SortVector(first *one, int(*cmpFunc)(void *a, void *b));
+first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a, void *b));
+
 
 #endif //VECTOR_VECTOR_H

@@ -102,69 +102,62 @@ int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), vo
     return -1;
 }
 
-//int findPhone(pb *phonebook, int nrOfElements) { // find data by phone number
-//    char telefon[10];
-//    int i = 0;
-//    printf("Telefon: ");
-//    getchar();
-//    fgets(telefon, 10, stdin);
-//    while (i < nrOfElements) {
-//        if (strcmp(telefon, phonebook[i].telefon) == 0) { // if phone number is found (which is a string by the way, because they
-//            printf("Nume: %s", phonebook[i].nume); // can start with 0), the data is printed
-//            printf("Prenume: %s", phonebook[i].prenume);
-//            printf("Adresa: %s", phonebook[i].adresa);
-//            printf("Telefon: %s", phonebook[i].telefon);
-//            return i;
-//        }
-//        i++;
-//    }
-//    return 0;
-//}
-//
-//int findFamily(pb *phonebook, int nrOfElements) { // find all people with a certain family name
-//    char nume[100];
-//    int i = 0, found = 0;
-//    printf("Nume: ");
-//    getchar();
-//    fgets(nume, 100, stdin);
-//    while (i < nrOfElements) {
-//        if (strcmp(nume, phonebook[i].nume) == 0) { //if family name is found, list all people with that family name
-//            printf("Nume: %s", phonebook[i].nume);
-//            printf("Prenume: %s", phonebook[i].prenume);
-//            printf("Adresa: %s", phonebook[i].adresa);
-//            printf("Telefon: %s", phonebook[i].telefon);
-//            printf("\n");
-//            found = 1;
-//        }
-//        i++;
-//    }
-//    if (found == 0)
-//    {
-//        return 0;
-//    }
-//    return 1;
-//}
-//
-//void sortByName(pb *phonebook, int nrOfElements) { // sort data by name
-//    int i, j, n = nrOfElements - 1;
-//    char fullName1[200], fullName2[200];
-//    for (i = 1; i < n; i++) {
-//        for (j = 0; j < n - i; j++) { // using an interesting version of boolean sort that i found
-//            strcpy(fullName1, phonebook[j].nume); // i used full name, so comparison is easier (which is nume + prenume)
-//            strcat(fullName1, phonebook[j].prenume);
-//            strcpy(fullName2, phonebook[j+1].nume);
-//            strcat(fullName2, phonebook[j+1].prenume);
-//            if (strcmp(fullName1, fullName2) > 0) {
-//                pb temp = phonebook[j];
-//                phonebook[j] = phonebook[j + 1];
-//                phonebook[j + 1] = temp;
-//            }
-//        }
-//    }
-////    showAll(phonebook, nrOfElements);
-//}
-//
-//
-void PrintVector(first* one, void(*printAllFunc)(first*)) { // show all elements from the phone book
+void SortVector(first *one, int(*cmpFunct)(void *a, void *b)) { // sort data by name
+    int i, j, n = one->nrOfElements;
+    for (i = 1; i < n; i++) {
+        for (j = 0; j < n - i; j++) { // using an interesting version of boolean sort that i found
+            if (cmpFunct(one->pointer[j], one->pointer[j + 1]) > 0) {
+                first *temp;
+                temp = one->pointer[j];
+                one->pointer[j] = one->pointer[j + 1];
+                one->pointer[j + 1] = temp;
+            }
+        }
+    }
+}
+
+first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a, void *b)) {
+    SortVector(one, cmpFunct);
+    SortVector(two, cmpFunct);
+    printf("three->nrOfElements = %d\n", three->nrOfElements);
+    int i = 0, j = 0, k = 0, m = one->nrOfElements, n = two->nrOfElements, p;
+    while (i < m && j < n) {
+
+        if (cmpFunct(one->pointer[i], two->pointer[j]) < 0) {
+            three->pointer[k] = malloc(sizeof(one->pointer[i]));
+            three->pointer[k] = one->pointer[i];
+            three->nrOfElements++;
+            i++;
+        }
+        else {
+            three->pointer[k] = malloc(sizeof(two->pointer[j]));
+            three->pointer[k] = two->pointer[j];
+            three->nrOfElements++;
+            j++;
+        }
+        k++;
+    }
+    if (i < m) {
+        for (p = i; p < m; p++) {
+            three->pointer[k] = malloc(sizeof(one->pointer[p]));
+            three->pointer[k] = one->pointer[p];
+            three->nrOfElements++;
+            k++;
+        }
+    }
+    else {
+        for (p = j; p < n; p++) {
+            three->pointer[k] = malloc(sizeof(two->pointer[p]));
+            three->pointer[k] = two->pointer[p];
+            three->nrOfElements++;
+            k++;
+        }
+    }
+    printf("three->nrOfElements = %d\n", three->nrOfElements);
+    return three;
+}
+
+
+void PrintVector(first* one, void(*printAllFunc)(first* one)) { // show all elements from the phone book
     printAllFunc(one);
 }
