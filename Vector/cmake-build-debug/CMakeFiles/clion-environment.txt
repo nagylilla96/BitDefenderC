@@ -1,1 +1,1 @@
-CMake: 3.6.2@/home/lilla/clion-2016.3/bin/cmake/bin/cmake
+CMake: 3.6.3@/home/lilla/clion-2016.3/bin/cmake/bin/cmake

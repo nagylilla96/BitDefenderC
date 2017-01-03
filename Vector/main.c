@@ -29,14 +29,8 @@ void printAllFunc(first* one) {
         if (one->pointer == NULL) {
             printf("Double pointer is null\n");
         }
-        else {
-            printf("Double pointer is not null\n");
-        }
         if (phonebook[i]->nume == NULL) {
             printf("phonebook nume is null\n");
-        }
-        else {
-            printf("phonebook nume is not null\n");
         }
         printFunc(one, i);
     }
@@ -87,15 +81,15 @@ int main()
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
                 AddVectorItems(nrOfItems, one, &size, newItem);
+                break;
             case 2:
-//                if (deleteReg(phonebook, nrOfElements))
-//                {
-//                    nrOfElements--;
-//                }
-//                else
-//                {
-//                    printf("Person not found\n");
-//                }
+                printf("Which index do you want to delete?\n");
+                scanf("%d", &index);
+                if (index >= one->nrOfElements) {
+                    printf("There are less than %d elements!\n", index);
+                    break;
+                }
+                DeleteVectorItem(one, index);
                 break;
             case 3:
                 printf("Nume: ");
@@ -108,7 +102,7 @@ int main()
                 printf("Telefon: ");
                 fgets(telefon, 10, stdin);
                 student = createNode(nume, prenume, adresa, telefon);
-                int x = findName(one, student, ifEquals, printFunc);
+                int x = SearchVectorItem(1one, student, ifEquals, printFunc);
                 if (x == -1) {
                     printf("Person not found\n");
                 }
@@ -116,11 +110,19 @@ int main()
             case 4:
                 printf("What index do you want? ");
                 scanf("%d", &index);
+                if (index >= one->nrOfElements) {
+                    printf("Index %d is bigger than the number of elements!\n", index);
+                    break;
+                }
                 GetVectorItem(index, one, printFunc);
                 break;
             case 5:
                 printf("Where do you want to insert the item?");
                 scanf("%d", &index);
+                if (index > one->nrOfElements) {
+                    printf("You can't insert there!\n");
+                    break;
+                }
                 PutVectorItem(index, one, &size, newItem);
                 break;
             case 6:

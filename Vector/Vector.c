@@ -88,30 +88,7 @@ void DeleteVectorItem(first* one, int index) {
     one->nrOfElements--;
 }
 
-//int deleteReg(pb *phonebook, int nrOfElements) { //delete an entry based by nume and prenume
-//    char nume[100], prenume[100];
-//    int i = 0, j;
-//    printf("Nume: ");
-//    getchar();
-//    fgets(nume, 100, stdin);
-//    printf("Prenume: ");
-//    fgets(prenume, 100, stdin);
-//    while (i < nrOfElements) {
-//        if (strcmp(nume, phonebook[i].nume) == 0 && strcmp(prenume, phonebook[i].prenume) == 0) // if nume and prenume found
-//        {
-//            nrOfElements--;
-//            for (j = i; j < nrOfElements; j++) // the structure from the array is deleted
-//            {
-//                phonebook[j] = phonebook[j + 1];
-//            }
-//            return 1;
-//        }
-//        i++;
-//    }
-//    return 0;
-//}
-
-int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
+int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
     int i = 0;
     while (i < one->nrOfElements)
     {

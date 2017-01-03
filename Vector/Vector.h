@@ -19,9 +19,10 @@ void** allocateVect(size_t size);
 first *CreateVector(size_t size);
 void new_entry(first* one, void* newNode, size_t *size, int index);
 void PrintVector(first* one, void(*printAllFunc)(first*));
-int findName(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index));
+int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index));
 void AddVectorItems(int nrOfItems, first* one, size_t *size, void(*newItem)(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size));
 void PutVectorItem(int index, first* one, size_t *size, void(*newItem)(int index, char *nume, char *prenume, char *adresa, char *telefon, first *one, size_t size));
 void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index));
+void DeleteVectorItem(first* one, int index);
 
 #endif //VECTOR_VECTOR_H
