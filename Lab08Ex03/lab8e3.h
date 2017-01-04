@@ -7,13 +7,15 @@
 #include "Vector.h"
 
 typedef struct {
-    int *list;
-    int nr;
-} first;
+    int index;
+    int element;
+} node;
 
 first* CreateArraySequence(int size);
-void ADD(int index, int element, first* list, int *size, void*(*getNode)(int i));
-void REMOVE(int index, first *list);
+void ADD(first* list, int *size, node*(*getNode)(int i, first* list));
+node* REMOVE(int index, first *list, int(*cmpFunct)(void *a, void *b));
+node* GET(int index, first *list, int(*cmpFunc)(void *a, void *b));
+int SEARCH(int element, first *list, int(*cmpFunct)(void *a, void *b));
 
 
 #endif //LAB08EX03_LAB8E3_H
