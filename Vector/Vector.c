@@ -69,7 +69,7 @@ int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), vo
     {
         if (cmpFunc(one->pointer[i], node) == 0) { // if nume and prenume found
             printFunc(one, i);
-            printf("Person found at index %d\n", i);
+            printf("Found at index %d\n", i);
             return i;
         }
         i++;

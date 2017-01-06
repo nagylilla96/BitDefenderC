@@ -53,9 +53,9 @@ node* GET(int index, first *list, int(*cmpFunc)(void *a, void *b)) {
     return ReturnByIndex(list, &myNode, cmpFunc);
 }
 
-int SEARCH(int element, first *list, int(*cmpFunct)(void *a, void *b)) {
+int SEARCH(int element, first *list, int(*cmpFunct)(void *a, void *b), int(*printFunct)()) {
     node myNode;
     myNode.index = 0;
     myNode.element = element;
-    return SearchVectorItem(list, &myNode, cmpFunct, NULL);
+    return SearchVectorItem(list, &myNode, cmpFunct, printFunct);
 }

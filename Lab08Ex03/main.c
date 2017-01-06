@@ -53,6 +53,10 @@ int cmpFunctEl(void *a, void *b) {
     }
 }
 
+int printFuct() {
+    return 1;
+}
+
 int main() {
     int size = 50;
     first *list = CreateArraySequence(size);
@@ -94,7 +98,7 @@ int main() {
             case 4:
                 printf("What element are you looking for?\n");
                 scanf("%d", &index);
-                SEARCH(index, list, cmpFunctEl);
+                SEARCH(index, list, cmpFunctEl, printFuct);
                 break;
             case 5:
                 return 0;
