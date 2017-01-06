@@ -16,12 +16,33 @@ void ADD(first* list, int *size, node*(*getNode)(int i, first* list)) {
         return;
     }
     printf("Add entered\n");
-    PutVectorItem(myNode->index, list, (size_t*) size, myNode);
+    int i;
+    if (list->nrOfElements + 1 >= *size) {
+        *size *= 2;
+        list->pointer = realloc(list->pointer, sizeof(list->pointer) * (*size)); // if the data amount exceeds the size, realloc space
+    }
+    if (list->nrOfElements == myNode->index) {
+        list->pointer[list->nrOfElements]= malloc(sizeof(myNode));
+        list->pointer[list->nrOfElements] = myNode;
+    }
+    else {
+        for (i = list->nrOfElements; i > myNode->index; i--) {
+            list->pointer[i] = list->pointer[i - 1];
+            ((node*)list->pointer[i])->index ++;
+        }
+        list->pointer[myNode->index] = myNode;
+    }
+    list->nrOfElements++;
 }
 
 node* REMOVE(int index, first *list, int(*cmpFunct)(void *a, void *b)) {
     node *myNode = GET(index, list, cmpFunct);
-    DeleteVectorItem(list, index);
+    int i;
+    for (i = index; i < list->nrOfElements; i++) {
+        list->pointer[i] = list->pointer[i + 1];
+        ((node*)list->pointer[i])->index --;
+    }
+    list->nrOfElements--;
     return myNode;
 }
 

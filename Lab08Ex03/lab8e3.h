@@ -17,5 +17,4 @@ node* REMOVE(int index, first *list, int(*cmpFunct)(void *a, void *b));
 node* GET(int index, first *list, int(*cmpFunc)(void *a, void *b));
 int SEARCH(int element, first *list, int(*cmpFunct)(void *a, void *b));
 
-
 #endif //LAB08EX03_LAB8E3_H
