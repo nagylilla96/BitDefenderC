@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.cpp">
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.c">
 			<Option target="LinkedList"/>
 		</Unit>
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.h">

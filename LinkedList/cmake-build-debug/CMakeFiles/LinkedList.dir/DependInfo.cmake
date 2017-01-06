@@ -1,24 +1,16 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "C"
-  "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.c" "/home/lilla/Desktop/BitDefenderC/LinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/LinkedList.c.o"
   "/home/lilla/Desktop/BitDefenderC/LinkedList/main.c" "/home/lilla/Desktop/BitDefenderC/LinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  )
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.cpp" "/home/lilla/Desktop/BitDefenderC/LinkedList/cmake-build-debug/CMakeFiles/LinkedList.dir/LinkedList.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # Targets to which this target links.

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.c
+LinkedList.h
+/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.h
+
+/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.h
+stdio.h
+-
+stdlib.h
+-
+
+/home/lilla/Desktop/BitDefenderC/LinkedList/main.c
+LinkedList.h
+/home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.h
+

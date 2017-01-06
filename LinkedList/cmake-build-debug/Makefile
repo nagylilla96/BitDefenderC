@@ -123,32 +123,32 @@ LinkedList/fast:
 	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/build
 .PHONY : LinkedList/fast
 
-LinkedList.o: LinkedList.cpp.o
+LinkedList.o: LinkedList.c.o
 
 .PHONY : LinkedList.o
 
 # target to build an object file
-LinkedList.cpp.o:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.cpp.o
-.PHONY : LinkedList.cpp.o
+LinkedList.c.o:
+	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.c.o
+.PHONY : LinkedList.c.o
 
-LinkedList.i: LinkedList.cpp.i
+LinkedList.i: LinkedList.c.i
 
 .PHONY : LinkedList.i
 
 # target to preprocess a source file
-LinkedList.cpp.i:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.cpp.i
-.PHONY : LinkedList.cpp.i
+LinkedList.c.i:
+	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.c.i
+.PHONY : LinkedList.c.i
 
-LinkedList.s: LinkedList.cpp.s
+LinkedList.s: LinkedList.c.s
 
 .PHONY : LinkedList.s
 
 # target to generate assembly for a file
-LinkedList.cpp.s:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.cpp.s
-.PHONY : LinkedList.cpp.s
+LinkedList.c.s:
+	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/LinkedList.c.s
+.PHONY : LinkedList.c.s
 
 main.o: main.c.o
 
