@@ -27,5 +27,7 @@ NODE *GetLinkedListItem(LIST* list, int index);
 NODE *DeleteLinkedListItem(LIST* list, int index);
 NODE *SearchLinkedListItem(LIST* list, void* element, int (*cmpFunct)(void *a, void *b), void (*printFuct) (void* a));
 void SortLinkedList(LIST* list, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b));
+LIST *MergeLinkedLists(LIST* listA, LIST* listB, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b));
+void DeleteLinkedList(LIST *list);
 
 #endif //LINKEDLIST_LINKEDLIST_H

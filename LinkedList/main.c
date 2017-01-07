@@ -48,6 +48,8 @@ void swap(void *a, void *b){
 int main() {
     ELEMENT *element;
     LIST *list = CreateLinkedList();
+    LIST *list1 = CreateLinkedList();
+    LIST *list2;
     element = createElement(2);
     AddLinkedListItem(list, element);
     element = createElement(0);
@@ -79,5 +81,19 @@ int main() {
     printf("\n");
     SortLinkedList(list, cmpFunct, swap);
     PrintLinkedList(list, printFunct);
+    element = createElement(5);
+    AddLinkedListItem(list1, element);
+    element = createElement(2);
+    AddLinkedListItem(list1, element);
+    element = createElement(3);
+    AddLinkedListItem(list1, element);
+    printf("\n");
+    PrintLinkedList(list1, printFunct);
+    list2 = MergeLinkedLists(list, list1, cmpFunct, swap);
+    printf("\n");
+    PrintLinkedList(list2, printFunct);
+    DeleteLinkedList(list);
+    DeleteLinkedList(list1);
+    DeleteLinkedList(list2);
     return 0;
 }

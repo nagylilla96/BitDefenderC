@@ -99,7 +99,7 @@ NODE *SearchLinkedListItem(LIST* list, void* searched, int (*cmpFunct)(void *a, 
 
 void SortLinkedList(LIST* list, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b)) {
     int swapped;
-    NODE *node;
+    NODE *node = list->first;
     NODE *lastNode = NULL;
     if (node == NULL) {
         printf("List is empty\n");
@@ -118,4 +118,52 @@ void SortLinkedList(LIST* list, int (*cmpFunct)(void *a, void *b), void (*swap) 
         lastNode = node;
     }
     while (swapped);
+}
+
+LIST *MergeLinkedLists(LIST* listA, LIST* listB, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b)) {
+    SortLinkedList(listA, cmpFunct, swap);
+    SortLinkedList(listB, cmpFunct, swap);
+    LIST *listC = CreateLinkedList();
+    NODE *nodeA = listA->first;
+    NODE *nodeB = listB->first;
+    while (nodeA != NULL && nodeB != NULL){
+        if (cmpFunct(nodeA->element, nodeB->element) < 0) {
+            AddLinkedListItem(listC, nodeA->element);
+            nodeA = nodeA->next;
+        }
+        else {
+            if (cmpFunct(nodeA->element, nodeB->element) > 0) {
+                AddLinkedListItem(listC, nodeB->element);
+                nodeB = nodeB->next;
+            }
+            else {
+                AddLinkedListItem(listC, nodeA->element);
+                nodeA = nodeA->next;
+                nodeB = nodeB->next;
+            }
+        }
+    }
+    while (nodeA != NULL) {
+        AddLinkedListItem(listC, nodeA->element);
+        nodeA = nodeA->next;
+    }
+    while (nodeB != NULL) {
+        AddLinkedListItem(listC, nodeB->element);
+        nodeB = nodeB->next;
+    }
+    return listC;
+}
+
+void DeleteLinkedList(LIST *list) {
+    NODE *node = list->first;
+    while (node != NULL) {
+        NODE *temp = node;
+        free(temp->element);
+        node = node->next;
+        temp->next = NULL;
+        free(temp);
+    }
+    free(list->first);
+    free(list->last);
+    free(list);
 }
