@@ -17,14 +17,14 @@ LIST *CreateLinkedList() {
     return list;
 }
 
-int AddLinkedListItem(LIST *list, void* node, void(*setNextNode)(void* currentNode, void *nextNode)) {
+int AddLinkedListItem(LIST *list, void* node) {
     if (list) {
         if (list->nrOfElements == 0) {
             list->first = node;
             list->last = node;
         }
         else {
-            setNextNode(list->last, node);
+            list->last->next;
             list->last = node;
         }
         list->nrOfElements++;

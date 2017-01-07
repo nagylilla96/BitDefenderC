@@ -14,6 +14,6 @@ typedef struct {
 }LIST;
 
 LIST *CreateLinkedList();
-int AddLinkedListItem(LIST *list, void* node, void(*setNextNode)(void* currentNode, void *nextNode));
+int AddLinkedListItem(LIST *list, void* node);
 
 #endif //LINKEDLIST_LINKEDLIST_H

@@ -17,14 +17,10 @@ NODE *CreateNode(int index) {
     return node;
 }
 
-void setNextNode(NODE* currentNode, NODE* nextNode) {
-    currentNode->next = nextNode;
-}
-
 int main() {
     LIST *list = CreateLinkedList();
     NODE *node = CreateNode(1);
-    AddLinkedListItem(list, node, setNextNode);
+    AddLinkedListItem(list, node);
     printf("Hello, World!\n");
     return 0;
 }
