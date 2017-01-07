@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.c
-LinkedList.h
--
 lab8e3.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.h
 
@@ -19,8 +17,6 @@ LinkedList.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/LinkedList.h
 
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/main.c
-LinkedList.h
--
 lab8e3.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.h
 

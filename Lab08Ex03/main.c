@@ -1,14 +1,13 @@
-#include <LinkedList.h>
 #include "lab8e3.h"
 
-MyNode *createNode(int index, int element) {
+MyNode *createNode(int index, int element) { // allocate space to a new node and initialize it for the list
     MyNode *myNode = (MyNode*) malloc(sizeof(MyNode));
     myNode->index = index;
     myNode->element = element;
     return myNode;
 }
 
-MyNode *getNode(int i, first *list) {
+MyNode *getNode(int i, first *list) { // read and initialize a node, create it
     int index, element;
     printf("Index: ");
     scanf("%d", &index);
@@ -21,7 +20,7 @@ MyNode *getNode(int i, first *list) {
     return createNode(index, element);
 }
 
-int cmpFunctInd(void *a, void *b) {
+int cmpFunctInd(void *a, void *b) { // compare two structures by index
     MyNode *aa = (MyNode *) a;
     MyNode *bb = (MyNode *) b;
     if (aa->index > bb->index) {
@@ -37,7 +36,7 @@ int cmpFunctInd(void *a, void *b) {
     }
 }
 
-int cmpFunctEl(void *a, void *b) {
+int cmpFunctEl(void *a, void *b) { // compare two structures by element
     MyNode *aa = (MyNode *) a;
     MyNode *bb = (MyNode *) b;
     if (aa->element > bb->element) {
@@ -53,18 +52,11 @@ int cmpFunctEl(void *a, void *b) {
     }
 }
 
-MyNode *createElement(int index, int value) {
-    MyNode *node = malloc(sizeof(MyNode));
-    node->index = index;
-    node->element = value;
-    return node;
-}
-
-int printFuct() {
+int printFuct() { //print function for Vector.h, but in our case we don't need to print an element if we find it
     return 1;
 }
 
-void printListFunct(void *a) {
+void printListFunct(void *a) { // print a node of the list
     MyNode *aa = (MyNode*) a;
     printf("index = %d\n", aa->index);
     printf("element = %d\n", aa->element);
@@ -95,7 +87,8 @@ int main() {
                         printf("There are less than %d elements!\n", index);
                         break;
                     }
-                    REMOVEArray(index, list, cmpFunctInd);
+                    MyNode *myNode = REMOVEArray(index, list, cmpFunctInd);
+                    free(myNode);
                     break;
                 case 3:
                     printf("Which index do you want to get?\n");
@@ -118,10 +111,6 @@ int main() {
                     if (SEARCHArray(index, list, cmpFunctEl, printFuct) == -1) {
                         printf("Element not found\n");
                     }
-                    else {
-                        printf("Element found at index %d\n", SEARCHArray(index, list, cmpFunctEl, printFuct));
-                    }
-
                     break;
                 case 5:
                     return 0;
@@ -151,7 +140,7 @@ int main() {
                             }
                             printf("What element do you want to add?\n");
                             scanf("%d", &element);
-                            node = createElement(index, element);
+                            node = createNode(index, element);
                             ADDList(list, node, index);
                             break;
                         case 2:
@@ -161,7 +150,8 @@ int main() {
                                 printf("There are less than %d elements!\n", index);
                                 break;
                             }
-                            REMOVEList(list, index);
+                            MyNode *node = REMOVEList(list, index);
+                            free(node);
                             break;
                         case 3:
                             printf("Which index do you want to get?\n");
@@ -181,7 +171,7 @@ int main() {
                         case 4:
                             printf("What element are you looking for?\n");
                             scanf("%d", &index);
-                            node = createElement(0, index);
+                            node = createNode(0, index);
                             int result = SEARCHList(list, node, cmpFunctEl, printListFunct);
                             if (result == -1) {
                                 printf("Element not found\n");

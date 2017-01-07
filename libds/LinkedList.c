@@ -62,14 +62,17 @@ void PrintLinkedList(LIST* list, void(*printFuct)(void *a)) {
 NODE *GetLinkedListItem(LIST* list, int index) {
     int i;
     NODE *node = list->first;
-    for (i = 0; i < index; i++) {
+    if (index == 0) {
+        return list->first;
+    }
+    for (i = 0; i < index - 1; i++) {
         node = node->next;
     }
     return node;
 }
 
 void PutLinkedListItem(LIST* list, void* element, int index) {
-    NODE *node = GetLinkedListItem(list, index - 1);
+    NODE *node = GetLinkedListItem(list, index);
     NODE* newNode = CreateNode(element);
     if (list->nrOfElements == 0) {
         list->first = node;
@@ -89,8 +92,8 @@ list->last = newNode;
 }
 
 NODE *DeleteLinkedListItem(LIST* list, int index) {
-    NODE *prevNode = GetLinkedListItem(list, index - 1);
-    NODE *node = GetLinkedListItem(list, index);
+    NODE *prevNode = GetLinkedListItem(list, index);
+    NODE *node = GetLinkedListItem(list, index + 1);
     if (index == list->nrOfElements - 1) {
         list->last = prevNode;
     }
