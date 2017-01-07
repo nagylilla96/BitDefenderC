@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.c
+printf.h
+-
 LinkedList.h
 /home/lilla/Desktop/BitDefenderC/LinkedList/LinkedList.h
 

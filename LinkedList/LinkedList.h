@@ -7,13 +7,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct node{
+    void *element;
+    struct node *next;
+}NODE;
+
 typedef struct {
-    void* first;
-    void* last;
+    NODE *first;
+    NODE *last;
     int nrOfElements;
 }LIST;
 
 LIST *CreateLinkedList();
-int AddLinkedListItem(LIST *list, void* node);
+NODE *CreateNode(void* element);
+int AddLinkedListItem(LIST *list, void* element);
+void PrintLinkedList(LIST* list, void(*printFuct)(void *a));
+void PutLinkedListItem(LIST* list, void* newNode, int index);
+NODE *GetLinkedListItem(LIST* list, int index);
 
 #endif //LINKEDLIST_LINKEDLIST_H
