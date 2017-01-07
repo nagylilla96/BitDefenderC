@@ -12,13 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14d5efae-2bee-44dc-be7d-d0cbc13788c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/cmake-build-debug/CMakeFiles/Vector.dir/Vector.c.o" afterPath="$PROJECT_DIR$/../Vector/cmake-build-debug/CMakeFiles/Vector.dir/Vector.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/cmake-build-debug/Vector" afterPath="$PROJECT_DIR$/../Vector/cmake-build-debug/Vector" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LinkedList.c" afterPath="$PROJECT_DIR$/LinkedList.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Vector/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/Vector.c" afterPath="$PROJECT_DIR$/../Vector/Vector.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/Vector.h" afterPath="$PROJECT_DIR$/../Vector/Vector.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Vector/main.c" afterPath="$PROJECT_DIR$/../Vector/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/cmake-build-debug/liblibds.a" afterPath="$PROJECT_DIR$/../libds/cmake-build-debug/liblibds.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../libds/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/Vector.c" afterPath="$PROJECT_DIR$/../libds/Vector.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/Vector.h" afterPath="$PROJECT_DIR$/../libds/Vector.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,7 +143,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Vector" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libds" />
   </component>
   <component name="RunManager" selected="Application.Build All">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LinkedList" TARGET_NAME="LinkedList" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
@@ -345,16 +342,16 @@
       <workItem from="1483703544373" duration="827000" />
       <workItem from="1483704858081" duration="5050000" />
       <workItem from="1483778764332" duration="209000" />
-      <workItem from="1483782726839" duration="4992000" />
+      <workItem from="1483782726839" duration="5097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11078000" />
+    <option name="totallyTimeSpent" value="11183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
