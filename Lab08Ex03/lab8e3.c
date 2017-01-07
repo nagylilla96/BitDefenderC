@@ -2,6 +2,7 @@
 // Created by lilla on 03/01/17.
 //
 
+#include <LinkedList.h>
 #include "lab8e3.h"
 
 first* CreateArraySequence(int size) {
@@ -14,7 +15,6 @@ void ADDArray(first* list, int *size, MyNode*(*getNode)(int i, first* list)) {
         printf("My node is null\n");
         return;
     }
-    printf("Add entered\n");
     int i;
     if (list->nrOfElements + 1 >= *size) {
         *size *= 2;
@@ -60,13 +60,22 @@ int SEARCHArray(int element, first *list, int(*cmpFunct)(void *a, void *b), int(
 }
 
 void ADDList(LIST* list, MyNode* element, int index) {
-    NODE *node = GetLinkedListItem(list, index - 1);
     NODE* newNode = CreateNode(element);
     MyNode *myNode;
-    newNode->next = node->next;
-    node->next = newNode;
+    if (list->nrOfElements == 0) {
+        list->first = newNode;
+        list->last = newNode;
+    }
+    else {
+        if (index == list->nrOfElements) {
+            list->last = newNode;
+        }
+        NODE *node = GetLinkedListItem(list, index - 1);
+        newNode->next = node->next;
+        node->next = newNode;
+    }
     list->nrOfElements ++;
-    while (newNode != NULL) {
+    while (newNode->next != NULL) {
         myNode = newNode->next->element;
         myNode->index ++;
         newNode = newNode->next;
@@ -74,15 +83,31 @@ void ADDList(LIST* list, MyNode* element, int index) {
 }
 
 MyNode *REMOVEList(LIST *list, int index) {
-    NODE *prevNode = GetLinkedListItem(list, index - 1);
     NODE *node = GetLinkedListItem(list, index);
     NODE *ptr = node;
     MyNode *myNode;
-    prevNode->next = node->next;
+    if (node == NULL) {
+        printf("Node is null\n");
+    }
+    if (index == 0) {
+        list->first = node->next;
+        ptr = list->first;
+    }
+    else {
+        NODE *prevNode = GetLinkedListItem(list, index - 1);
+        if (index == list->nrOfElements - 1) {
+            list->last = prevNode;
+            prevNode->next = NULL;
+        }
+        else {
+            prevNode->next = node->next;
+            ptr = node->next;
+        }
+    }
     node->next = NULL;
     list->nrOfElements --;
     while (ptr != NULL) {
-        myNode = ptr->next->element;
+        myNode = ptr->element;
         myNode->index --;
         ptr = ptr->next;
     }
@@ -94,6 +119,9 @@ MyNode *GETList(LIST *list, int index) {
 }
 
 int SEARCHList(LIST *list, MyNode *element, int (*cmpFunctEl)(void *a, void *b), void(*printListFunct)(void *a)) {
+    if (SearchLinkedListItem(list, element, cmpFunctEl, printListFunct) == NULL) {
+        return -1;
+    }
     MyNode *myNode = SearchLinkedListItem(list, element, cmpFunctEl, printListFunct)->element;
     return myNode->index;
 }

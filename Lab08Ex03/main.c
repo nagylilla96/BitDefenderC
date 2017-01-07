@@ -115,7 +115,13 @@ int main() {
                 case 4:
                     printf("What element are you looking for?\n");
                     scanf("%d", &index);
-                    SEARCHArray(index, list, cmpFunctEl, printFuct);
+                    if (SEARCHArray(index, list, cmpFunctEl, printFuct) == -1) {
+                        printf("Element not found\n");
+                    }
+                    else {
+                        printf("Element found at index %d\n", SEARCHArray(index, list, cmpFunctEl, printFuct));
+                    }
+
                     break;
                 case 5:
                     return 0;
@@ -141,6 +147,7 @@ int main() {
                             scanf("%d", &index);
                             if (index > list->nrOfElements) {
                                 printf("You can't add this here!\n");
+                                break;
                             }
                             printf("What element do you want to add?\n");
                             scanf("%d", &element);
@@ -175,7 +182,13 @@ int main() {
                             printf("What element are you looking for?\n");
                             scanf("%d", &index);
                             node = createElement(0, index);
-                            SEARCHList(list, node, cmpFunctEl, printListFunct);
+                            int result = SEARCHList(list, node, cmpFunctEl, printListFunct);
+                            if (result == -1) {
+                                printf("Element not found\n");
+                            }
+                            else {
+                                printf("Element found at index %d\n", result);
+                            }
                             break;
                         case 5:
                             return 0;
