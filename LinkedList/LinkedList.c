@@ -73,6 +73,7 @@ void PutLinkedListItem(LIST* list, void* element, int index) {
     NODE* newNode = CreateNode(element);
     newNode->next = node->next;
     node->next = newNode;
+    list->nrOfElements ++;
 }
 
 NODE *DeleteLinkedListItem(LIST* list, int index) {
@@ -80,6 +81,7 @@ NODE *DeleteLinkedListItem(LIST* list, int index) {
     NODE *node = GetLinkedListItem(list, index);
     prevNode->next = node->next;
     node->next = NULL;
+    list->nrOfElements --;
     return node;
 }
 
@@ -93,4 +95,27 @@ NODE *SearchLinkedListItem(LIST* list, void* searched, int (*cmpFunct)(void *a, 
         node = node->next;
     }
     return NULL;
+}
+
+void SortLinkedList(LIST* list, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b)) {
+    int swapped;
+    NODE *node;
+    NODE *lastNode = NULL;
+    if (node == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+    do {
+        swapped = 0;
+        node = list->first;
+        while (node->next != lastNode) {
+            if (cmpFunct(node->element, node->next->element) > 0) {
+                swap(node, node->next);
+                swapped = 1;
+            }
+            node = node->next;
+        }
+        lastNode = node;
+    }
+    while (swapped);
 }

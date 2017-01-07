@@ -36,6 +36,15 @@ int cmpFunct(void *a, void *b) {
     }
 }
 
+void swap(void *a, void *b){
+    NODE *aa = (NODE*) a;
+    NODE *bb = (NODE*) b;
+    ELEMENT *temp;
+    temp = aa->element;
+    aa->element = bb->element;
+    bb->element = temp;
+}
+
 int main() {
     ELEMENT *element;
     LIST *list = CreateLinkedList();
@@ -67,6 +76,8 @@ int main() {
     else {
         printFunct(SearchLinkedListItem(list, element, cmpFunct, printFunct)->element);
     }
-
+    printf("\n");
+    SortLinkedList(list, cmpFunct, swap);
+    PrintLinkedList(list, printFunct);
     return 0;
 }
