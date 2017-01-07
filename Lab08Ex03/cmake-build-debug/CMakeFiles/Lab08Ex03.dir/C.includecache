@@ -7,20 +7,26 @@
 #IncludeRegexTransform: 
 
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.c
-Vector.h
--
 lab8e3.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.h
 
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.h
 Vector.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/Vector.h
+LinkedList.h
+/home/lilla/Desktop/BitDefenderC/Lab08Ex03/LinkedList.h
 
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/main.c
-Vector.h
+LinkedList.h
 -
 lab8e3.h
 /home/lilla/Desktop/BitDefenderC/Lab08Ex03/lab8e3.h
+
+/home/lilla/Desktop/BitDefenderC/libraries/include/LinkedList.h
+stdio.h
+-
+stdlib.h
+-
 
 /home/lilla/Desktop/BitDefenderC/libraries/include/Vector.h
 stdlib.h
