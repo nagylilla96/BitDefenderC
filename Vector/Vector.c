@@ -55,8 +55,9 @@ void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index
     printFunc(one, index);
 }
 
-void DeleteVectorItem(first* one, int index) {
+void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
     int i;
+    freeNode(one->pointer[index]);
     free(one->pointer[index]);
     for (i = index; i < one->nrOfElements; i++) {
         one->pointer[i] = one->pointer[i + 1];

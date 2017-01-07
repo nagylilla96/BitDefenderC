@@ -101,6 +101,14 @@ int cmpFunct(void *a, void *b) {
     }
 }
 
+void freeNode(void* a){
+    node *aa = (node*) a;
+    free(aa->nume);
+    free(aa->prenume);
+    free(aa->adresa);
+    free(aa->telefon);
+}
+
 int main()
 {
     size = 50;
@@ -128,7 +136,7 @@ int main()
                     printf("There are less than %d elements!\n", index);
                     break;
                 }
-                DeleteVectorItem(one, index);
+                DeleteVectorItem(one, index, freeNode);
                 break;
             case 3:
                 printf("Nume: ");

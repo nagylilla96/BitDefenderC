@@ -78,3 +78,7 @@ NODE *GetLinkedListItem(LIST* list, int index) {
     }
     return node;
 }
+
+NODE *DeleteLinkedListItem(LIST* list, int index) {
+
+}

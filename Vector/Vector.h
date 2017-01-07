@@ -24,7 +24,7 @@ void* ReturnByIndex(first *one, void* index, int(*cmpFunc)(void* a, void* b));
 void AddVectorItems(int nrOfItems, first* one, size_t *size, void*(*getNode)(int i));
 void PutVectorItem(int index, first* one, size_t *size, void* newNode);
 void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index));
-void DeleteVectorItem(first* one, int index);
+void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a));
 void SortVector(first *one, int(*cmpFunc)(void *a, void *b));
 first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a, void *b));
 void DeleteVector(first *one, size_t size);
