@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/lilla/Desktop/BitDefenderC/libds/LinkedList.c
+printf.h
+-
+LinkedList.h
+/home/lilla/Desktop/BitDefenderC/libds/LinkedList.h
+
+/home/lilla/Desktop/BitDefenderC/libds/LinkedList.h
+stdio.h
+-
+stdlib.h
+-
+
 /home/lilla/Desktop/BitDefenderC/libds/Vector.c
 Vector.h
 /home/lilla/Desktop/BitDefenderC/libds/Vector.h

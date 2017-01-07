@@ -123,6 +123,33 @@ libds/fast:
 	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/build
 .PHONY : libds/fast
 
+LinkedList.o: LinkedList.c.o
+
+.PHONY : LinkedList.o
+
+# target to build an object file
+LinkedList.c.o:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/LinkedList.c.o
+.PHONY : LinkedList.c.o
+
+LinkedList.i: LinkedList.c.i
+
+.PHONY : LinkedList.i
+
+# target to preprocess a source file
+LinkedList.c.i:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/LinkedList.c.i
+.PHONY : LinkedList.c.i
+
+LinkedList.s: LinkedList.c.s
+
+.PHONY : LinkedList.s
+
+# target to generate assembly for a file
+LinkedList.c.s:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/LinkedList.c.s
+.PHONY : LinkedList.c.s
+
 Vector.o: Vector.c.o
 
 .PHONY : Vector.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... libds"
+	@echo "... LinkedList.o"
+	@echo "... LinkedList.i"
+	@echo "... LinkedList.s"
 	@echo "... Vector.o"
 	@echo "... Vector.i"
 	@echo "... Vector.s"

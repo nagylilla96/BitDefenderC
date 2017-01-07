@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/libds.dir/Vector.c.o"
+  "CMakeFiles/libds.dir/LinkedList.c.o"
   "liblibds.pdb"
   "liblibds.a"
 )
