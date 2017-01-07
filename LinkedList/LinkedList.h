@@ -24,5 +24,7 @@ int AddLinkedListItem(LIST *list, void* element);
 void PrintLinkedList(LIST* list, void(*printFuct)(void *a));
 void PutLinkedListItem(LIST* list, void* newNode, int index);
 NODE *GetLinkedListItem(LIST* list, int index);
+NODE *DeleteLinkedListItem(LIST* list, int index);
+NODE *SearchLinkedListItem(LIST* list, void* element, int (*cmpFunct)(void *a, void *b), void (*printFuct) (void* a));
 
 #endif //LINKEDLIST_LINKEDLIST_H

@@ -59,17 +59,6 @@ void PrintLinkedList(LIST* list, void(*printFuct)(void *a)) {
     }
 }
 
-void PutLinkedListItem(LIST* list, void* element, int index) {
-    int i;
-    NODE *node = list->first;
-    NODE* newNode = CreateNode(element);
-    for (i = 0; i < index - 1; i++) {
-        node = node->next;
-    }
-    newNode->next = node->next;
-    node->next = newNode;
-}
-
 NODE *GetLinkedListItem(LIST* list, int index) {
     int i;
     NODE *node = list->first;
@@ -79,6 +68,29 @@ NODE *GetLinkedListItem(LIST* list, int index) {
     return node;
 }
 
-NODE *DeleteLinkedListItem(LIST* list, int index) {
+void PutLinkedListItem(LIST* list, void* element, int index) {
+    NODE *node = GetLinkedListItem(list, index - 1);
+    NODE* newNode = CreateNode(element);
+    newNode->next = node->next;
+    node->next = newNode;
+}
 
+NODE *DeleteLinkedListItem(LIST* list, int index) {
+    NODE *prevNode = GetLinkedListItem(list, index - 1);
+    NODE *node = GetLinkedListItem(list, index);
+    prevNode->next = node->next;
+    node->next = NULL;
+    return node;
+}
+
+NODE *SearchLinkedListItem(LIST* list, void* searched, int (*cmpFunct)(void *a, void *b), void (*printFunct) (void* a)) {
+    NODE* node = list->first;
+    while (node->next != NULL) {
+        if (cmpFunct(node->element, searched) == 0)
+        {
+            return node;
+        }
+        node = node->next;
+    }
+    return NULL;
 }
