@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/LastLab/lastLab.c
+lastLab.h
+/home/lilla/Desktop/BitDefenderC/LastLab/lastLab.h
+
+/home/lilla/Desktop/BitDefenderC/LastLab/lastLab.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/lilla/Desktop/BitDefenderC/LastLab/main.c
+lastLab.h
+/home/lilla/Desktop/BitDefenderC/LastLab/lastLab.h
+

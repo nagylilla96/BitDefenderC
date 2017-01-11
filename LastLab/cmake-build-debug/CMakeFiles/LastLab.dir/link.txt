@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/LastLab.dir/main.c.o CMakeFiles/LastLab.dir/lastLab.c.o  -o LastLab 
