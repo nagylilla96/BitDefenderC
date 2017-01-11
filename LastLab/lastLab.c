@@ -5,6 +5,7 @@
 #include "lastLab.h"
 
 NODE **createTrie() {
+
     int i;
     NODE **list = malloc(sizeof(NODE)*100);
     for (i = 0; i < 26; i++) {
@@ -38,45 +39,52 @@ char **readFile() {
 
 void addWord(char *word, NODE **root) {
     int i;
-
-    NODE **anotherRoot = root;
-    if (anotherRoot == NULL) {
-        printf("AnotherRoot is null\n");
-    }
-
     for (i = 0; i < strlen(word); i++) {
-        if (anotherRoot[word[i] - 97]->next == NULL) {
-            anotherRoot[word[i] - 97]->next = createTrie();
-            if (anotherRoot[word[i] - 97]->next == NULL) {
+        if (root[word[i] - 97]->next == NULL) {
+            root[word[i] - 97]->next = createTrie();
+
+            if (root[word[i] - 97]->next == NULL) {
                 printf("Root is null!\n");
             }
         }
-        anotherRoot[word[i] - 97] = anotherRoot[word[i] - 97] -> next;
+        root[word[i] - 97] = (NODE *) root[word[i] - 97] -> next;
     }
-    printf("Addword entered\n");
+}
+
+int printListOfStrings(char **listOfStrings) {
+    int i = 0;
+    while (strlen(listOfStrings[i]) != 0) {
+        listOfStrings[i][strlen(listOfStrings[i]) - 1] = '\0';
+//        printf("%s\n", listOfStrings[i]);
+        i++;
+    }
+    return i - 1;
 }
 
 void addFile(char **listOfStrings, NODE** root) {
     int i = 0;
-
     while (strlen(listOfStrings[i]) != 0) {
-        printf("Addfile entered\n");
         addWord(listOfStrings[i], root);
         i++;
     }
-
 }
 
 int searchCompleteWord(char *word, NODE **root) {
-    int i = 0, found = 1;
+    printf("SearchCompleteWord entered\n");
+    int i = 0;
     while (i < strlen(word)) {
+        printf("%c", root[word[i]]);
         if (root[word[i] - 97]->next == NULL) {
             return 0;
         }
-        root[word[i] - 97] = root[word[i] - 97] -> next;
+        root[word[i] - 97] = (NODE *) root[word[i] - 97] -> next;
         i++;
     }
     return 1;
+}
+
+int nrOfWords(char **listOfStrings) {
+    return printListOfStrings(listOfStrings);
 }
 
 
