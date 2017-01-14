@@ -21,11 +21,11 @@ typedef struct {
 LIST *CreateLinkedList();
 NODE *CreateNode(void* element);
 int AddLinkedListItem(LIST *list, void* element);
-void PrintLinkedList(LIST* list, void(*printFuct)(void *a));
+void PrintLinkedList(LIST* list, void(*printFuct)(void *a, FILE *f), FILE *f);
 void PutLinkedListItem(LIST* list, void* newNode, int index);
 NODE *GetLinkedListItem(LIST* list, int index);
 NODE *DeleteLinkedListItem(LIST* list, int index);
-NODE *SearchLinkedListItem(LIST* list, void* element, int (*cmpFunct)(void *a, void *b), void (*printFuct) (void* a));
+NODE *SearchLinkedListItem(LIST* list, void* element, int (*cmpFunct)(void *a, void *b));
 void SortLinkedList(LIST* list, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b));
 LIST *MergeLinkedLists(LIST* listA, LIST* listB, int (*cmpFunct)(void *a, void *b), void (*swap) (void *a, void *b));
 void DeleteLinkedList(LIST *list);

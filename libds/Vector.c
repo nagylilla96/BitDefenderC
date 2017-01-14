@@ -39,10 +39,10 @@ void new_entry(first* one, void* newNode, size_t *size, int index) { // add a ne
     one->nrOfElements++;
 }
 
-void AddVectorItems(int nrOfItems, first* one, size_t *size, void*(*getNode)(int i)) {
+void AddVectorItems(int nrOfItems, first* one, size_t *size, void*(*getNode)(int i, FILE *f), FILE *f) {
     int i;
     for (i = 0; i < nrOfItems; i++) {
-        new_entry(one, getNode(i), size, one->nrOfElements);
+        new_entry(one, getNode(i, f), size, one->nrOfElements);
     }
 }
 
@@ -50,9 +50,9 @@ void PutVectorItem(int index, first* one, size_t *size, void* newNode) {
     new_entry(one, newNode, size, index);
 }
 
-void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index)) {
-    printf("The vector item with index %d is:\n", index);
-    printFunc(one, index);
+void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index, FILE *f), FILE *f) {
+    fprintf(f, "The vector item with index %d is:\n", index);
+    printFunc(one, index, f);
 }
 
 void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
@@ -65,13 +65,13 @@ void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
     one->nrOfElements--;
 }
 
-int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index)) { // find name by nume and prenume
+int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index, FILE *f), FILE *f) { // find name by nume and prenume
     int i = 0;
     while (i < one->nrOfElements)
     {
         if (cmpFunc(one->pointer[i], node) == 0) { // if nume and prenume found
-            printFunc(one, i);
-            printf("Found at index %d\n", i);
+            printFunc(one, i, f);
+            fprintf(f, "Found at index %d\n", i);
             return i;
         }
         i++;
@@ -108,7 +108,6 @@ void SortVector(first *one, int(*cmpFunct)(void *a, void *b)) { // sort data by 
 first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a, void *b)) {
     SortVector(one, cmpFunct);
     SortVector(two, cmpFunct);
-    printf("three->nrOfElements = %d\n", three->nrOfElements);
     int i = 0, j = 0, k = 0, m = one->nrOfElements, n = two->nrOfElements, p;
     while (i < m && j < n) {
 
@@ -142,12 +141,11 @@ first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a
             k++;
         }
     }
-    printf("three->nrOfElements = %d\n", three->nrOfElements);
     return three;
 }
 
-void PrintVector(first* one, void(*printAllFunc)(first* one)) { // show all elements from the phone book
-    printAllFunc(one);
+void PrintVector(first* one, void(*printAllFunc)(first* one, FILE *f), FILE *f) { // show all elements from the phone book
+    printAllFunc(one, f);
 }
 
 void DeleteVector(first *one, size_t size) {

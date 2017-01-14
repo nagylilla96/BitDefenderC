@@ -47,14 +47,14 @@ int AddLinkedListItem(LIST *list, void* element) {
     return 0;
 }
 
-void PrintLinkedList(LIST* list, void(*printFuct)(void *a)) {
+void PrintLinkedList(LIST* list, void(*printFuct)(void *a, FILE *f), FILE *f) {
     NODE *node = list->first;
     if (node == NULL) {
-        printf("First node is null");
+        fprintf(f, "First node is null");
         return;
     }
     while (node != NULL) {
-        printFuct(node->element);
+        printFuct(node->element, f);
         node = node->next;
     }
 }
@@ -108,7 +108,7 @@ NODE *DeleteLinkedListItem(LIST* list, int index) {
     return node;
 }
 
-NODE *SearchLinkedListItem(LIST* list, void* searched, int (*cmpFunct)(void *a, void *b), void (*printFunct) (void* a)) {
+NODE *SearchLinkedListItem(LIST* list, void* searched, int (*cmpFunct)(void *a, void *b)) {
     NODE* node = list->first;
     while (node != NULL) {
         if (cmpFunct(node->element, searched) == 0)
