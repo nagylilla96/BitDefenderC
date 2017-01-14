@@ -4,8 +4,8 @@ project(ArrayVectorTester)
 set(CMAKE_C_STANDARD 99)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-set(SOURCE_FILES main.c)
-add_executable(ArrayVectorTester ${SOURCE_FILES})
+set(SOURCE_FILES main.c tester.c tester.h)
+add_executable(ArrayVectorTester ${SOURCE_FILES} tester.c tester.h)
 
 include(FindPkgConfig)
 find_package(LibDS REQUIRED)

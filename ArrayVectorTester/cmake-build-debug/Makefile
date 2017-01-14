@@ -150,6 +150,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/ArrayVectorTester.dir/build.make CMakeFiles/ArrayVectorTester.dir/main.c.s
 .PHONY : main.c.s
 
+tester.o: tester.c.o
+
+.PHONY : tester.o
+
+# target to build an object file
+tester.c.o:
+	$(MAKE) -f CMakeFiles/ArrayVectorTester.dir/build.make CMakeFiles/ArrayVectorTester.dir/tester.c.o
+.PHONY : tester.c.o
+
+tester.i: tester.c.i
+
+.PHONY : tester.i
+
+# target to preprocess a source file
+tester.c.i:
+	$(MAKE) -f CMakeFiles/ArrayVectorTester.dir/build.make CMakeFiles/ArrayVectorTester.dir/tester.c.i
+.PHONY : tester.c.i
+
+tester.s: tester.c.s
+
+.PHONY : tester.s
+
+# target to generate assembly for a file
+tester.c.s:
+	$(MAKE) -f CMakeFiles/ArrayVectorTester.dir/build.make CMakeFiles/ArrayVectorTester.dir/tester.c.s
+.PHONY : tester.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tester.o"
+	@echo "... tester.i"
+	@echo "... tester.s"
 .PHONY : help
 
 

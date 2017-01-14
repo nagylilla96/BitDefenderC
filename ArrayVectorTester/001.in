@@ -1,0 +1,7 @@
+CreateVector A
+AddVectorItems A
+3
+1;0.2 2;0.3 3;0.4
+PrintVector A
+
+

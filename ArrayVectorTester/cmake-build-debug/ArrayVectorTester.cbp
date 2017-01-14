@@ -89,6 +89,12 @@
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/main.c">
 			<Option target="ArrayVectorTester"/>
 		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/tester.c">
+			<Option target="ArrayVectorTester"/>
+		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/tester.h">
+			<Option target="ArrayVectorTester"/>
+		</Unit>
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

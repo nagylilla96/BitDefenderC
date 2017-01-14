@@ -4,10 +4,10 @@ typedef struct {
     int index;
 }ELEMENT;
 
-void printFunct(void *a) {
+void printFunct(void *a, FILE *f) {
 
     ELEMENT *aa = (ELEMENT*) a;
-    printf("index = %d\n", aa->index);
+    fprintf(f, "index = %d\n", aa->index);
 }
 
 ELEMENT *createElement(int index) {
@@ -56,42 +56,42 @@ int main() {
     AddLinkedListItem(list, element);
     element = createElement(1);
     AddLinkedListItem(list, element);
-    PrintLinkedList(list, printFunct);
-    printf("\n");
+    PrintLinkedList(list, printFunct, stdout);
+    fprintf(stdout, "\n");
     element = createElement(3);
     PutLinkedListItem(list, element, 1);
-    PrintLinkedList(list, printFunct);
-    printf("\n");
-    printFunct(GetLinkedListItem(list, 1)->element);
-    printf("\n");
+    PrintLinkedList(list, printFunct, stdout);
+    fprintf(stdout, "\n");
+    printFunct(GetLinkedListItem(list, 1)->element, stdout);
+    fprintf(stdout, "\n");
     ELEMENT* toDelete = DeleteLinkedListItem(list, 1)->element;
-    printFunct(toDelete);
-    printf("\n");
+    printFunct(toDelete, stdout);
+    fprintf(stdout, "\n");
     freeNode(toDelete);
     free(toDelete);
-    PrintLinkedList(list, printFunct);
-    printf("\n");
+    PrintLinkedList(list, printFunct, stdout);
+    fprintf(stdout, "\n");
     element = createElement(0);
-    if (SearchLinkedListItem(list, element, cmpFunct, printFunct) == NULL) {
-        printf("Not found\n");
+    if (SearchLinkedListItem(list, element, cmpFunct) == NULL) {
+        fprintf(stdout, "Not found\n");
     }
     else {
-        printFunct(SearchLinkedListItem(list, element, cmpFunct, printFunct)->element);
+        printFunct(SearchLinkedListItem(list, element, cmpFunct)->element, stdout);
     }
-    printf("\n");
+    fprintf(stdout, "\n");
     SortLinkedList(list, cmpFunct, swap);
-    PrintLinkedList(list, printFunct);
+    PrintLinkedList(list, printFunct, stdout);
     element = createElement(5);
     AddLinkedListItem(list1, element);
     element = createElement(2);
     AddLinkedListItem(list1, element);
     element = createElement(3);
     AddLinkedListItem(list1, element);
-    printf("\n");
-    PrintLinkedList(list1, printFunct);
+    fprintf(stdout, "\n");
+    PrintLinkedList(list1, printFunct, stdout);
     list2 = MergeLinkedLists(list, list1, cmpFunct, swap);
-    printf("\n");
-    PrintLinkedList(list2, printFunct);
+    fprintf(stdout, "\n");
+    PrintLinkedList(list2, printFunct, stdout);
     DeleteLinkedList(list);
     DeleteLinkedList(list1);
     DeleteLinkedList(list2);

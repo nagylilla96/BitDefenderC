@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/main.c" "/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/main.c.o"
+  "/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/tester.c" "/home/lilla/Desktop/BitDefenderC/ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/tester.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
