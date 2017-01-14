@@ -11,28 +11,28 @@ typedef struct {
     char *telefon;
 } node;
 
-void printFunc(first* one, int index) {
-    printf("index = %d\n", index);
+void printFunc(first* one, int index, FILE *f) {
+    fprintf(f, "index = %d\n", index);
     node **phonebook = (node**) one->pointer;
-    printf("Nume: %s", phonebook[index]->nume);
-    printf("Prenume: %s", phonebook[index]->prenume);
-    printf("Adresa: %s", phonebook[index]->adresa);
-    printf("Telefon: %s", phonebook[index]->telefon);
-    printf("\n");
+    fprintf(f, "Nume: %s", phonebook[index]->nume);
+    fprintf(f, "Prenume: %s", phonebook[index]->prenume);
+    fprintf(f, "Adresa: %s", phonebook[index]->adresa);
+    fprintf(f, "Telefon: %s", phonebook[index]->telefon);
+    fprintf(f, "\n");
 }
 
-void printAllFunc(first* one) {
+void printAllFunc(first* one, FILE *f) {
     int i;
     node **phonebook = (node **) one->pointer;
-    printf("Print func entered\n");
+    fprintf(f, "Print func entered\n");
     for (i = 0; i < one->nrOfElements; i++) {
         if (one->pointer == NULL) {
-            printf("Double pointer is null\n");
+            fprintf(f, "Double pointer is null\n");
         }
         if (phonebook[i]->nume == NULL) {
-            printf("phonebook nume is null\n");
+            fprintf(f, "phonebook nume is null\n");
         }
-        printFunc(one, i);
+        printFunc(one, i, f);
     }
 }
 
@@ -49,18 +49,18 @@ node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     return myNode;
 }
 
-node *getNode(int i) {
+node *getNode(int i, FILE *f) {
     char nume[100], prenume[100], adresa[500], telefon[10];
-    printf("Nume: ");
+    fprintf(f, "Nume: ");
     if (i == 0) {
         getchar();
     }
     fgets(nume, 100, stdin);
-    printf("Prenume: ");
+    fprintf(f, "Prenume: ");
     fgets(prenume, 100, stdin);
-    printf("Adresa: ");
+    fprintf(f, "Adresa: ");
     fgets(adresa, 500, stdin);
-    printf("Telefon: ");
+    fprintf(f, "Telefon: ");
     fgets(telefon, 10, stdin);
     return createNode(nume, prenume, adresa, telefon);
 }
@@ -127,7 +127,7 @@ int main()
             case 1:
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, one, &size, getNode);
+                AddVectorItems(nrOfItems, one, &size, getNode, stdout);
                 break;
             case 2:
                 printf("Which index do you want to delete?\n");
@@ -149,7 +149,7 @@ int main()
                 printf("Telefon: ");
                 fgets(telefon, 10, stdin);
                 student = createNode(nume, prenume, adresa, telefon);
-                int x = SearchVectorItem(one, student, cmpFunct, printFunc);
+                int x = SearchVectorItem(one, student, cmpFunct, printFunc, stdout);
                 if (x == -1) {
                     printf("Person not found\n");
                 }
@@ -161,7 +161,7 @@ int main()
                     printf("Index %d is bigger than the number of elements!\n", index);
                     break;
                 }
-                GetVectorItem(index, one, printFunc);
+                GetVectorItem(index, one, printFunc, stdout);
                 break;
             case 5:
                 printf("Where do you want to insert the item?");
@@ -170,7 +170,7 @@ int main()
                     printf("You can't insert there!\n");
                     break;
                 }
-                PutVectorItem(index, one, &size, getNode(0));
+                PutVectorItem(index, one, &size, getNode(0, stdout));
                 break;
             case 6:
                 SortVector(one, cmpFunct);
@@ -179,20 +179,20 @@ int main()
                 printf("Add elements to vector2!");
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, one, &size, getNode);
+                AddVectorItems(nrOfItems, one, &size, getNode, stdout);
                 break;
             case 8:
                 printf("Vector1\n");
-                PrintVector(one, printAllFunc);
+                PrintVector(one, printAllFunc, stdout);
                 break;
             case 9:
                 printf("Vector2\n");
-                PrintVector(two, printAllFunc);
+                PrintVector(two, printAllFunc, stdout);
                 break;
             case 10:
                 three = CreateVector((size_t) one->nrOfElements + two->nrOfElements);
                 three = MergeVectors(one, two, three, cmpFunct);
-                PrintVector(three, printAllFunc);
+                PrintVector(three, printAllFunc, stdout);
                 break;
             case 11:
                 DeleteVector(one, size);
