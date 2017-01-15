@@ -3,5 +3,28 @@ AddVectorItems A
 3
 1;0.2 2;0.3 3;0.4
 PrintVector A
-
-
+CreateVector B
+PutVectorItem A
+-2
+3;2.4
+PutVectorItem B
+0
+1;0.25
+GetVectorItem A
+2
+GetVectorItem B
+2
+DeleteVectorItem A
+2
+AddVectorItems B
+2
+0;4 2;8
+SearchVectorItem B
+1;4
+SortVector A
+PrintVector A
+MergeVectors A B
+PrintVector C
+DeleteVector A
+DeleteVector B
+DeleteVector C
