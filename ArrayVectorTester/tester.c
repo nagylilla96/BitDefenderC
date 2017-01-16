@@ -34,6 +34,10 @@ void printAllFunc(first* one, FILE *f) {
     }
 }
 
+void freeFunct(void *a) {
+    return;
+}
+
 int cmpFunct(void *a, void *b) {
     MyNode *aa = (MyNode *) a;
     MyNode *bb = (MyNode *) b;
@@ -207,7 +211,7 @@ void runTester(char *nameIN, char *nameOut) {
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] != NULL){
                         index = (int) *token - 65;
-                        DeleteVector(arrayOfArrays[index], size);
+                        DeleteVector(arrayOfArrays[index], size, freeFunct);
                     }
                     else {
                         error(1, g, token);
