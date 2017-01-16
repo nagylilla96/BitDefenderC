@@ -16,8 +16,20 @@ MyNode *getNode(int i, FILE *f) {
 }
 
 void printFunc(first* one, int index, FILE *f) {
+    if (one == NULL){
+        printf("one is null\n");
+        return;
+    }
+    if (one->pointer == NULL) {
+        printf("one pointer is null\n");
+        return;
+    }
     fprintf(f, "index = %d\n", index);
     MyNode **vector = (MyNode**) one->pointer;
+    if (vector[index] == NULL) {
+        printf("vector index is null\n");
+        return;
+    }
     fprintf(f, "integer = %d\n", vector[index]->integer);
     fprintf(f, "real = %f\n", vector[index]->real);
     fprintf(f, "\n");
@@ -72,7 +84,7 @@ void freeNode(void *a){
 void runTester(char *nameIN, char *nameOut) {
 
     size = 50;
-    first **arrayOfArrays = malloc(sizeof(first*) * 26);
+    first **arrayOfArrays = calloc(26, sizeof(first*));
     printf("RunTester\n");
     int index = 0, elements;
     FILE *f = fopen(nameIN, "r");
@@ -93,8 +105,14 @@ void runTester(char *nameIN, char *nameOut) {
                 case 0:
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
+                    if(arrayOfArrays[(int) *token - 65] != NULL){
+                        printf("WHat the fuck\n");
+                    }
                     if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] == NULL) {
                         arrayOfArrays[(int) *token - 65] = CreateVector(size);
+                        if (arrayOfArrays[(int) *token - 65] == NULL) {
+                            printf("Create was not successful\n");
+                        };
                     } else {
                         error(1, g, token);
                     }
@@ -217,16 +235,22 @@ void runTester(char *nameIN, char *nameOut) {
                     if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] != NULL){
                         index = (int) *token - 65;
                         DeleteVector(arrayOfArrays[index], size, freeFunct);
+
                     }
                     else {
                         error(1, g, token);
                     }
+                    arrayOfArrays[index] = NULL;
                     break;
                 case 9:
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1){
                         index = (int) *token - 65;
+                        if (arrayOfArrays[index]->pointer == NULL ) {
+                            printf("array pointer is null!\n");
+                            break;
+                        }
                         PrintVector(arrayOfArrays[index], printAllFunc, g);
                     }
                     else {
@@ -240,6 +264,8 @@ void runTester(char *nameIN, char *nameOut) {
     }
     fclose(f);
     fclose(g);
+    free(arrayOfArrays);
+    free(instruction);
 }
 
 void error(int errorCode, FILE *f, char *command) {

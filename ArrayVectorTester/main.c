@@ -14,14 +14,21 @@ int main(int argc, char **argv) {
         }
         else {
             if (argc == 2) {
-                length = strlen(argv[1]);
-                strcpy(name, argv[1]);
-                name[length-2] = 'o';
-                name[length - 1] = 'u';
-                name[length] = 't';
-                name[length + 1] = '\0';
-                printf("name = %s\n", name);
-                runTester(argv[1], name);
+                if (strcmp(argv[1], "runall") == 0 ) {
+
+                }
+                else {
+//                    length = strlen(argv[1]);
+                    strcpy(name, argv[1]);
+                    strcat(argv[1],".in");
+                    strcat(name, ".out");
+//                    name[length-2] = 'o';
+//                    name[length - 1] = 'u';
+//                    name[length] = 't';
+//                    name[length + 1] = '\0';
+                    printf("name = %s\n", name);
+                    runTester(argv[1], name);
+                }
             }
             else {
                 int i;
@@ -30,16 +37,21 @@ int main(int argc, char **argv) {
                 char *input = malloc(sizeof(char) * 100);
                 char *output = malloc(sizeof(char) * 100);
                 strcpy(input, argv[1]);
-                for (i = 0; i < name1[2] - name[2]; i++) {
-                    input[2] += i;
+                strcpy(output, input);
+                strcat(input, ".in");
+                strcat(output, ".out");
+                printf("name1-nam2 = %d\n", name1[2] - name[2]);
+                for (i = 0; i <= name1[2] - name[2]; i++) {
+                    printf("i = %d\n", i);
                     printf("%s\n", input);
-                    strcpy(output, input);
-                    length = strlen(output);
-                    output[length-2] = 'o';
-                    output[length - 1] = 'u';
-                    output[length] = 't';
-                    output[length + 1] = '\0';
+                    strncpy(output, input, 3);
+//                    length = strlen(output);
+//                    output[length-2] = 'o';
+//                    output[length - 1] = 'u';
+//                    output[length] = 't';
+//                    output[length + 1] = '\0';
                     runTester(input, output);
+                    input[2] ++;
                 }
             }
         }

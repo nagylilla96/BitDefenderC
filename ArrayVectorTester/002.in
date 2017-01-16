@@ -1,6 +1,6 @@
-CreateVector B
-AddVectorItems B
+CreateVector A
+AddVectorItems A
 3
 0;1 1;2 2;3
-PrintVector B
-DeleteVector B
+PrintVector A
+DeleteVector A
