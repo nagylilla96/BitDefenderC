@@ -1,0 +1,9 @@
+CreateLinkedList B
+AddLinkedListItem B
+0;1
+AddLinkedListItem B
+1;2 
+AddLinkedListItem B
+2;3
+PrintLinkedList B
+DeleteLinkedList B

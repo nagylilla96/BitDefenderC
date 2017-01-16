@@ -186,7 +186,7 @@ void DeleteLinkedList(LIST *list) {
         temp->next = NULL;
         free(temp);
     }
-    free(list->first);
-    free(list->last);
+//    free(list->first);
+//    free(list->last);
     free(list);
 }
