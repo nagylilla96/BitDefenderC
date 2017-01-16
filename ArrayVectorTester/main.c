@@ -15,17 +15,34 @@ int main(int argc, char **argv) {
         else {
             if (argc == 2) {
                 if (strcmp(argv[1], "runall") == 0 ) {
-
+                    DIR *dir = opendir("Input/");
+                    if (dir != NULL){
+                        struct dirent *dr;
+                        while ((dr = readdir(dir)) != NULL) {
+                            if (dr->d_type == DT_REG) {
+                                char *input = malloc(sizeof(char) * 100);
+                                strcpy(input, "Input/");
+                                char *output = malloc(sizeof(char) * 100);
+                                char *basicName = malloc(sizeof(char) * 100);
+                                strcpy(basicName, strtok(dr->d_name, "."));
+                                strcat(input, basicName);
+                                strcpy(output, "Output/");
+                                strcat(output, basicName);
+                                strcat(input, ".in");
+                                strcat(output, ".out");
+                                runTester(input, output);
+                            }
+                        }
+                        closedir(dir);
+                    }
+                    else {
+                        printf("Can't open directory\n");
+                    }
                 }
                 else {
-//                    length = strlen(argv[1]);
                     strcpy(name, argv[1]);
                     strcat(argv[1],".in");
                     strcat(name, ".out");
-//                    name[length-2] = 'o';
-//                    name[length - 1] = 'u';
-//                    name[length] = 't';
-//                    name[length + 1] = '\0';
                     printf("name = %s\n", name);
                     runTester(argv[1], name);
                 }
@@ -45,11 +62,6 @@ int main(int argc, char **argv) {
                     printf("i = %d\n", i);
                     printf("%s\n", input);
                     strncpy(output, input, 3);
-//                    length = strlen(output);
-//                    output[length-2] = 'o';
-//                    output[length - 1] = 'u';
-//                    output[length] = 't';
-//                    output[length + 1] = '\0';
                     runTester(input, output);
                     input[2] ++;
                 }

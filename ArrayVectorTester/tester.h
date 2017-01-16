@@ -6,6 +6,7 @@
 #define ARRAYVECTORTESTER_TESTER_H
 
 #include <stdio.h>
+#include <dirent.h>
 #include "Vector.h"
 
 typedef struct {

@@ -19,6 +19,8 @@ tester.h
 /home/lilla/Desktop/BitDefenderC/ArrayVectorTester/tester.h
 stdio.h
 -
+dirent.h
+-
 Vector.h
 /home/lilla/Desktop/BitDefenderC/ArrayVectorTester/Vector.h
 
