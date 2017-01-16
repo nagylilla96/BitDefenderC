@@ -11,7 +11,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c5bde6d-ca65-4aa1-bfec-4b7590de9c65" name="Default" comment="" />
+    <list default="true" id="3c5bde6d-ca65-4aa1-bfec-4b7590de9c65" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/ArrayVectorTester" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/ArrayVectorTester" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/tester.c.o" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/tester.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Vector.dir/Vector.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Vector.dir/Vector.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Vector.dir/main.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Vector.dir/main.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Vector" afterPath="$PROJECT_DIR$/cmake-build-debug/Vector" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ArrayVectorTester/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/001.in" afterPath="$PROJECT_DIR$/../ArrayVectorTester/001.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/001.out" afterPath="$PROJECT_DIR$/../ArrayVectorTester/001.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/C.includecache" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/tester.c" afterPath="$PROJECT_DIR$/../ArrayVectorTester/tester.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.c" afterPath="$PROJECT_DIR$/Vector.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.h" afterPath="$PROJECT_DIR$/Vector.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,21 +72,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="105" column="19" lean-forward="false" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
+                <state relative-caret-position="345">
+                  <caret line="202" column="50" lean-forward="false" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Vector.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="23" column="101" lean-forward="false" selection-start-line="23" selection-start-column="101" selection-end-line="23" selection-end-column="101" />
+                <state relative-caret-position="522">
+                  <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
                   <folding>
                     <element signature="e#88#107#0" expanded="true" />
                   </folding>
@@ -94,21 +108,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+                <state relative-caret-position="626">
+                  <caret line="212" column="1" lean-forward="false" selection-start-line="212" selection-start-column="1" selection-end-line="212" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vector.c" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Vector.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Vector.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+                <state relative-caret-position="464">
+                  <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="70" />
                   <folding />
                 </state>
               </provider>
@@ -378,15 +392,16 @@
       <workItem from="1483482910786" duration="287000" />
       <workItem from="1483786271365" duration="1399000" />
       <workItem from="1484423803090" duration="695000" />
+      <workItem from="1484578483796" duration="148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53223000" />
+    <option name="totallyTimeSpent" value="53371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22420634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -394,7 +409,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277635" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33161953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33161953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -439,7 +454,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>198</line>
+          <line>203</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -860,28 +875,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Vector.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="101" lean-forward="false" selection-start-line="23" selection-start-column="101" selection-end-line="23" selection-end-column="101" />
+        <state relative-caret-position="522">
+          <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
           <folding>
             <element signature="e#88#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vector.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        <state relative-caret-position="345">
+          <caret line="202" column="50" lean-forward="false" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
           <folding />
         </state>
       </provider>

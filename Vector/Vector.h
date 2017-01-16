@@ -27,6 +27,6 @@ void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index
 void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a));
 void SortVector(first *one, int(*cmpFunc)(void *a, void *b));
 first *MergeVectors(first *one, first *two, first *three, int(*cmpFunct)(void *a, void *b));
-void DeleteVector(first *one, size_t size);
+void DeleteVector(first *one, size_t size, void(*freeFunct)(void *a));
 
 #endif //VECTOR_VECTOR_H

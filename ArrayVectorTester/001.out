@@ -1,0 +1,64 @@
+index = 0
+integer = 1
+real = 0.200000
+
+index = 1
+integer = 2
+real = 0.300000
+
+index = 2
+integer = 3
+real = 0.400000
+
+Error: Index out of bounds
+index = 0
+integer = 1
+real = 0.250000
+
+The vector item with index 2 is:
+index = 2
+integer = 3
+real = 0.400000
+
+Error: Item not found
+index = 0
+integer = 1
+real = 0.250000
+
+index = 1
+integer = 0
+real = 4.000000
+
+index = 2
+integer = 2
+real = 8.000000
+
+Error: Index out of bounds
+index = 0
+integer = 1
+real = 0.200000
+
+index = 1
+integer = 2
+real = 0.300000
+
+index = 0
+integer = 0
+real = 4.000000
+
+index = 1
+integer = 1
+real = 0.200000
+
+index = 2
+integer = 1
+real = 0.250000
+
+index = 3
+integer = 2
+real = 0.300000
+
+index = 4
+integer = 2
+real = 8.000000
+

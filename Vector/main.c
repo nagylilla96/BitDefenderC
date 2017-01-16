@@ -36,6 +36,11 @@ void printAllFunc(first* one, FILE *f) {
     }
 }
 
+void freeFunct(void *a) {
+    node *aa = (node *) a;
+    free(a);
+}
+
 node *createNode(char *nume, char *prenume, char *adresa, char *telefon) {
     node *myNode = (node*) malloc(sizeof(node));
     myNode->nume = malloc(sizeof(char) * 100);
@@ -195,7 +200,7 @@ int main()
                 PrintVector(three, printAllFunc, stdout);
                 break;
             case 11:
-                DeleteVector(one, size);
+                DeleteVector(one, size, freeFunct);
                 return 0;
             default:
                 break;

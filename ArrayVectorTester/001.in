@@ -10,6 +10,7 @@ PutVectorItem A
 PutVectorItem B
 0
 1;0.25
+PrintVector B
 GetVectorItem A
 2
 GetVectorItem B
@@ -19,6 +20,7 @@ DeleteVectorItem A
 AddVectorItems B
 2
 0;4 2;8
+PrintVector B
 SearchVectorItem B
 1;4
 SortVector A

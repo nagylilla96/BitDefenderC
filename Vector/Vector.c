@@ -148,11 +148,11 @@ void PrintVector(first* one, void(*printAllFunc)(first* one, FILE *f), FILE *f) 
     printAllFunc(one, f);
 }
 
-void DeleteVector(first *one, size_t size) {
+void DeleteVector(first *one, size_t size, void(*freeFunct)(void *a)) {
     int i;
     one->nrOfElements = 0;
     for (i = 0; i < size; i++) {
-        free(one->pointer[i]);
+        freeFunct(one->pointer[i]);
     }
     free(one->pointer);
     free(one);

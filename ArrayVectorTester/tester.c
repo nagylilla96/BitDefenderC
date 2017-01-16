@@ -2,15 +2,15 @@
 // Created by lilla on 14/01/17.
 //
 
+#include <Vector.h>
 #include "tester.h"
 
 MyNode *getNode(int i, FILE *f) {
     int integer;
     float real;
     MyNode *node = malloc(sizeof(MyNode));
-    fscanf(f, "%d", &integer);
+    fscanf(f, "%d;%f", &integer, &real);
     node->integer = integer;
-    fscanf(f, "%f", &real);
     node->real = real;
     return node;
 }
@@ -72,6 +72,7 @@ void runTester(char *nameIN, char *nameOut) {
     printf("RunTester\n");
     int index = 0, elements, value1, value2, i;
     FILE *f = fopen(nameIN, "r");
+    FILE *h = fopen(nameIN, "r");
     FILE *g = fopen(nameOut, "w");
     char *instruction;
     char *token, *token1;
@@ -96,7 +97,7 @@ void runTester(char *nameIN, char *nameOut) {
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
                         if (elements > 0) {
-                            AddVectorItems(elements, arrayOfArrays[index], &size, getNode, g);
+                            AddVectorItems(elements, arrayOfArrays[index], &size, getNode, f);
                         } else {
                             error(10, g, token);
                         }
@@ -126,7 +127,12 @@ void runTester(char *nameIN, char *nameOut) {
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
                         if (elements >= 0) {
-                            GetVectorItem(elements, arrayOfArrays[index], printFunc, g);
+                            if (elements < arrayOfArrays[index]->nrOfElements) {
+                                GetVectorItem(elements, arrayOfArrays[index], printFunc, g);
+                            }
+                            else {
+                                error(7, g, token);
+                            }
                         } else {
                             error(4, g, token);
                         }
@@ -179,7 +185,6 @@ void runTester(char *nameIN, char *nameOut) {
                     break;
                 case 7:
                     token = strtok(NULL, " ");
-                    token[strlen(token) - 1] = '\0';
                     token1 = strtok(NULL, " ");
                     token1[strlen(token1) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1
@@ -200,7 +205,7 @@ void runTester(char *nameIN, char *nameOut) {
                 case 8:
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
-                    if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] == NULL){
+                    if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] != NULL){
                         index = (int) *token - 65;
                         DeleteVector(arrayOfArrays[index], size);
                     }
@@ -252,7 +257,7 @@ void error(int errorCode, FILE *f, char *command) {
             fprintf(f, "Error: Memory allocation failed\n");
             break;
         case 7:
-            fprintf(f, "Cannot delete: Item not found\n");
+            fprintf(f, "Error: Item not found\n");
             break;
         case 8:
             fprintf(f, "Printing: Structure is empty\n");
