@@ -1,7 +1,6 @@
 #include "tester.h"
 
 int main(int argc, char **argv) {
-    int length;
     char *name = malloc(sizeof(char) * 100);
     char *name1 = malloc(sizeof(char) * 100);
     printf("argc = %d\n", argc);

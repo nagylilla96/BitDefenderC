@@ -5,7 +5,7 @@
 #include <Vector.h>
 #include "tester.h"
 
-MyNode *getNode(int i, FILE *f) {
+MyNode *getNode(int i, FILE *f) {//read and return a node
     int integer;
     float real;
     MyNode *node = malloc(sizeof(MyNode));
@@ -15,7 +15,7 @@ MyNode *getNode(int i, FILE *f) {
     return node;
 }
 
-void printFunc(first* one, int index, FILE *f) {
+void printFunc(first* one, int index, FILE *f) {//print one element of a certain index from an arrayvector
     if (one == NULL){
         printf("one is null\n");
         return;
@@ -35,7 +35,7 @@ void printFunc(first* one, int index, FILE *f) {
     fprintf(f, "\n");
 }
 
-void printAllFunc(first* one, FILE *f) {
+void printAllFunc(first* one, FILE *f) {//print all elements from an arrayvector
     int i;
     MyNode **node = (MyNode **) one->pointer;
     for (i = 0; i < one->nrOfElements; i++) {
@@ -46,11 +46,11 @@ void printAllFunc(first* one, FILE *f) {
     }
 }
 
-void freeFunct(void *a) {
+void freeFunct(void *a) {//frees a list, but we don't need to use this for our struct so it just returns
     return;
 }
 
-int cmpFunct(void *a, void *b) {
+int cmpFunct(void *a, void *b) {//compares two elements
     MyNode *aa = (MyNode *) a;
     MyNode *bb = (MyNode *) b;
     if (aa->integer > bb->integer) {
@@ -76,12 +76,12 @@ int cmpFunct(void *a, void *b) {
     }
 }
 
-void freeNode(void *a){
+void freeNode(void *a){//frees a node
     return;
 }
 
 
-void runTester(char *nameIN, char *nameOut) {
+void runTester(char *nameIN, char *nameOut) { //run the tester
 
     size = 50;
     first **arrayOfArrays = calloc(26, sizeof(first*));
@@ -102,7 +102,7 @@ void runTester(char *nameIN, char *nameOut) {
         token = strtok(instruction, " ");
         if (token != NULL) {
             switch (commandNr(token)) {
-                case 0:
+                case 0://creates a list to the arrayOfArrays starting from A to Z, depending on the set's name
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if(arrayOfArrays[(int) *token - 65] != NULL){
@@ -117,7 +117,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 1:
+                case 1: //adds some items (elements number of items) to a certain vector (based on the set's name),
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
@@ -132,8 +132,8 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 2:
-                    token = strtok(NULL, " ");
+                case 2:// puts an item to the arrayvector based on the given index (which is called elements because
+                    token = strtok(NULL, " "); // I didn't want to declare a new variable
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
                         index = (int) *token - 65;
@@ -147,7 +147,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 3:
+                case 3: // gets a vector item with a certain index (again using the variable elements)
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
@@ -167,7 +167,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 4:
+                case 4: // searches a vector item based on integer and real number
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
@@ -182,7 +182,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 5:
+                case 5: // deletes a vector item based on its index (again, noted by elements) (I'm so sorry)
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1){
@@ -199,7 +199,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 6:
+                case 6: // sorts the vector based on the given compare function
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1){
@@ -210,7 +210,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 7:
+                case 7: // creates a new arraylist, which will get the value returned by the merge function
                     token = strtok(NULL, " ");
                     token1 = strtok(NULL, " ");
                     token1[strlen(token1) - 1] = '\0';
@@ -229,7 +229,7 @@ void runTester(char *nameIN, char *nameOut) {
                         error(1, g, token);
                     }
                     break;
-                case 8:
+                case 8: // deletes a vector completely
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] != NULL){
@@ -242,7 +242,7 @@ void runTester(char *nameIN, char *nameOut) {
                     }
                     arrayOfArrays[index] = NULL;
                     break;
-                case 9:
+                case 9: // prints a vector
                     token = strtok(NULL, " ");
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1){
@@ -269,7 +269,7 @@ void runTester(char *nameIN, char *nameOut) {
 }
 
 void error(int errorCode, FILE *f, char *command) {
-    switch(errorCode) {
+    switch(errorCode) { // based on the error code, returns an error
         case 0:
             fprintf(f, "Error: Illegal operation. Data structure does not exist\n");
             break;
@@ -309,7 +309,7 @@ void error(int errorCode, FILE *f, char *command) {
     }
 }
 
-int commandNr(char *command) {
+int commandNr(char *command) { // based on a command, returns a number, which can later be used in the switch-case
     if (strcmp(command, "CreateVector") == 0) return 0;
     if (strcmp(command, "AddVectorItems") == 0) return 1;
     if (strcmp(command, "PutVectorItem") == 0) return 2;
