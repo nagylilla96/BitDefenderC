@@ -74,11 +74,16 @@ void runTester(char *nameIN, char *nameOut) {
     size = 50;
     first **arrayOfArrays = malloc(sizeof(first*) * 26);
     printf("RunTester\n");
-    int index = 0, elements, value1, value2, i;
+    int index = 0, elements;
     FILE *f = fopen(nameIN, "r");
-    FILE *h = fopen(nameIN, "r");
     FILE *g = fopen(nameOut, "w");
-    char *instruction;
+    if (f == NULL) {
+        printf("input file is null\n");
+    }
+    if (g == NULL) {
+        printf("output file is null\n");
+    }
+    char *instruction = malloc(sizeof(char) * 100);
     char *token, *token1;
     while (fgets(instruction, 100, f) != NULL) {
         printf("%s", instruction);

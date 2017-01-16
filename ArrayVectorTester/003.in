@@ -1,0 +1,6 @@
+CreateVector C
+AddVectorItems C
+3
+0;1 1;2 2;3
+PrintVector C
+DeleteVector C
