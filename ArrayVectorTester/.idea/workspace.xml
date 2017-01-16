@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/../libds/Vector.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="152" column="26" lean-forward="true" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
+              <caret line="152" column="26" lean-forward="false" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -128,6 +128,7 @@
         <option value="$PROJECT_DIR$/tester.h" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/tester.c" />
+        <option value="$PROJECT_DIR$/../libds/Vector.c" />
       </list>
     </option>
   </component>
@@ -386,12 +387,12 @@
       <option name="presentableId" value="Default" />
       <updated>1484421446367</updated>
       <workItem from="1484421448248" duration="14471000" />
-      <workItem from="1484574938175" duration="3692000" />
+      <workItem from="1484574938175" duration="3792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18163000" />
+    <option name="totallyTimeSpent" value="18263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -695,7 +696,7 @@
     <entry file="file://$PROJECT_DIR$/../libds/Vector.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="152" column="26" lean-forward="true" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
+          <caret line="152" column="26" lean-forward="false" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
           <folding />
         </state>
       </provider>
