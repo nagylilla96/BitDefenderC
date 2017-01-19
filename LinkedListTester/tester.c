@@ -12,7 +12,7 @@ void printFunct(void *a, FILE *f) {
 }
 
 ELEMENT *createElement(int integer, float real) {
-    ELEMENT *element = malloc(sizeof(ELEMENT));
+    ELEMENT *element = malloc(sizeof(ELEMENT*));
     element->integer = integer;
     element->real = real;
     return element;

@@ -19,7 +19,7 @@ LIST *CreateLinkedList() {
 }
 
 NODE *CreateNode(void* element) {
-    NODE *node = malloc(sizeof(NODE*));
+    NODE *node = malloc(sizeof(NODE));
     if (node) {
         node->element = element;
         node->next = NULL;
@@ -178,8 +178,7 @@ LIST *MergeLinkedLists(LIST* listA, LIST* listB, int (*cmpFunct)(void *a, void *
 }
 
 void DeleteLinkedList(LIST *list) {
-    NODE *node = malloc(sizeof(NODE));
-    node = list->first;
+    NODE *node = list->first;
     while (node != NULL) {
         NODE *temp = node;
         free(temp->element);
