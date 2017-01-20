@@ -81,7 +81,7 @@ int DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
     int i;
     if (one->pointer[index] != NULL) {
         freeNode(one->pointer[index]);
-        free(one->pointer[index]);
+        one->pointer[index] = NULL;
         for (i = index; i < one->nrOfElements; i++) {
             one->pointer[i] = one->pointer[i + 1];
         }

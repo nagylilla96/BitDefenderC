@@ -60,17 +60,17 @@ MINHEAP *correctHeapTopDown(MINHEAP *minheap, int(*cmpFunct)(void *a, void *b)) 
             }
         }
         if (child1 != NULL && child2 != NULL ) {
-            if (!(parent < child1 && parent < child2)){
+            if (!(cmpFunct(parent, child1) < 0 && cmpFunct(parent, child2) < 0)){
                 if (cmpFunct(child1, child2) < 0) {
-                    heapnode = parent;
-                    parent = child1;
-                    child1 = heapnode;
+                    heapnode = minheap->vector->pointer[i];
+                    minheap->vector->pointer[i] = minheap->vector->pointer[2 * i + 1];
+                    minheap->vector->pointer[2 * i + 1] = heapnode;
                     i = 2 * i + 1;
                 }
                 else {
-                    heapnode = parent;
-                    parent = child1;
-                    child2 = heapnode;
+                    heapnode = minheap->vector->pointer[i];
+                    minheap->vector->pointer[i] = minheap->vector->pointer[2 * i + 2];
+                    minheap->vector->pointer[2 * i + 2] = heapnode;
                     i = 2 * i + 2;
                 }
             }
@@ -88,25 +88,43 @@ int AddHeapItem(MINHEAP *minheap, void*(*getNode)(int i, FILE *f), FILE *f, int(
     return 0;
 }
 
+void *GetHeapMin(MINHEAP *minheap) {
+    return minheap->vector->pointer[0];
+}
+
 int DeleteHeapMin(MINHEAP *minheap, void (*freeNode), int(*cmpFunct)(void *a, void *b)) {
-    if (DeleteVectorItem(minheap->vector, 0, freeNode)) {
-        minheap->nrOfElements--;
-        minheap = correctHeapTopDown(minheap, cmpFunct);
-        return 1;
-    }
-    return 0;
+    HEAPNODE *node = NULL;
+    minheap->vector->pointer[0] = minheap->vector->pointer[minheap->nrOfElements - 1];
+    minheap->vector->pointer[minheap->nrOfElements - 1] = NULL;
+    minheap->nrOfElements--;
+    minheap->vector->nrOfElements--;
+    minheap = correctHeapTopDown(minheap, cmpFunct);
+    return 1;
 }
 
 int DeleteHeapItem(MINHEAP *minheap, void *element, void(*freeNode), int(cmpFunct)(void *a, void *b), void(*printFunc)(first* one, int index, FILE *f), FILE *f) {
     int index = SearchVectorItem(minheap->vector, element, cmpFunct, printFunc, f);
     if (DeleteVectorItem(minheap->vector, index, freeNode)){
         minheap->nrOfElements--;
+        minheap->vector->nrOfElements--;
         minheap = correctHeapTopDown(minheap, cmpFunct);
+
         return 1;
     }
     return 0;
 }
 
+MINHEAP *MergeMinHeaps(MINHEAP *minheap1, MINHEAP *minheap2,int(*cmpFunct)(void *a, void *b)){
+    MINHEAP *resultHeap = CreateHeap(minheap1->size + minheap2->size);
+    resultHeap->vector = MergeVectors(minheap1->vector, minheap2->vector, resultHeap->vector, cmpFunct);
+    return resultHeap;
+}
+
 void PrintHeap(MINHEAP *minheap, void(*printAllFunct)(first *one, FILE *f), FILE *f) {
     PrintVector(minheap->vector, printAllFunct, f);
+}
+
+void DeleteHeap(MINHEAP *minheap, void(*freeFunction)(void *a)) {
+    DeleteVector(minheap->vector, freeFunction);
+    free(minheap);
 }
