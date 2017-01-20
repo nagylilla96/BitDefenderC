@@ -6,10 +6,11 @@ typedef struct {
 }ELEMENT;
 
 ELEMENT *createElement(int key, char* value){
-    value = calloc(100, sizeof(char));
+
     ELEMENT *element = calloc(1, sizeof(ELEMENT));
     element->key = key;
-    element->value = value;
+    element->value = calloc(100, sizeof(char));
+    strcpy(element->value, value);
     return element;
 }
 
@@ -39,7 +40,20 @@ int cmpFunct(void *a, void *b) {
     }
 }
 
+void printElement(void *a) {
+    ELEMENT *element = (ELEMENT*) a;
+    printf("key: %d\n", element->key);
+    printf("value: %s\n", element->value);
+}
+
 int main() {
-    printf("Hello, World!\n");
+    HASHTABLE *hashtable = CreateHashTable(2, NULL);
+    AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct, printElement);
+    AddHashTableItem(hashtable, 2, "Arni", createElement, cmpFunct, printElement);
+    AddHashTableItem(hashtable, 3, "David", createElement, cmpFunct, printElement);
+    printf("%d\n", SearchHashTableItem(hashtable, 1, "Lilla",createElement,cmpFunct));
+    printf("%d\n", SearchHashTableItem(hashtable, 1, "LILLA",createElement,cmpFunct));
+    printf("%d\n", SearchHashTableItem(hashtable, 2, "Lilla",createElement,cmpFunct));
+    PrintHashTable(hashtable, printElement);
     return 0;
 }

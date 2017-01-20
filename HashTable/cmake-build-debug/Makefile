@@ -150,6 +150,33 @@ HashTable.c.s:
 	$(MAKE) -f CMakeFiles/HashTable.dir/build.make CMakeFiles/HashTable.dir/HashTable.c.s
 .PHONY : HashTable.c.s
 
+LinkedList.o: LinkedList.c.o
+
+.PHONY : LinkedList.o
+
+# target to build an object file
+LinkedList.c.o:
+	$(MAKE) -f CMakeFiles/HashTable.dir/build.make CMakeFiles/HashTable.dir/LinkedList.c.o
+.PHONY : LinkedList.c.o
+
+LinkedList.i: LinkedList.c.i
+
+.PHONY : LinkedList.i
+
+# target to preprocess a source file
+LinkedList.c.i:
+	$(MAKE) -f CMakeFiles/HashTable.dir/build.make CMakeFiles/HashTable.dir/LinkedList.c.i
+.PHONY : LinkedList.c.i
+
+LinkedList.s: LinkedList.c.s
+
+.PHONY : LinkedList.s
+
+# target to generate assembly for a file
+LinkedList.c.s:
+	$(MAKE) -f CMakeFiles/HashTable.dir/build.make CMakeFiles/HashTable.dir/LinkedList.c.s
+.PHONY : LinkedList.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... HashTable.o"
 	@echo "... HashTable.i"
 	@echo "... HashTable.s"
+	@echo "... LinkedList.o"
+	@echo "... LinkedList.i"
+	@echo "... LinkedList.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

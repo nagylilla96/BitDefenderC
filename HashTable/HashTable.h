@@ -8,20 +8,30 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "LinkedList.h"
 
-typedef struct node {
+typedef struct hashnode {
     void* element;
-    struct node *next;
-}NODE;
+    struct hashnode *next;
+}HASHNODE;
 
 typedef struct{
     int size;
-    struct node **hashTable;
+    struct hashnode **hashTable;
     int(*hashFunction)(void* key, int size);
     int nrOfElements;
 }HASHTABLE;
 
+int implicitHashFunction(void *key, int size);
+HASHNODE *CreateHashNode(void* element);
 HASHTABLE *CreateHashTable(int size, int(*hashFunction)(void *key, int size));
+int isPrime(int number);
+int findPrime(int size);
+void redimensionTable(HASHTABLE *hashtable);
+void PrintHashTable(HASHTABLE *hashtable, void(*printElement)(void* a));
+int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct)(void *a));
+int SearchHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
+
 //TODO print 4
 //TODO add 1
 //TODO delete item 2
