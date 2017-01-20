@@ -49,11 +49,12 @@ void printElement(void *a) {
 int main() {
     HASHTABLE *hashtable = CreateHashTable(2, NULL);
     AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct, printElement);
-    AddHashTableItem(hashtable, 2, "Arni", createElement, cmpFunct, printElement);
-    AddHashTableItem(hashtable, 3, "David", createElement, cmpFunct, printElement);
+    AddHashTableItem(hashtable, 1, "Arni", createElement, cmpFunct, printElement);
+    AddHashTableItem(hashtable, 1, "David", createElement, cmpFunct, printElement);
     printf("%d\n", SearchHashTableItem(hashtable, 1, "Lilla",createElement,cmpFunct));
-    printf("%d\n", SearchHashTableItem(hashtable, 1, "LILLA",createElement,cmpFunct));
+    printf("%d\n", SearchHashTableItem(hashtable, 1, "David",createElement,cmpFunct));
     printf("%d\n", SearchHashTableItem(hashtable, 2, "Lilla",createElement,cmpFunct));
+    DeleteHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct);
     PrintHashTable(hashtable, printElement);
     return 0;
 }

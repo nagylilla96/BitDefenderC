@@ -130,15 +130,18 @@ int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*create
 
     }
     LIST *list = CreateLinkedList();
+    if (list == NULL) {
+        printf("list is null\n");
+    }
     last = hashtable->hashTable[index];
-    if (!AddLinkedListItem(list, node)) {
+    if (!AddLinkedListItem(list, node->element)) {
         printf("Element could not be added to linked list\n");
         return 0;
     }
     while (last->next != NULL) {
         last = last->next;
     }
-    last->next = SearchLinkedListItem(list, node, cmpFunct);
+    last->next = (HASHNODE*) SearchLinkedListItem(list, node->element, cmpFunct);
     hashtable->nrOfElements++;
     return 1;
 }
@@ -166,9 +169,36 @@ int SearchHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*cre
     return 0;
 }
 
-//int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void (*cmpFunct)) {
-//
-//}
+int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b)) {
+    int i;
+    HASHNODE *searchedNode = CreateHashNode(createElement(key, value));
+    HASHNODE *last = NULL;
+    HASHNODE *previous = NULL;
+    for (i = 0; i < hashtable->size; i++) {
+        if (hashtable->hashTable[i] != NULL) {
+            if (hashtable->hashTable[i]->element != NULL) {
+                last = hashtable->hashTable[i];
+                if (cmpFunct(last->element, searchedNode->element) == 0 ) {
+                    last->element = last->next->element;
+                    last->next = last->next->next;
+                    return 1;
+                }
+                while (last->next != NULL) {
+
+                    previous = last;
+                    last = last->next;
+
+                    if (cmpFunct(last->element, searchedNode->element) == 0 ) {
+                        previous->next = last->next;
+                        last->next = NULL;
+                        return 1;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
 
 
 

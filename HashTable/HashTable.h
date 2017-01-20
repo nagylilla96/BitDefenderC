@@ -30,6 +30,7 @@ int findPrime(int size);
 void redimensionTable(HASHTABLE *hashtable);
 void PrintHashTable(HASHTABLE *hashtable, void(*printElement)(void* a));
 int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct)(void *a));
+int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
 int SearchHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
 
 //TODO print 4
