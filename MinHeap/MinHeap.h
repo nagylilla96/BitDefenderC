@@ -15,8 +15,17 @@ typedef struct {
 typedef struct {
     int size;
     first *vector;
+    int nrOfElements;
 }MINHEAP;
 
 MINHEAP *CreateHeap(int size);
+//TODO print
+//TODO add
+//TODO get
+//TODO deleteMin
+//TODO deleteMax
+//TODO merge
+//TODO delete
+
 
 #endif //MINHEAP_MINHEAP_H
