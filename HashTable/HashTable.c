@@ -34,6 +34,7 @@ HASHNODE *CreateHashNode(void* element) {
     HASHNODE *node = calloc(1, sizeof(HASHNODE));
     node->element = element;
     node->next = NULL;
+    node->linkedList = NULL;
     return node;
 }
 
@@ -104,6 +105,7 @@ void PrintHashTable(HASHTABLE *hashtable, void(*printElement)(void* a)) {
     }
 }
 
+
 int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct) (void *a)){
     int index = hashtable->hashFunction(key, hashtable->size);
     int factor = ((hashtable->size * 3) / 4);
@@ -130,6 +132,7 @@ int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*create
 
     }
     LIST *list = CreateLinkedList();
+    hashtable->hashTable[index]->linkedList = list;
     if (list == NULL) {
         printf("list is null\n");
     }
@@ -197,11 +200,26 @@ int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*cre
             }
         }
     }
+    free(searchedNode);
     return 0;
 }
 
+void DeleteHashTable(HASHTABLE *hashtable, void(*deleteFunct)(void *a)) {
+    int i;
+    for (i = 0; i < hashtable->size; i++) {
+        if (hashtable->hashTable[i] != NULL) {
+            if (hashtable->hashTable[i]->linkedList != NULL) {
+                DeleteLinkedList(hashtable->hashTable[i]->linkedList);
 
-
+            }
+            deleteFunct(hashtable->hashTable[i]->element);
+            free(hashtable->hashTable[i]);
+        }
+    }
+    free(hashtable->hashTable);
+    free(hashtable);
+    hashtable->hashTable = NULL;
+}
 
 
 

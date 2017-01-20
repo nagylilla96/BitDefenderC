@@ -181,9 +181,10 @@ void DeleteLinkedList(LIST *list) {
     NODE *node = list->first;
     while (node != NULL) {
         NODE *temp = node;
-        free(temp->element);
+
         node = node->next;
         temp->next = NULL;
+        free(temp->element);
         free(temp);
     }
 //    free(list->first);

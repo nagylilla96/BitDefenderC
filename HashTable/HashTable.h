@@ -13,6 +13,7 @@
 typedef struct hashnode {
     void* element;
     struct hashnode *next;
+    LIST *linkedList;
 }HASHNODE;
 
 typedef struct{
@@ -32,7 +33,7 @@ void PrintHashTable(HASHTABLE *hashtable, void(*printElement)(void* a));
 int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct)(void *a));
 int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
 int SearchHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
-
+void DeleteHashTable(HASHTABLE *hashtable, void(*deleteFunct)(void *a));
 //TODO print 4
 //TODO add 1
 //TODO delete item 2

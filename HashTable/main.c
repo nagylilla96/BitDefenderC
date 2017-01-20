@@ -46,6 +46,11 @@ void printElement(void *a) {
     printf("value: %s\n", element->value);
 }
 
+void deleteFunct(void *a) {
+    ELEMENT *element = (ELEMENT* ) a;
+    free(element->value);
+}
+
 int main() {
     HASHTABLE *hashtable = CreateHashTable(2, NULL);
     AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct, printElement);
@@ -56,5 +61,7 @@ int main() {
     printf("%d\n", SearchHashTableItem(hashtable, 2, "Lilla",createElement,cmpFunct));
     DeleteHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct);
     PrintHashTable(hashtable, printElement);
+    DeleteHashTable(hashtable, deleteFunct);
+    hashtable = NULL;
     return 0;
 }
