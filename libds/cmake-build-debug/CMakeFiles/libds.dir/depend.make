@@ -8,6 +8,10 @@ CMakeFiles/libds.dir/HashTable.c.o: ../LinkedList.h
 CMakeFiles/libds.dir/LinkedList.c.o: ../LinkedList.c
 CMakeFiles/libds.dir/LinkedList.c.o: ../LinkedList.h
 
+CMakeFiles/libds.dir/MinHeap.c.o: ../MinHeap.c
+CMakeFiles/libds.dir/MinHeap.c.o: ../MinHeap.h
+CMakeFiles/libds.dir/MinHeap.c.o: ../Vector.h
+
 CMakeFiles/libds.dir/Vector.c.o: ../Vector.c
 CMakeFiles/libds.dir/Vector.c.o: ../Vector.h
 

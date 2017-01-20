@@ -1,2 +1,2 @@
-/usr/bin/ar qc liblibds.a  CMakeFiles/libds.dir/Vector.c.o CMakeFiles/libds.dir/LinkedList.c.o CMakeFiles/libds.dir/HashTable.c.o
+/usr/bin/ar qc liblibds.a  CMakeFiles/libds.dir/Vector.c.o CMakeFiles/libds.dir/LinkedList.c.o CMakeFiles/libds.dir/HashTable.c.o CMakeFiles/libds.dir/MinHeap.c.o
 /usr/bin/ranlib liblibds.a

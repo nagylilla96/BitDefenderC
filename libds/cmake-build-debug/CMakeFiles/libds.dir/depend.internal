@@ -8,6 +8,10 @@ CMakeFiles/libds.dir/HashTable.c.o
 CMakeFiles/libds.dir/LinkedList.c.o
  /home/lilla/Desktop/BitDefenderC/libds/LinkedList.c
  /home/lilla/Desktop/BitDefenderC/libds/LinkedList.h
+CMakeFiles/libds.dir/MinHeap.c.o
+ /home/lilla/Desktop/BitDefenderC/libds/MinHeap.c
+ /home/lilla/Desktop/BitDefenderC/libds/MinHeap.h
+ /home/lilla/Desktop/BitDefenderC/libds/Vector.h
 CMakeFiles/libds.dir/Vector.c.o
  /home/lilla/Desktop/BitDefenderC/libds/Vector.c
  /home/lilla/Desktop/BitDefenderC/libds/Vector.h

@@ -1,0 +1,19 @@
+CreateHeap A
+AddHeapItem A
+8
+AddHeapItem A
+18
+AddHeapItem A
+29
+AddHeapItem A
+30
+AddHeapItem A
+50
+AddHeapItem A
+60
+AddHeapItem A
+70
+AddHeapItem A
+80
+PrintHeap A
+DeleteHeap A

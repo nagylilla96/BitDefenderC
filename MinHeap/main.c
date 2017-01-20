@@ -24,6 +24,11 @@ void printFunc(first* one, int index, FILE *f) {
     fprintf(f, "number = %d\n", myNode[index]->number);
 }
 
+void anotherPrintFunc(first *one, int index, FILE *f) {
+    ELEMENT **myNode = (ELEMENT**) one->pointer;
+    fprintf(f, "%d", myNode[index]->number);
+}
+
 void printAllFunc(first* one, FILE *f) {
     int i;
     printf("nr of elements: %d\n", one->nrOfElements);
@@ -55,14 +60,15 @@ int main() {
     int i;
     for (i = 0; i < 7; i++) {
         AddHeapItem(minheap1, getNode, stdin, cmpFunct);
-        PrintHeap(minheap1, printAllFunc, stdout);
     }
+    PrettyPrint(minheap1, 0, 0, anotherPrintFunc, stdout);
     DeleteHeapMin(minheap1, freeNode, cmpFunct);
     PrintHeap(minheap1, printAllFunc, stdout);
     HEAPNODE *node = getNode(0, stdin);
     if (node == NULL){
         printf("Node is null\n");
     }
+
     DeleteHeapItem(minheap1, node, freeNode, cmpFunct, printFunc, stdout);
     PrintHeap(minheap1, printAllFunc, stdout);
     printf("Heapmin: \n");
@@ -73,7 +79,7 @@ int main() {
         PrintHeap(minheap2, printAllFunc, stdout);
     }
     minheap3 = MergeMinHeaps(minheap1, minheap2, cmpFunct);
-    PrintHeap(minheap3, printAllFunc, stdout);
+    PrettyPrint(minheap3, 0, 0, anotherPrintFunc, stdout);
     DeleteHeap(minheap1, freeNode);
     DeleteHeap(minheap2, freeNode);
     DeleteHeap(minheap3, freeNode);

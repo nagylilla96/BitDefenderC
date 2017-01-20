@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/MinHeapTester/MinHeapTester.c
+MinHeap.h
+-
+MinHeapTester.h
+/home/lilla/Desktop/BitDefenderC/MinHeapTester/MinHeapTester.h
+
+/home/lilla/Desktop/BitDefenderC/MinHeapTester/MinHeapTester.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+dirent.h
+-
+MinHeap.h
+-
+
+/home/lilla/Desktop/BitDefenderC/MinHeapTester/main.c
+MinHeapTester.h
+/home/lilla/Desktop/BitDefenderC/MinHeapTester/MinHeapTester.h
+
+/home/lilla/Desktop/BitDefenderC/libraries/include/MinHeap.h
+stdio.h
+-
+Vector.h
+/home/lilla/Desktop/BitDefenderC/libraries/include/Vector.h
+stdlib.h
+-
+
+/home/lilla/Desktop/BitDefenderC/libraries/include/Vector.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+

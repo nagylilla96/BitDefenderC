@@ -177,6 +177,33 @@ LinkedList.c.s:
 	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/LinkedList.c.s
 .PHONY : LinkedList.c.s
 
+MinHeap.o: MinHeap.c.o
+
+.PHONY : MinHeap.o
+
+# target to build an object file
+MinHeap.c.o:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/MinHeap.c.o
+.PHONY : MinHeap.c.o
+
+MinHeap.i: MinHeap.c.i
+
+.PHONY : MinHeap.i
+
+# target to preprocess a source file
+MinHeap.c.i:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/MinHeap.c.i
+.PHONY : MinHeap.c.i
+
+MinHeap.s: MinHeap.c.s
+
+.PHONY : MinHeap.s
+
+# target to generate assembly for a file
+MinHeap.c.s:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/MinHeap.c.s
+.PHONY : MinHeap.c.s
+
 Vector.o: Vector.c.o
 
 .PHONY : Vector.o
@@ -219,6 +246,9 @@ help:
 	@echo "... LinkedList.o"
 	@echo "... LinkedList.i"
 	@echo "... LinkedList.s"
+	@echo "... MinHeap.o"
+	@echo "... MinHeap.i"
+	@echo "... MinHeap.s"
 	@echo "... Vector.o"
 	@echo "... Vector.i"
 	@echo "... Vector.s"

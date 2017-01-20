@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/lilla/Desktop/BitDefenderC/libds/HashTable.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/HashTable.c.o"
   "/home/lilla/Desktop/BitDefenderC/libds/LinkedList.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/LinkedList.c.o"
+  "/home/lilla/Desktop/BitDefenderC/libds/MinHeap.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/MinHeap.c.o"
   "/home/lilla/Desktop/BitDefenderC/libds/Vector.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/Vector.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

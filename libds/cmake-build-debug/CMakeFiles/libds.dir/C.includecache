@@ -34,6 +34,20 @@ stdio.h
 stdlib.h
 -
 
+/home/lilla/Desktop/BitDefenderC/libds/MinHeap.c
+MinHeap.h
+/home/lilla/Desktop/BitDefenderC/libds/MinHeap.h
+Vector.h
+/home/lilla/Desktop/BitDefenderC/libds/Vector.h
+
+/home/lilla/Desktop/BitDefenderC/libds/MinHeap.h
+stdio.h
+-
+Vector.h
+/home/lilla/Desktop/BitDefenderC/libds/Vector.h
+stdlib.h
+-
+
 /home/lilla/Desktop/BitDefenderC/libds/Vector.c
 Vector.h
 /home/lilla/Desktop/BitDefenderC/libds/Vector.h

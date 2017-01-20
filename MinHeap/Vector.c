@@ -9,6 +9,7 @@ void** allocateVect(int size) {
     int i;
     for (i = 0; i < size; i++) {
         vector[i] = malloc(sizeof(void*));
+        vector[i] = NULL;
     }
     return vector;
 }

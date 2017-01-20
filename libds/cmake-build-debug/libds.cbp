@@ -96,6 +96,12 @@
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/LinkedList.h">
 			<Option target="libds"/>
 		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/MinHeap.c">
+			<Option target="libds"/>
+		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/MinHeap.h">
+			<Option target="libds"/>
+		</Unit>
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/Vector.c">
 			<Option target="libds"/>
 		</Unit>

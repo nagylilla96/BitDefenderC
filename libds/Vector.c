@@ -9,12 +9,13 @@ void** allocateVect(int size) {
     int i;
     for (i = 0; i < size; i++) {
         vector[i] = malloc(sizeof(void*));
+        vector[i] = NULL;
     }
     return vector;
 }
 
 first *CreateVector(int size) {
-    first* array = (first*) malloc(sizeof(first*));
+    first* array = (first*) calloc(1, sizeof(first*));
     array->pointer = allocateVect(size);
     array->nrOfElements = 0;
     array->size = size;
@@ -81,7 +82,7 @@ int DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
     int i;
     if (one->pointer[index] != NULL) {
         freeNode(one->pointer[index]);
-        free(one->pointer[index]);
+        one->pointer[index] = NULL;
         for (i = index; i < one->nrOfElements; i++) {
             one->pointer[i] = one->pointer[i + 1];
         }
