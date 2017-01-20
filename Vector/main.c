@@ -116,7 +116,7 @@ void freeNode(void* a){
 
 int main()
 {
-    size = 50;
+    int size = 50;
     char nume[100], prenume[100], adresa[500], telefon[10];
     first *one = CreateVector(size);
     first *two = CreateVector(size);
@@ -132,7 +132,7 @@ int main()
             case 1:
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, one, &size, getNode, stdout);
+                AddVectorItems(nrOfItems, one, getNode, stdout);
                 break;
             case 2:
                 printf("Which index do you want to delete?\n");
@@ -175,7 +175,7 @@ int main()
                     printf("You can't insert there!\n");
                     break;
                 }
-                PutVectorItem(index, one, &size, getNode(0, stdout));
+                PutVectorItem(index, one, getNode(0, stdout));
                 break;
             case 6:
                 SortVector(one, cmpFunct);
@@ -184,7 +184,7 @@ int main()
                 printf("Add elements to vector2!");
                 printf("How many new items do you want?\n");
                 scanf("%d", &nrOfItems);
-                AddVectorItems(nrOfItems, one, &size, getNode, stdout);
+                AddVectorItems(nrOfItems, one, getNode, stdout);
                 break;
             case 8:
                 printf("Vector1\n");
@@ -200,7 +200,7 @@ int main()
                 PrintVector(three, printAllFunc, stdout);
                 break;
             case 11:
-                DeleteVector(one, size, freeFunct);
+                DeleteVector(one, freeFunct);
                 return 0;
             default:
                 break;

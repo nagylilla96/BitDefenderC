@@ -19,11 +19,14 @@ typedef struct {
 }MINHEAP;
 
 MINHEAP *CreateHeap(int size);
-//TODO print
-//TODO add
-//TODO get
-//TODO deleteMin
-//TODO deleteMax
+void PrintHeap(MINHEAP *minheap, void(*printAllFunct)(first *one, FILE *f), FILE *f);
+int AddHeapItem(MINHEAP *minheap, void*(*getNode)(int i, FILE *f), FILE *f, int(*cmpFunct)(void *a, void *b));
+MINHEAP *correctHeapBottomUp(MINHEAP *minheap, int(*cmpFunct)(void *a, void *b));
+int isHeapOK(MINHEAP *minheap, int (*cmpFunct)(void *a, void *b));
+//TODO getMin
+int DeleteHeapMin(MINHEAP *minheap, void (*freeNode), int(*cmpFunct)(void *a, void *b));
+int DeleteHeapItem(MINHEAP *minheap, void *element, void(*freeNode), int(cmpFunct)(void *a, void *b), void(*printFunc)(first* one, int index, FILE *f), FILE *f);
+//TODO deleteItem
 //TODO merge
 //TODO delete
 

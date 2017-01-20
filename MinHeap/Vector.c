@@ -4,7 +4,7 @@
 
 #include "Vector.h"
 
-void** allocateVect(size_t size) {
+void** allocateVect(int size) {
     void **vector =  malloc(size * sizeof(void**));
     int i;
     for (i = 0; i < size; i++) {
@@ -13,56 +13,82 @@ void** allocateVect(size_t size) {
     return vector;
 }
 
-first *CreateVector(size_t size) {
-    first* array = (first*) malloc(sizeof(first*));
+first *CreateVector(int size) {
+    first* array = (first*) calloc(1, sizeof(first*));
     array->pointer = allocateVect(size);
     array->nrOfElements = 0;
+    array->size = size;
     return array;
 }
 
-void new_entry(first* one, void* newNode, size_t *size, int index) { // add a new entry
+int new_entry(first* one, void* newNode, int index) { // add a new entry
     int i;
-    if (one->nrOfElements + 1 >= *size) {
-        *size *= 2;
-        one->pointer = realloc(one->pointer, sizeof(one->pointer) * (*size)); // if the data amount exceeds the size, realloc space
+    if (newNode == NULL) {
+        return 0;
+    }
+    if (one->nrOfElements + 1 >= one->size) {
+        one->size *= 2;
+        one->pointer = realloc(one->pointer, sizeof(one->pointer) * (one->size)); // if the data amount exceeds the size, realloc space
     }
     if (one->nrOfElements == index) {
         one->pointer[one->nrOfElements]= malloc(sizeof(newNode));
         one->pointer[one->nrOfElements] = newNode;
-    }
-    else {
-        for (i = one->nrOfElements; i > index; i--) {
-            one->pointer[i] = one->pointer[i - 1];
+        if (one->pointer[one->nrOfElements] == NULL) {
+            return 0;
         }
-        one->pointer[index] = newNode;
+        return 1;
+    }
+    for (i = one->nrOfElements; i > index; i--) {
+        one->pointer[i] = one->pointer[i - 1];
+    }
+    one->pointer[index] = newNode;
+    if (one->pointer[index] == NULL) {
+        return 0;
     }
     one->nrOfElements++;
+    return 1;
 }
 
-void AddVectorItems(int nrOfItems, first* one, size_t *size, void*(*getNode)(int i, FILE *f), FILE *f) {
+int AddVectorItems(int nrOfItems, first* one, void*(*getNode)(int i, FILE *f), FILE *f) {
     int i;
     for (i = 0; i < nrOfItems; i++) {
-        new_entry(one, getNode(i, f), size, one->nrOfElements);
+        if (!new_entry(one, getNode(i, f), one->nrOfElements)) {
+            return 0;
+        }
+        one->nrOfElements++;
     }
+    return 1;
 }
 
-void PutVectorItem(int index, first* one, size_t *size, void* newNode) {
-    new_entry(one, newNode, size, index);
+int PutVectorItem(int index, first* one, void* newNode) {
+    if (new_entry(one, newNode, index)) {
+        one->nrOfElements++;
+        return 1;
+    };
+    return 0;
 }
 
-void GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index, FILE *f), FILE *f) {
-    fprintf(f, "The vector item with index %d is:\n", index);
-    printFunc(one, index, f);
+int GetVectorItem(int index, first* one, void(*printFunc)(first* one, int index, FILE *f), FILE *f) {
+    if (one->pointer[index] != NULL) {
+        fprintf(f, "The vector item with index %d is:\n", index);
+        printFunc(one, index, f);
+        return 1;
+    }
+    return 0;
 }
 
-void DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
+int DeleteVectorItem(first* one, int index, void (*freeNode)(void* a)) {
     int i;
-    freeNode(one->pointer[index]);
-    free(one->pointer[index]);
-    for (i = index; i < one->nrOfElements; i++) {
-        one->pointer[i] = one->pointer[i + 1];
+    if (one->pointer[index] != NULL) {
+        freeNode(one->pointer[index]);
+        free(one->pointer[index]);
+        for (i = index; i < one->nrOfElements; i++) {
+            one->pointer[i] = one->pointer[i + 1];
+        }
+        one->nrOfElements--;
+        return 1;
     }
-    one->nrOfElements--;
+    return 0;
 }
 
 int SearchVectorItem(first *one, void* node, int(*cmpFunc)(void* a, void* b), void(*printFunc)(first* one, int index, FILE *f), FILE *f) { // find name by nume and prenume
@@ -148,10 +174,10 @@ void PrintVector(first* one, void(*printAllFunc)(first* one, FILE *f), FILE *f) 
     printAllFunc(one, f);
 }
 
-void DeleteVector(first *one, size_t size, void(*freeFunct)(void *a)) {
+void DeleteVector(first *one, void(*freeFunct)(void *a)) {
     int i;
     one->nrOfElements = 0;
-    for (i = 0; i < size; i++) {
+    for (i = 0; i < one->size; i++) {
         freeFunct(one->pointer[i]);
     }
     free(one->pointer);

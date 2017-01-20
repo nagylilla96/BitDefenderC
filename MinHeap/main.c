@@ -4,14 +4,15 @@ typedef struct {
     int number;
 }ELEMENT;
 
-ELEMENT *createNode(int number) {
-    ELEMENT *myNode = (HEAPNODE*) malloc(sizeof(HEAPNODE));
+void *createNode(int number) {
+    ELEMENT *myNode = (ELEMENT*) malloc(sizeof(ELEMENT));
     myNode->number = number;
     return myNode;
 }
 
-ELEMENT *getNode(int i, FILE *f) {
+void *getNode(int i, FILE *f) {
     int number;
+    printf("number = ");
     fscanf(f, "%d", &number);
     return createNode(number);
 }
@@ -24,20 +25,41 @@ void printFunc(first* one, int index, FILE *f) {
 
 void printAllFunc(first* one, FILE *f) {
     int i;
-    ELEMENT **myNode = (ELEMENT **) one->pointer;
-    fprintf(f, "Print func entered\n");
     for (i = 0; i < one->nrOfElements; i++) {
-        if (one->pointer == NULL) {
-            fprintf(f, "Double pointer is null\n");
-        }
-        if (phonebook[i]->nume == NULL) {
-            fprintf(f, "phonebook nume is null\n");
-        }
         printFunc(one, i, f);
     }
 }
 
+int cmpFunct(void *a, void *b) {//compares two elements
+    ELEMENT *aa = (ELEMENT *) a;
+    ELEMENT *bb = (ELEMENT *) b;
+    if (aa->number > bb->number) {
+        return 1;
+    }
+    if (aa->number == bb->number) {
+        return 0;
+    }
+    return -1;
+}
+
+void freeNode(void *a) {
+    return;
+}
+
 int main() {
-    printf("Hello, World!\n");
+    MINHEAP *minheap = CreateHeap(50);
+    int i;
+    for (i = 0; i < 7; i++) {
+        AddHeapItem(minheap, getNode, stdin, cmpFunct);
+        PrintHeap(minheap, printAllFunc, stdout);
+    }
+    DeleteHeapMin(minheap, freeNode, cmpFunct);
+    PrintHeap(minheap, printAllFunc, stdout);
+    HEAPNODE *node = getNode(0, stdin);
+    if (node == NULL){
+        printf("Node is null\n");
+    }
+    DeleteHeapItem(minheap, node, freeNode, cmpFunct, printFunc, stdout);
+    PrintHeap(minheap, printAllFunc, stdout);
     return 0;
 }

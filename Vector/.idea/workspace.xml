@@ -12,14 +12,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c5bde6d-ca65-4aa1-bfec-4b7590de9c65" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/ArrayVectorTester" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/ArrayVectorTester" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/main.c.o" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/main.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/tester.c.o" afterPath="$PROJECT_DIR$/../ArrayVectorTester/cmake-build-debug/CMakeFiles/ArrayVectorTester.dir/tester.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/cmake-build-debug/CMakeFiles/libds.dir/Vector.c.o" afterPath="$PROJECT_DIR$/../libds/cmake-build-debug/CMakeFiles/libds.dir/Vector.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/cmake-build-debug/liblibds.a" afterPath="$PROJECT_DIR$/../libds/cmake-build-debug/liblibds.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libraries/lib/liblibds.a" afterPath="$PROJECT_DIR$/../libraries/lib/liblibds.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ArrayVectorTester/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/Output/001.out" afterPath="$PROJECT_DIR$/../ArrayVectorTester/Output/001.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/Output/002.out" afterPath="$PROJECT_DIR$/../ArrayVectorTester/Output/002.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/Output/003.out" afterPath="$PROJECT_DIR$/../ArrayVectorTester/Output/003.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ArrayVectorTester/tester.c" afterPath="$PROJECT_DIR$/../ArrayVectorTester/tester.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MinHeap/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/MinHeap.c" afterPath="$PROJECT_DIR$/../MinHeap/MinHeap.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/MinHeap.h" afterPath="$PROJECT_DIR$/../MinHeap/MinHeap.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/Vector.c" afterPath="$PROJECT_DIR$/../MinHeap/Vector.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/Vector.h" afterPath="$PROJECT_DIR$/../MinHeap/Vector.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MinHeap/main.c" afterPath="$PROJECT_DIR$/../MinHeap/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.c" afterPath="$PROJECT_DIR$/Vector.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vector.h" afterPath="$PROJECT_DIR$/Vector.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../libds/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/Vector.c" afterPath="$PROJECT_DIR$/../libds/Vector.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libds/Vector.h" afterPath="$PROJECT_DIR$/../libds/Vector.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../libraries/include/Vector.h" afterPath="$PROJECT_DIR$/../libraries/include/Vector.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,21 +84,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="202" column="50" lean-forward="false" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
+                <state relative-caret-position="446">
+                  <caret line="202" column="34" lean-forward="false" selection-start-line="202" selection-start-column="34" selection-end-line="202" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Vector.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+                <state relative-caret-position="288">
+                  <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
                   <folding>
                     <element signature="e#88#107#0" expanded="true" />
                   </folding>
@@ -92,8 +109,8 @@
           <file leaf-file-name="Vector.c" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Vector.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="738">
-                  <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+                <state relative-caret-position="918">
+                  <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -106,8 +123,8 @@
           <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+                <state relative-caret-position="212">
+                  <caret line="189" column="28" lean-forward="true" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -116,8 +133,8 @@
           <file leaf-file-name="Vector.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Vector.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+                <state relative-caret-position="216">
+                  <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -127,6 +144,11 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>size</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -134,9 +156,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Vector.h" />
         <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/Vector.c" />
-        <option value="$PROJECT_DIR$/Vector.h" />
       </list>
     </option>
   </component>
@@ -390,11 +412,13 @@
       <workItem from="1484578483796" duration="240000" />
       <workItem from="1484898555754" duration="180000" />
       <workItem from="1484899923353" duration="405000" />
+      <workItem from="1484900720022" duration="349000" />
+      <workItem from="1484901265313" duration="513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54048000" />
+    <option name="totallyTimeSpent" value="54910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -402,22 +426,22 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22420634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277635" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33161953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33161953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -456,21 +480,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Vector.c</url>
-          <line>181</line>
+          <line>184</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Vector.c</url>
-          <line>180</line>
+          <line>183</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Vector.c</url>
-          <line>179</line>
+          <line>182</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Vector.c</url>
+          <line>24</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -872,28 +901,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        <state relative-caret-position="288">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding>
             <element signature="e#88#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="189" column="28" lean-forward="true" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vector.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+        <state relative-caret-position="216">
+          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -83,7 +83,7 @@ void freeNode(void *a){//frees a node
 
 void runTester(char *nameIN, char *nameOut) { //run the tester
 
-    size = 5;
+    int size = 50;
     first **arrayOfArrays = calloc(26, sizeof(first*));
     printf("RunTester\n");
     int index = 0, elements;
@@ -125,7 +125,7 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
                         if (elements > 0) {
-                            AddVectorItems(elements, arrayOfArrays[index], &size, getNode, f);
+                            AddVectorItems(elements, arrayOfArrays[index], getNode, f);
                         } else {
                             error(10, g, token);
                         }
@@ -140,7 +140,7 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
                         if (elements >= 0) {
-                            PutVectorItem(elements, arrayOfArrays[index], &size, getNode(0, f));
+                            PutVectorItem(elements, arrayOfArrays[index], getNode(0, f));
                         } else {
                             error(4, g, token);
                         }
@@ -235,7 +235,7 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1 && arrayOfArrays[(int) *token - 65] != NULL){
                         index = (int) *token - 65;
-                        DeleteVector(arrayOfArrays[index], size, freeFunct);
+                        DeleteVector(arrayOfArrays[index], freeFunct);
 
                     }
                     else {
