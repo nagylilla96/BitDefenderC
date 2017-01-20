@@ -14,6 +14,9 @@ ELEMENT *createElement(int key, char* value){
     return element;
 }
 
+int hashFunction(void *key, int size) {
+    return ((int)key*23455 % size);
+}
 int cmpFunct(void *a, void *b) {
     ELEMENT *aa = (ELEMENT*) a;
     ELEMENT *bb = (ELEMENT*) b;
@@ -51,8 +54,59 @@ void deleteFunct(void *a) {
     free(element->value);
 }
 
+void *getKey(HASHTABLE *hashtable, void *a) {
+    int i;
+    ELEMENT *element = (ELEMENT *) a;
+    HASHNODE *last = NULL;
+    for (i = 0; i < hashtable->size; i++) {
+        if (hashtable->hashTable[i] != NULL) {
+            if (hashtable->hashTable[i]->element != NULL) {
+                last = hashtable->hashTable[i];
+                if (cmpFunct(last->element, element) == 0) {
+                    element = last->element;
+                    return element->key;
+                }
+                while (last->next != NULL) {
+                    last = last->next;
+                    if (cmpFunct(last->element, element) == 0) {
+                        element = last->element;
+                        return element->key;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+void *getValue(HASHTABLE *hashtable, void *a){
+    int i;
+    ELEMENT *element = (ELEMENT *) a;
+    HASHNODE *last = NULL;
+    for (i = 0; i < hashtable->size; i++) {
+        if (hashtable->hashTable[i] != NULL) {
+            if (hashtable->hashTable[i]->element != NULL) {
+                last = hashtable->hashTable[i];
+                if (cmpFunct(last->element, element) == 0) {
+                    element = last->element;
+                    return element->value;
+                }
+                while (last->next != NULL) {
+                    last = last->next;
+                    if (cmpFunct(last->element, element) == 0) {
+                        element = last->element;
+                        return element->value;
+                    }
+                }
+            }
+        }
+    }
+    return NULL;
+}
+
 int main() {
     HASHTABLE *hashtable = CreateHashTable(2, NULL);
+    HASHTABLE *newHashTable;
     AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct, printElement);
     AddHashTableItem(hashtable, 1, "Arni", createElement, cmpFunct, printElement);
     AddHashTableItem(hashtable, 1, "David", createElement, cmpFunct, printElement);
@@ -61,7 +115,9 @@ int main() {
     printf("%d\n", SearchHashTableItem(hashtable, 2, "Lilla",createElement,cmpFunct));
     DeleteHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct);
     PrintHashTable(hashtable, printElement);
-    DeleteHashTable(hashtable, deleteFunct);
-    hashtable = NULL;
+    newHashTable = RehashTable(hashtable, hashFunction, getKey, getValue, createElement, cmpFunct, printElement, deleteFunct);
+    PrintHashTable(newHashTable, printElement);
+    DeleteHashTable(newHashTable, deleteFunct);
+
     return 0;
 }

@@ -60,7 +60,6 @@ int findPrime(int size) {
 }
 
 void redimensionTable(HASHTABLE *hashtable) {
-//    printf("\n");
     int i;
     HASHNODE **newHashTable =  calloc(findPrime(hashtable->size), sizeof(HASHNODE*));
     HASHNODE *last = NULL;
@@ -106,7 +105,8 @@ void PrintHashTable(HASHTABLE *hashtable, void(*printElement)(void* a)) {
 }
 
 
-int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct) (void *a)){
+int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *, void *),
+                     int (*cmpFunct)(void *a, void *b), void (*printFunct) (void *a)){
     int index = hashtable->hashFunction(key, hashtable->size);
     int factor = ((hashtable->size * 3) / 4);
     void *element = createElement(key, value);
@@ -204,13 +204,39 @@ int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*cre
     return 0;
 }
 
+HASHTABLE *RehashTable(HASHTABLE *hashtable, int(*hashFunction)(void *key, void *value),
+                       void*(*getKey)(HASHTABLE *hashtable, void *a), void*(getValue)(HASHTABLE *hashtable, void *a),
+                       void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct) (void *a),
+                       void(*deleteFunct)(void *a)) {
+    //I will suppose it should have the same size
+    int i;
+    if (hashFunction == NULL) {
+        return NULL;
+    }
+    HASHTABLE *newHashTable = CreateHashTable(hashtable->size, hashFunction);
+    HASHNODE *last = NULL;
+    for (i = 0; i < hashtable->size; i++) {
+        if (hashtable->hashTable[i]!= NULL) {
+            last = hashtable->hashTable[i];
+            AddHashTableItem(newHashTable, getKey(hashtable, last->element), getValue(hashtable, last->element), createElement,
+            cmpFunct, printFunct);
+            while (last->next != NULL) {
+                last = last->next;
+                AddHashTableItem(newHashTable, getKey(hashtable, last->element), getValue(hashtable, last->element), createElement,
+                                 cmpFunct, printFunct);
+            }
+        }
+    }
+    DeleteHashTable(hashtable, deleteFunct);
+    return newHashTable;
+}
+
 void DeleteHashTable(HASHTABLE *hashtable, void(*deleteFunct)(void *a)) {
     int i;
     for (i = 0; i < hashtable->size; i++) {
         if (hashtable->hashTable[i] != NULL) {
             if (hashtable->hashTable[i]->linkedList != NULL) {
                 DeleteLinkedList(hashtable->hashTable[i]->linkedList);
-
             }
             deleteFunct(hashtable->hashTable[i]->element);
             free(hashtable->hashTable[i]);
@@ -218,7 +244,6 @@ void DeleteHashTable(HASHTABLE *hashtable, void(*deleteFunct)(void *a)) {
     }
     free(hashtable->hashTable);
     free(hashtable);
-    hashtable->hashTable = NULL;
 }
 
 

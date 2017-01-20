@@ -34,6 +34,10 @@ int AddHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*create
 int DeleteHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
 int SearchHashTableItem(HASHTABLE *hashtable, void *key, void *value, void*(*createElement)(void *key, void *value), int (*cmpFunct)(void *a, void *b));
 void DeleteHashTable(HASHTABLE *hashtable, void(*deleteFunct)(void *a));
+HASHTABLE *RehashTable(HASHTABLE *hashtable, int(*hashFunction)(void *key, void *value),
+                       void*(*getKey)(HASHTABLE *hashtable, void *a), void*(getValue)(HASHTABLE *hashtable, void *a),
+                       void*(*createElement)(void *, void *), int (*cmpFunct)(void *a, void *b), void (*printFunct) (void *a),
+                       void(*deleteFunct)(void *a));
 //TODO print 4
 //TODO add 1
 //TODO delete item 2
