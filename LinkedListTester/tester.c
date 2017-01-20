@@ -18,10 +18,6 @@ ELEMENT *createElement(int integer, float real) {
     return element;
 }
 
-void freeNode(void* a) {
-    return;
-}
-
 int cmpFunct(void *a, void *b) {
     ELEMENT *aa = (ELEMENT*) a;
     ELEMENT *bb = (ELEMENT*) b;

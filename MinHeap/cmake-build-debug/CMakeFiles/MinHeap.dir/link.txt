@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/MinHeap.dir/main.c.o CMakeFiles/MinHeap.dir/Vector.c.o CMakeFiles/MinHeap.dir/MinHeap.c.o  -o MinHeap 

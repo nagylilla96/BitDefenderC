@@ -83,12 +83,13 @@ void freeNode(void *a){//frees a node
 
 void runTester(char *nameIN, char *nameOut) { //run the tester
 
-    size = 50;
+    size = 5;
     first **arrayOfArrays = calloc(26, sizeof(first*));
     printf("RunTester\n");
     int index = 0, elements;
     FILE *f = fopen(nameIN, "r");
     FILE *g = fopen(nameOut, "w");
+    printf("%s\n", nameIN);
     if (f == NULL) {
         printf("input file is null\n");
     }
