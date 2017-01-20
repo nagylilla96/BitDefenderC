@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/lilla/Desktop/BitDefenderC/libds/HashTable.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/HashTable.c.o"
   "/home/lilla/Desktop/BitDefenderC/libds/LinkedList.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/LinkedList.c.o"
   "/home/lilla/Desktop/BitDefenderC/libds/Vector.c" "/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles/libds.dir/Vector.c.o"
   )

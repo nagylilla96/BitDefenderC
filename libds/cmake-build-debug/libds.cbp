@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/HashTable.c">
+			<Option target="libds"/>
+		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/HashTable.h">
+			<Option target="libds"/>
+		</Unit>
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/LinkedList.c">
 			<Option target="libds"/>
 		</Unit>

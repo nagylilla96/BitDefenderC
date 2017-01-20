@@ -43,10 +43,10 @@ int cmpFunct(void *a, void *b) {
     }
 }
 
-void printElement(void *a) {
+void printElement(void *a, FILE *f) {
     ELEMENT *element = (ELEMENT*) a;
-    printf("key: %d\n", element->key);
-    printf("value: %s\n", element->value);
+    fprintf(f, "key: %d\n", element->key);
+    fprintf(f, "value: %s\n", element->value);
 }
 
 void deleteFunct(void *a) {
@@ -107,16 +107,16 @@ void *getValue(HASHTABLE *hashtable, void *a){
 int main() {
     HASHTABLE *hashtable = CreateHashTable(2, NULL);
     HASHTABLE *newHashTable;
-    AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct, printElement);
-    AddHashTableItem(hashtable, 1, "Arni", createElement, cmpFunct, printElement);
-    AddHashTableItem(hashtable, 1, "David", createElement, cmpFunct, printElement);
+    AddHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct);
+    AddHashTableItem(hashtable, 1, "Arni", createElement, cmpFunct);
+    AddHashTableItem(hashtable, 1, "David", createElement, cmpFunct);
     printf("%d\n", SearchHashTableItem(hashtable, 1, "Lilla",createElement,cmpFunct));
     printf("%d\n", SearchHashTableItem(hashtable, 1, "David",createElement,cmpFunct));
     printf("%d\n", SearchHashTableItem(hashtable, 2, "Lilla",createElement,cmpFunct));
     DeleteHashTableItem(hashtable, 1, "Lilla", createElement, cmpFunct);
-    PrintHashTable(hashtable, printElement);
+    PrintHashTable(hashtable, printElement, stdout);
     newHashTable = RehashTable(hashtable, hashFunction, getKey, getValue, createElement, cmpFunct, printElement, deleteFunct);
-    PrintHashTable(newHashTable, printElement);
+    PrintHashTable(newHashTable, printElement, stdout);
     DeleteHashTable(newHashTable, deleteFunct);
 
     return 0;

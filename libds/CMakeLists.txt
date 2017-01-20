@@ -3,5 +3,5 @@ project(libds)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES Vector.c Vector.h LinkedList.c LinkedList.h)
+set(SOURCE_FILES Vector.c Vector.h LinkedList.c LinkedList.h HashTable.c HashTable.h)
 add_library(libds ${SOURCE_FILES})

@@ -123,6 +123,33 @@ libds/fast:
 	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/build
 .PHONY : libds/fast
 
+HashTable.o: HashTable.c.o
+
+.PHONY : HashTable.o
+
+# target to build an object file
+HashTable.c.o:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/HashTable.c.o
+.PHONY : HashTable.c.o
+
+HashTable.i: HashTable.c.i
+
+.PHONY : HashTable.i
+
+# target to preprocess a source file
+HashTable.c.i:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/HashTable.c.i
+.PHONY : HashTable.c.i
+
+HashTable.s: HashTable.c.s
+
+.PHONY : HashTable.s
+
+# target to generate assembly for a file
+HashTable.c.s:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/HashTable.c.s
+.PHONY : HashTable.c.s
+
 LinkedList.o: LinkedList.c.o
 
 .PHONY : LinkedList.o
@@ -186,6 +213,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... libds"
+	@echo "... HashTable.o"
+	@echo "... HashTable.i"
+	@echo "... HashTable.s"
 	@echo "... LinkedList.o"
 	@echo "... LinkedList.i"
 	@echo "... LinkedList.s"

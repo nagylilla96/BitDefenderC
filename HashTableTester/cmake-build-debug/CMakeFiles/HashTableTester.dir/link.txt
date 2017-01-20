@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/HashTableTester.dir/main.c.o CMakeFiles/HashTableTester.dir/hashtester.c.o  -o HashTableTester /home/lilla/Desktop/BitDefenderC/libraries/lib/liblibds.a -lm 

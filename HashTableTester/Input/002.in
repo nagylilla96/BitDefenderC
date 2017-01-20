@@ -1,0 +1,23 @@
+CreateHashTable A
+AddHashTableItem A
+1;0
+AddHashTableItem A
+1;1
+AddHashTableItem A
+1;2
+AddHashTableItem A
+2;5
+AddHashTableItem A
+3;6
+SearchHashTableItem A
+1;0
+SearchHashTableItem A
+1;1
+SearchHashTableItem A
+2;0
+DeleteHashTableItem A
+1;0
+PrintHashTable A
+ReHashTable A B
+PrintHashTable B
+DeleteHashTable B
