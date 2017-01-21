@@ -1,0 +1,18 @@
+CreateBST B
+AddBSTItem B
+2
+AddBSTItem B
+4
+AddBSTItem B
+9
+AddBSTItem B
+3
+AddBSTItem B
+6
+AddBSTItem B
+8
+AddBSTItem B
+0
+PreorderBST B
+PrintBST B
+DeleteBST B

@@ -153,12 +153,37 @@ CMakeFiles/libds.dir/MinHeap.c.o.provides: CMakeFiles/libds.dir/MinHeap.c.o.requ
 CMakeFiles/libds.dir/MinHeap.c.o.provides.build: CMakeFiles/libds.dir/MinHeap.c.o
 
 
+CMakeFiles/libds.dir/BST.c.o: CMakeFiles/libds.dir/flags.make
+CMakeFiles/libds.dir/BST.c.o: ../BST.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/libds.dir/BST.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/libds.dir/BST.c.o   -c /home/lilla/Desktop/BitDefenderC/libds/BST.c
+
+CMakeFiles/libds.dir/BST.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/libds.dir/BST.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lilla/Desktop/BitDefenderC/libds/BST.c > CMakeFiles/libds.dir/BST.c.i
+
+CMakeFiles/libds.dir/BST.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/libds.dir/BST.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lilla/Desktop/BitDefenderC/libds/BST.c -o CMakeFiles/libds.dir/BST.c.s
+
+CMakeFiles/libds.dir/BST.c.o.requires:
+
+.PHONY : CMakeFiles/libds.dir/BST.c.o.requires
+
+CMakeFiles/libds.dir/BST.c.o.provides: CMakeFiles/libds.dir/BST.c.o.requires
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/BST.c.o.provides.build
+.PHONY : CMakeFiles/libds.dir/BST.c.o.provides
+
+CMakeFiles/libds.dir/BST.c.o.provides.build: CMakeFiles/libds.dir/BST.c.o
+
+
 # Object files for target libds
 libds_OBJECTS = \
 "CMakeFiles/libds.dir/Vector.c.o" \
 "CMakeFiles/libds.dir/LinkedList.c.o" \
 "CMakeFiles/libds.dir/HashTable.c.o" \
-"CMakeFiles/libds.dir/MinHeap.c.o"
+"CMakeFiles/libds.dir/MinHeap.c.o" \
+"CMakeFiles/libds.dir/BST.c.o"
 
 # External object files for target libds
 libds_EXTERNAL_OBJECTS =
@@ -167,9 +192,10 @@ liblibds.a: CMakeFiles/libds.dir/Vector.c.o
 liblibds.a: CMakeFiles/libds.dir/LinkedList.c.o
 liblibds.a: CMakeFiles/libds.dir/HashTable.c.o
 liblibds.a: CMakeFiles/libds.dir/MinHeap.c.o
+liblibds.a: CMakeFiles/libds.dir/BST.c.o
 liblibds.a: CMakeFiles/libds.dir/build.make
 liblibds.a: CMakeFiles/libds.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library liblibds.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lilla/Desktop/BitDefenderC/libds/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library liblibds.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libds.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libds.dir/link.txt --verbose=$(VERBOSE)
 
@@ -182,6 +208,7 @@ CMakeFiles/libds.dir/requires: CMakeFiles/libds.dir/Vector.c.o.requires
 CMakeFiles/libds.dir/requires: CMakeFiles/libds.dir/LinkedList.c.o.requires
 CMakeFiles/libds.dir/requires: CMakeFiles/libds.dir/HashTable.c.o.requires
 CMakeFiles/libds.dir/requires: CMakeFiles/libds.dir/MinHeap.c.o.requires
+CMakeFiles/libds.dir/requires: CMakeFiles/libds.dir/BST.c.o.requires
 
 .PHONY : CMakeFiles/libds.dir/requires
 

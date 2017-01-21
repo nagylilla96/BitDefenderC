@@ -1,0 +1,57 @@
+CreateBST A
+AddBSTItem A
+5
+AddBSTItem A
+3
+AddBSTItem A
+2
+AddBSTItem A
+7
+AddBSTItem A
+9
+AddBSTItem A
+1
+AddBSTItem A
+8
+AddBSTItem A
+4
+AddBSTItem A
+2
+AddBSTItem A
+0
+PreorderBST A
+InorderBST A
+PostorderBST A
+PrintBST A
+HeightBST A
+SearchBSTItem A
+6
+DeleteBSTItem A
+6
+SearchBSTItem A
+3
+DeleteBSTItem A
+2
+PrintBST A
+CreateBST B
+AddBSTItem B
+2
+AddBSTItem B
+4
+AddBSTItem B
+9
+AddBSTItem B
+3
+AddBSTItem B
+6
+AddBSTItem B
+8
+AddBSTItem B
+0
+PreorderBST B
+PrintBST B
+MergeBSTs A B
+PrintBST C
+DeleteBST A
+DeleteBST B
+DeleteBST C

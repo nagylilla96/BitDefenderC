@@ -106,23 +106,23 @@ BST *findMax(BST *node, int(*cmpFunct)(void *a, void *b)) {
     return findMax(node->right, cmpFunct);
 }
 
-BST *DeleteBstItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
+BST *DeleteBSTItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
     BST *temp;
     if (node == NULL) {
         return NULL;
     }
     if (cmpFunct(element, node->element) < 0) {
-        node->left = DeleteBstItem(node->left, element, cmpFunct);
+        node->left = DeleteBSTItem(node->left, element, cmpFunct);
     }
     else {
         if (cmpFunct(element, node->element) > 0) {
-            node->right = DeleteBstItem(node->right, element, cmpFunct);
+            node->right = DeleteBSTItem(node->right, element, cmpFunct);
         }
         else {
             if (node->right && node->left) {
                 temp = findMin(node->right, cmpFunct);
                 node->element = temp->element;
-                node->right = DeleteBstItem(node->right, temp->element, cmpFunct);
+                node->right = DeleteBSTItem(node->right, temp->element, cmpFunct);
             }
             else {
                 temp = node;
@@ -146,8 +146,8 @@ BST *MergeBSTs(BST *root1, BST *root2, int(*cmpFunct)(void *a, void *b)){
     BST *min = findMin(root2, cmpFunct);
     while (min != NULL){
         root3 = AddBSTItem(root3, min->element, cmpFunct);
-        root2 = DeleteBstItem(root2, min->element, cmpFunct);
-        min = findMin(root2, cmpFunct);
+        root1 = DeleteBSTItem(root1, min->element, cmpFunct);
+        min = findMin(root1, cmpFunct);
     }
     return root3;
 }
@@ -166,7 +166,7 @@ int HeightBST(BST *node){
 
 void DeleteBST(TREE *bst, int(*cmpFunct)(void *a, void *b)) {
     while (findMin(bst->root, cmpFunct) != NULL) {
-        bst->root = DeleteBstItem(bst->root, bst->root->element, cmpFunct);
+        bst->root = DeleteBSTItem(bst->root, bst->root->element, cmpFunct);
     }
     free(bst);
 }

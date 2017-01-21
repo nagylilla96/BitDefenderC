@@ -44,10 +44,10 @@ int main() {
     elements[3]->data = 7;
     elements[4]->data = 9;
     elements[5]->data = 1;
-    elements[6]->data = 0;
-    elements[7]->data = 8;
-    elements[8]->data = 4;
-    elements[9]->data = 2;
+    elements[6]->data = 8;
+    elements[7]->data = 4;
+    elements[8]->data = 2;
+    elements[9]->data = 0;
     for (int i = 0; i < 10; i++) {
         bst->root = AddBSTItem(bst->root, elements[i], cmpFunct);
     }
@@ -83,7 +83,7 @@ int main() {
     }
     elements[11]->data = 6;
     if (SearchBSTItem(bst->root, elements[11], cmpFunct) != NULL){
-        DeleteBstItem(bst->root, elements[11], cmpFunct);
+        DeleteBSTItem(bst->root, elements[11], cmpFunct);
         PrintBST(bst->root, 0, printData, stdout);
         printf("\nHeight of the three: %d\n", HeightBST(bst->root));
         printf("\n.................\n");
@@ -92,7 +92,14 @@ int main() {
         printf("Element %d not found!\n", elements[11]->data);
     }
     TREE *bst1 = CreateBST();
-    for (int i = 5; i < 12; i++) {
+    elements[13]->data = 2;
+    elements[14]->data = 4;
+    elements[15]->data = 9;
+    elements[16]->data = 3;
+    elements[17]->data = 6;
+    elements[18]->data = 8;
+    elements[19]->data = 0;
+    for (int i = 13; i < 20; i++) {
         bst1->root = AddBSTItem(bst1->root, elements[i], cmpFunct);
     }
     PreorderBST(bst1->root, printData, stdout);
@@ -104,6 +111,8 @@ int main() {
     bst2->root = MergeBSTs(bst->root, bst1->root, cmpFunct);
     PrintBST(bst2->root, 0, printData, stdout);
     printf("\nHeight of the three: %d\n", HeightBST(bst->root));
+    TREE *bst3 = CreateBST();
+    bst3->root = MergeBSTs(bst1->root, bst->root, cmpFunct);
     DeleteBST(bst, cmpFunct);
     DeleteBST(bst1, cmpFunct);
     DeleteBST(bst2, cmpFunct);

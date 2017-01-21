@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/BalancedBST.dir/main.c.o CMakeFiles/BalancedBST.dir/BalancedBST.c.o  -o BalancedBST 

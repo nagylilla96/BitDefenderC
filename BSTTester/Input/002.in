@@ -1,0 +1,27 @@
+CreateBST E
+AddBSTItem E
+5
+AddBSTItem E
+3
+AddBSTItem E
+2
+AddBSTItem E
+7
+AddBSTItem E
+9
+AddBSTItem E
+1
+AddBSTItem E
+8
+AddBSTItem E
+4
+AddBSTItem E
+2
+AddBSTItem E
+0
+PreorderBST E
+InorderBST E
+PostorderBST E
+PrintBST E
+HeightBST E
+DeleteBST E
