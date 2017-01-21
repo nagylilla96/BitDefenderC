@@ -50,6 +50,12 @@ int main() {
     elements[9]->data = 0;
     for (int i = 0; i < 10; i++) {
         bst->root = AddBalancedBSTItem(bst->root, elements[i], cmpFunct);
+        printf("\n.....\n");
+        PrintBalancedBST(bst->root, 0, printData, stdout);
+        printf("\n.....\n");
+        balance(bst->root);
+        PrintBalancedBST(bst->root, 0, printData, stdout);
+        printf("\n.....\n");
     }
     PreorderBalancedBST(bst->root, printData, stdout);
     printf("\n");
@@ -84,7 +90,8 @@ int main() {
     }
     elements[11]->data = 6;
     if (SearchBalancedBSTItem(bst->root, elements[11], cmpFunct) != NULL){
-        DeleteBalancedBSTItem(bst->root, elements[11], cmpFunct);
+        bst->root = DeleteBalancedBSTItem(bst->root, elements[11], cmpFunct);
+        balance(bst->root);
         PrintBalancedBST(bst->root, 0, printData, stdout);
         printf("\nHeight of the three: %d\n", HeightBalancedBST(bst->root));
         printf("\n.................\n");
@@ -102,6 +109,7 @@ int main() {
     elements[19]->data = 0;
     for (int i = 13; i < 20; i++) {
         bst1->root = AddBalancedBSTItem(bst1->root, elements[i], cmpFunct);
+        balance(bst1->root);
     }
     PreorderBalancedBST(bst1->root, printData, stdout);
     printf("\n..................\n");
@@ -110,6 +118,7 @@ int main() {
     printf("\n..................\n");
     BalancedTree *bst2 = CreateBalancedBST();
     bst2->root = MergeBalancedBSTs(bst->root, bst1->root, cmpFunct);
+    balance(bst2->root);
     PrintBalancedBST(bst2->root, 0, printData, stdout);
     printf("\nHeight of the three: %d\n", HeightBalancedBST(bst->root));
     BalancedTree *bst3 = CreateBalancedBST();

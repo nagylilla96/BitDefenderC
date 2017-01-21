@@ -28,6 +28,8 @@ BalancedBST *SearchBalancedBSTItem(BalancedBST *node, void *element, int(*cmpFun
 BalancedBST *findMin(BalancedBST *node, int(*cmpFunct)(void *a, void *b));
 BalancedBST *findMax(BalancedBST *node, int(*cmpFunct)(void *a, void *b));
 int nodeHeight(BalancedBST *node);
+int balanceFactor(BalancedBST *node);
+void balance(BalancedBST *root);
 BalancedBST *DeleteBalancedBSTItem(BalancedBST *node, void *element, int(*cmpFunct)(void *a, void *b));
 BalancedBST *MergeBalancedBSTs(BalancedBST *root1, BalancedBST *root2, int(*cmpFunct)(void *a, void *b));
 int HeightBalancedBST(BalancedBST *node);

@@ -124,7 +124,114 @@ int nodeHeight(BalancedBST *node) {
 }
 
 int balanceFactor(BalancedBST *node) {
+    int balance = 0;
+    if (node->left) {
+        balance += nodeHeight(node->left);
+    }
+    if (node->right) {
+        balance -=nodeHeight(node->right);
+    }
+    return balance;
+}
 
+BalancedBST *rotateLeftLeft(BalancedBST *node) {
+    BalancedBST *a = node;
+    BalancedBST *b = a->left;
+//    if (b == NULL) {
+//        return node;
+//    }
+    a->left = b->right;
+    b->right = a;
+    return b;
+}
+
+BalancedBST *rotateLeftRight(BalancedBST *node) {
+    BalancedBST *a = node;
+    BalancedBST *b = a->left;
+    BalancedBST *c = b->right;
+    a->left = c->right;
+    b->right = c->left;
+    c->left = b;
+    c->right = a;
+    return c;
+}
+
+BalancedBST *rotateRightLeft(BalancedBST *node) {
+    if (node == NULL) {
+        return NULL;
+    }
+    BalancedBST *a = node;
+    BalancedBST *b = a->right;
+    BalancedBST *c = b->left;
+//    if (b == NULL && c == NULL) {
+//        return node;
+//    }
+//    if (b == NULL) {
+//        a->right = c->left;
+//        c->right = b;
+//        c->left = a;
+//    }
+//    if (c == NULL) {
+//        return node;
+//    }
+    a->right = c->left;
+    b->left = c->right;
+    c->right = b;
+    c->left = a;
+    return c;
+}
+
+BalancedBST *rotateRightRight(BalancedBST *node) {
+    BalancedBST *a = node;
+    BalancedBST *b = a->right;
+    a->right = b->left;
+    b->left = a;
+//    if (b == NULL){
+//        return node;
+//    }
+    return b;
+}
+
+BalancedBST *balanceNode(BalancedBST *node) {
+    BalancedBST *temp = NULL;
+    int balance;
+    if (node->left) {
+        node->left = balanceNode(node->left);
+    }
+    if (node->right) {
+        node->right = balanceNode(node->right);
+    }
+    balance = balanceFactor(node);
+    if (balance >= 2) {
+        if (balanceFactor(node->left) <= -1) {
+            temp = rotateLeftRight(node);
+        }
+        else {
+            temp = rotateLeftLeft(node);
+        }
+    }
+    else {
+        if (balance <= -2){
+            if (balanceFactor(node->right) >= 1){
+                temp = rotateRightLeft(node);
+            }
+            else {
+                temp = rotateRightRight(node);
+            }
+        }
+        else {
+            temp = node;
+        }
+    }
+    return temp;
+}
+
+void balance(BalancedBST *root) {
+    BalancedBST *node;
+    node = balanceNode(root);
+    if (node != root) {
+        root = node;
+    }
 }
 
 BalancedBST *DeleteBalancedBSTItem(BalancedBST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
@@ -188,6 +295,7 @@ int HeightBalancedBST(BalancedBST *node){
 void DeleteBalancedBST(BalancedTree *bst, int(*cmpFunct)(void *a, void *b)) {
     while (findMin(bst->root, cmpFunct) != NULL) {
         bst->root = DeleteBalancedBSTItem(bst->root, bst->root->element, cmpFunct);
+        balance(bst->root);
     }
     free(bst);
 }
