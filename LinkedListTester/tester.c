@@ -2,10 +2,10 @@
 // Created by lilla on 16/01/17.
 //
 
+#include <LinkedList.h>
 #include "tester.h"
 
 void printFunct(void *a, FILE *f) {
-
     ELEMENT *aa = (ELEMENT*) a;
     fprintf(f, "index = %d\n", aa->integer);
     fprintf(f, "index = %f\n", aa->real);
@@ -52,22 +52,23 @@ void swap(void *a, void *b){
 }
 
 void runTester(char *nameIN, char *nameOut) { //run the tester
+
     LIST **arrayOfArrays = calloc(26, sizeof(LIST*));
-    printf("nameIN = %s\n", nameIN);
-    printf("nameOut = %s\n", nameOut);
     printf("RunTester\n");
     int index = 0, elements;
     FILE *f = fopen(nameIN, "r");
     FILE *g = fopen(nameOut, "w");
+    printf("%s\n", nameIN);
     if (f == NULL) {
         printf("input file is null\n");
     }
     if (g == NULL) {
         printf("output file is null\n");
     }
+    int value1;
+    float value2;
     char *instruction = calloc(100, sizeof(char));
     char *token, *token1;
-    printf("Smile!\n");
     while (fgets(instruction, 100, f) != NULL) {
         printf("%s", instruction);
         token = strtok(instruction, " ");
@@ -93,11 +94,10 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
                         index = (int) *token - 65;
-                        int integer;
-                        float real;
-                        fscanf(f, "%d;%f", &integer, &real);
-                        ELEMENT *node = createElement(integer, real);
-                        AddLinkedListItem(arrayOfArrays[index], node);
+                        fscanf(f, "%d;%f", &value1, &value2);
+                        ELEMENT *element = createElement(value1, value2);
+                            AddLinkedListItem(arrayOfArrays[index], element);
+                            error(10, g, token);
                     } else {
                         error(1, g, token);
                     }
@@ -108,12 +108,10 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                     if (token != NULL && strlen(token) == 1) {
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
-                        int integer;
-                        float real;
-                        fscanf(f, "%d;%f", &integer, &real);
-                        ELEMENT *node = createElement(integer, real);
+                        fscanf(f, "%d;%f", &value1, &value2);
+                        ELEMENT *element = createElement(value1, value2);
                         if (elements >= 0) {
-                            PutLinkedListItem(arrayOfArrays[index], node, elements);
+                            PutLinkedListItem(arrayOfArrays[index], element, elements);
                         } else {
                             error(4, g, token);
                         }
@@ -146,15 +144,11 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1) {
                         index = (int) *token - 65;
-                        int integer;
-                        float real;
-                        fscanf(f, "%d;%f", &integer, &real);
-                        ELEMENT *node = createElement(integer, real);
-                        NODE *returned = SearchLinkedListItem(arrayOfArrays[index], node, cmpFunct);
-                        if (returned == 0) {
+                        fscanf(f, "%d;%f", &value1, &value2);
+                        ELEMENT *element = createElement(value1, value2);
+                        NODE *node = SearchLinkedListItem(arrayOfArrays[index], element, cmpFunct);
+                        if (node == NULL) {
                             error(3, g, token);
-                        } else {
-                            error(4, g, token);
                         }
                     } else {
                         error(1, g, token);
@@ -167,7 +161,7 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                         index = (int) *token - 65;
                         fscanf(f, "%d", &elements);
                         if (elements >= 0) {
-                           DeleteLinkedListItem(arrayOfArrays[index], elements);
+                            DeleteLinkedListItem(arrayOfArrays[index], elements);
                         }
                         else {
                             error(4, g, token);
@@ -224,6 +218,10 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                     token[strlen(token) - 1] = '\0';
                     if (token != NULL && strlen(token) == 1){
                         index = (int) *token - 65;
+                        if (arrayOfArrays[index]->first == NULL ) {
+                            printf("array pointer is null!\n");
+                            break;
+                        }
                         PrintLinkedList(arrayOfArrays[index], printFunct, g);
                     }
                     else {
@@ -283,14 +281,14 @@ void error(int errorCode, FILE *f, char *command) {
 }
 
 int commandNr(char *command) { // based on a command, returns a number, which can later be used in the switch-case
-    if (strcmp(command, "CreateLinkedList") == 0) return 0;
-    if (strcmp(command, "AddLinkedListItem") == 0) return 1;
-    if (strcmp(command, "PutLinkedListItem") == 0) return 2;
-    if (strcmp(command, "GetLinkedListItem") == 0) return 3;
-    if (strcmp(command, "SearchLinkedListItem") == 0) return 4;
-    if (strcmp(command, "DeleteLinkedListItem") == 0) return 5;
-    if (strcmp(command, "SortLinkedList") == 0) return 6;
-    if (strcmp(command, "MergeLinkedLists") == 0) return 7;
+    if (strcmp(command, "CreateLinkedList") == 0) return 0;//
+    if (strcmp(command, "AddLinkedListItem") == 0) return 1;//
+    if (strcmp(command, "PutLinkedListItem") == 0) return 2;//
+    if (strcmp(command, "GetLinkedListItem") == 0) return 3;//
+    if (strcmp(command, "SearchLinkedListItem") == 0) return 4;//
+    if (strcmp(command, "DeleteLinkedListItem") == 0) return 5;//
+    if (strcmp(command, "SortLinkedList") == 0) return 6;//
+    if (strcmp(command, "MergeLinkedLists") == 0) return 7;//
     if (strcmp(command, "DeleteLinkedList") == 0) return 8;
     if (strcmp(command, "PrintLinkedList") == 0) return 9;
     return 10;

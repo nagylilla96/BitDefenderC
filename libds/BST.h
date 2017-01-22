@@ -27,9 +27,10 @@ void PrintBST(BST *node, int level, void(*printData)(void *a, FILE *f), FILE *f)
 BST *SearchBSTItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b));
 BST *findMin(BST *node, int(*cmpFunct)(void *a, void *b));
 BST *findMax(BST *node, int(*cmpFunct)(void *a, void *b));
-BST *DeleteBstItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b));
+BST *DeleteBSTItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b));
 BST *MergeBSTs(BST *root1, BST *root2, int(*cmpFunct)(void *a, void *b));
 int HeightBST(BST *node);
 void DeleteBST(TREE *bst, int(*cmpFunct)(void *a, void *b));
+BST *copyTree(BST *node);
 
 #endif //BST_BST_H

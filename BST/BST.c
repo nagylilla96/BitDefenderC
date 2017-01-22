@@ -33,6 +33,17 @@ BST *AddBSTItem(BST *node, void *element, int (*cmpFunct)(void *a, void *b)) {
     }
 }
 
+BST *copyTree(BST *node) {
+    if (node == NULL) {
+        return NULL;
+    }
+    BST *temp = calloc(1, sizeof(BST));
+    temp->element = node->element;
+    temp->left = copyTree(node->left);
+    temp->right = copyTree(node->right);
+    return temp;
+}
+
 void PreorderBST(BST *node, void(*printData)(void *a, FILE *f), FILE *f) {
     if (node == NULL) {
         return;
@@ -142,13 +153,15 @@ BST *DeleteBSTItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
 }
 
 BST *MergeBSTs(BST *root1, BST *root2, int(*cmpFunct)(void *a, void *b)){
-    BST *root3 = root1;
-    BST *min = findMin(root2, cmpFunct);
+    BST *root3 = copyTree(root1);
+    BST *root4 = copyTree(root2);
+    BST *min = findMin(root4, cmpFunct);
     while (min != NULL){
         root3 = AddBSTItem(root3, min->element, cmpFunct);
-        root1 = DeleteBSTItem(root1, min->element, cmpFunct);
-        min = findMin(root1, cmpFunct);
+        root4 = DeleteBSTItem(root4, min->element, cmpFunct);
+        min = findMin(root4, cmpFunct);
     }
+    free(root4);
     return root3;
 }
 

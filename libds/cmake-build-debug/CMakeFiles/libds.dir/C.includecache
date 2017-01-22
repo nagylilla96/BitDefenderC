@@ -16,6 +16,16 @@ stdio.h
 stdlib.h
 -
 
+/home/lilla/Desktop/BitDefenderC/libds/BalancedBST.c
+BalancedBST.h
+/home/lilla/Desktop/BitDefenderC/libds/BalancedBST.h
+
+/home/lilla/Desktop/BitDefenderC/libds/BalancedBST.h
+stdio.h
+-
+stdlib.h
+-
+
 /home/lilla/Desktop/BitDefenderC/libds/HashTable.c
 HashTable.h
 /home/lilla/Desktop/BitDefenderC/libds/HashTable.h

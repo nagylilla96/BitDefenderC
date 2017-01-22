@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="116" lean-forward="false" selection-start-line="5" selection-start-column="116" selection-end-line="5" selection-end-column="116" />
+              <caret line="5" column="144" lean-forward="false" selection-start-line="5" selection-start-column="144" selection-end-line="5" selection-end-column="144" />
               <folding />
             </state>
           </provider>
@@ -49,7 +49,7 @@
       <file leaf-file-name="MinHeap.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MinHeap.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
+            <state relative-caret-position="1998">
               <caret line="111" column="48" lean-forward="false" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
               <folding />
             </state>
@@ -359,15 +359,16 @@
       <workItem from="1484930467922" duration="202000" />
       <workItem from="1484954293242" duration="18000" />
       <workItem from="1484962944617" duration="140000" />
+      <workItem from="1485112013254" duration="55000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2665000" />
+    <option name="totallyTimeSpent" value="2720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -780,7 +781,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MinHeap.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
+        <state relative-caret-position="1998">
           <caret line="111" column="48" lean-forward="false" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
           <folding />
         </state>
@@ -789,7 +790,7 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="116" lean-forward="false" selection-start-line="5" selection-start-column="116" selection-end-line="5" selection-end-column="116" />
+          <caret line="5" column="144" lean-forward="false" selection-start-line="5" selection-start-column="144" selection-end-line="5" selection-end-column="144" />
           <folding />
         </state>
       </provider>

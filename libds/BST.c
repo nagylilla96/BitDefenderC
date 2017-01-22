@@ -33,6 +33,17 @@ BST *AddBSTItem(BST *node, void *element, int (*cmpFunct)(void *a, void *b)) {
     }
 }
 
+BST *copyTree(BST *node) {
+    if (node == NULL) {
+        return NULL;
+    }
+    BST *temp = calloc(1, sizeof(BST));
+    temp->element = node->element;
+    temp->left = copyTree(node->left);
+    temp->right = copyTree(node->right);
+    return temp;
+}
+
 void PreorderBST(BST *node, void(*printData)(void *a, FILE *f), FILE *f) {
     if (node == NULL) {
         return;
@@ -106,23 +117,23 @@ BST *findMax(BST *node, int(*cmpFunct)(void *a, void *b)) {
     return findMax(node->right, cmpFunct);
 }
 
-BST *DeleteBstItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
+BST *DeleteBSTItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
     BST *temp;
     if (node == NULL) {
         return NULL;
     }
     if (cmpFunct(element, node->element) < 0) {
-        node->left = DeleteBstItem(node->left, element, cmpFunct);
+        node->left = DeleteBSTItem(node->left, element, cmpFunct);
     }
     else {
         if (cmpFunct(element, node->element) > 0) {
-            node->right = DeleteBstItem(node->right, element, cmpFunct);
+            node->right = DeleteBSTItem(node->right, element, cmpFunct);
         }
         else {
             if (node->right && node->left) {
                 temp = findMin(node->right, cmpFunct);
                 node->element = temp->element;
-                node->right = DeleteBstItem(node->right, temp->element, cmpFunct);
+                node->right = DeleteBSTItem(node->right, temp->element, cmpFunct);
             }
             else {
                 temp = node;
@@ -142,13 +153,15 @@ BST *DeleteBstItem(BST *node, void *element, int(*cmpFunct)(void *a, void *b)) {
 }
 
 BST *MergeBSTs(BST *root1, BST *root2, int(*cmpFunct)(void *a, void *b)){
-    BST *root3 = root1;
-    BST *min = findMin(root2, cmpFunct);
+    BST *root3 = copyTree(root1);
+    BST *root4 = copyTree(root2);
+    BST *min = findMin(root4, cmpFunct);
     while (min != NULL){
         root3 = AddBSTItem(root3, min->element, cmpFunct);
-        root2 = DeleteBstItem(root2, min->element, cmpFunct);
-        min = findMin(root2, cmpFunct);
+        root4 = DeleteBSTItem(root4, min->element, cmpFunct);
+        min = findMin(root4, cmpFunct);
     }
+    free(root4);
     return root3;
 }
 
@@ -166,7 +179,7 @@ int HeightBST(BST *node){
 
 void DeleteBST(TREE *bst, int(*cmpFunct)(void *a, void *b)) {
     while (findMin(bst->root, cmpFunct) != NULL) {
-        bst->root = DeleteBstItem(bst->root, bst->root->element, cmpFunct);
+        bst->root = DeleteBSTItem(bst->root, bst->root->element, cmpFunct);
     }
     free(bst);
 }

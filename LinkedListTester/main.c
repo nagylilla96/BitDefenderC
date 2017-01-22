@@ -1,7 +1,6 @@
 #include "tester.h"
 
 
-
 int main(int argc, char **argv) {
     char *name = malloc(sizeof(char) * 100);
     char *name1 = malloc(sizeof(char) * 100);
@@ -21,11 +20,10 @@ int main(int argc, char **argv) {
                         struct dirent *dr;
                         while ((dr = readdir(dir)) != NULL) {
                             if (dr->d_type == DT_REG) {
-                                printf("%s\n", dr->d_name);
-                                char *input = calloc(100, sizeof(char));
+                                char *input = malloc(sizeof(char) * 100);
                                 strcpy(input, "Input/");
-                                char *output = calloc(100, sizeof(char));
-                                char *basicName = calloc(100, sizeof(char));
+                                char *output = malloc(sizeof(char) * 100);
+                                char *basicName = malloc(sizeof(char) * 100);
                                 strcpy(basicName, strtok(dr->d_name, "."));
                                 strcat(input, basicName);
                                 strcpy(output, "Output/");

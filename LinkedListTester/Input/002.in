@@ -1,9 +1,32 @@
 CreateLinkedList A
 AddLinkedListItem A
-0;1
+1;0.2
 AddLinkedListItem A
-1;2 
-AddLinkedListItem A
-2;3
+3;4
 PrintLinkedList A
+CreateLinkedList B
+PutLinkedListItem A
+-2
+3;2.4
+PutLinkedListItem B
+0
+1;0.25
+PrintLinkedList B
+GetLinkedListItem A
+2
+GetLinkedListItem B
+2
+DeleteLinkedListItem A
+0
+AddLinkedListItem B
+0;4
+PrintLinkedList B
+SearchLinkedListItem B
+1;0.25
+SortLinkedList A
+PrintLinkedList A
+MergeLinkedLists A B
+PrintLinkedList C
 DeleteLinkedList A
+DeleteLinkedList B
+DeleteLinkedList C

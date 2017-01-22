@@ -150,6 +150,33 @@ BST.c.s:
 	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/BST.c.s
 .PHONY : BST.c.s
 
+BalancedBST.o: BalancedBST.c.o
+
+.PHONY : BalancedBST.o
+
+# target to build an object file
+BalancedBST.c.o:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/BalancedBST.c.o
+.PHONY : BalancedBST.c.o
+
+BalancedBST.i: BalancedBST.c.i
+
+.PHONY : BalancedBST.i
+
+# target to preprocess a source file
+BalancedBST.c.i:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/BalancedBST.c.i
+.PHONY : BalancedBST.c.i
+
+BalancedBST.s: BalancedBST.c.s
+
+.PHONY : BalancedBST.s
+
+# target to generate assembly for a file
+BalancedBST.c.s:
+	$(MAKE) -f CMakeFiles/libds.dir/build.make CMakeFiles/libds.dir/BalancedBST.c.s
+.PHONY : BalancedBST.c.s
+
 HashTable.o: HashTable.c.o
 
 .PHONY : HashTable.o
@@ -270,6 +297,9 @@ help:
 	@echo "... BST.o"
 	@echo "... BST.i"
 	@echo "... BST.s"
+	@echo "... BalancedBST.o"
+	@echo "... BalancedBST.i"
+	@echo "... BalancedBST.s"
 	@echo "... HashTable.o"
 	@echo "... HashTable.i"
 	@echo "... HashTable.s"

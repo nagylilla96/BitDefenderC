@@ -172,7 +172,7 @@ void runTester(char *nameIN, char *nameOut) { //run the tester
                         index = (int) *token - 65;
                         fscanf(f, "%d", &element[elementIndex]->data);
                         if (SearchBSTItem(arrayOfTrees[index]->root, element[elementIndex], cmpFunct) != NULL){
-                            arrayOfTrees[index]->root = DeleteBstItem(arrayOfTrees[index]->root, element[elementIndex], cmpFunct);
+                            arrayOfTrees[index]->root = DeleteBSTItem(arrayOfTrees[index]->root, element[elementIndex], cmpFunct);
                         }
                         else{
                             printf("\nElement %d not found!\n", element[elementIndex]->data);

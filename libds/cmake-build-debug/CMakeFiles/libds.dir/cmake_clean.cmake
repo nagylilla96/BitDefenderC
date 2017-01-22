@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/libds.dir/HashTable.c.o"
   "CMakeFiles/libds.dir/MinHeap.c.o"
   "CMakeFiles/libds.dir/BST.c.o"
+  "CMakeFiles/libds.dir/BalancedBST.c.o"
   "liblibds.pdb"
   "liblibds.a"
 )

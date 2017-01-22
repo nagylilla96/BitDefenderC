@@ -43,7 +43,7 @@ int main() {
     elements[2]->data = 2;
     elements[3]->data = 7;
     elements[4]->data = 9;
-    elements[5]->data = 1;
+    elements[5]->data = 5;
     elements[6]->data = 8;
     elements[7]->data = 4;
     elements[8]->data = 2;
@@ -51,9 +51,6 @@ int main() {
     for (int i = 0; i < 10; i++) {
         bst->root = AddBalancedBSTItem(bst->root, elements[i], cmpFunct);
         printf("\n.....\n");
-        PrintBalancedBST(bst->root, 0, printData, stdout);
-        printf("\n.....\n");
-        balance(bst->root);
         PrintBalancedBST(bst->root, 0, printData, stdout);
         printf("\n.....\n");
     }
@@ -88,10 +85,10 @@ int main() {
     else {
         printf("Min value is: %d\n", ((ELEMENT*)maxVal->element)->data);
     }
-    elements[11]->data = 6;
+    elements[11]->data = 3;
     if (SearchBalancedBSTItem(bst->root, elements[11], cmpFunct) != NULL){
         bst->root = DeleteBalancedBSTItem(bst->root, elements[11], cmpFunct);
-        balance(bst->root);
+//        balance(bst->root);
         PrintBalancedBST(bst->root, 0, printData, stdout);
         printf("\nHeight of the three: %d\n", HeightBalancedBST(bst->root));
         printf("\n.................\n");
@@ -109,7 +106,7 @@ int main() {
     elements[19]->data = 0;
     for (int i = 13; i < 20; i++) {
         bst1->root = AddBalancedBSTItem(bst1->root, elements[i], cmpFunct);
-        balance(bst1->root);
+//        balance(bst1->root);
     }
     PreorderBalancedBST(bst1->root, printData, stdout);
     printf("\n..................\n");
@@ -118,11 +115,9 @@ int main() {
     printf("\n..................\n");
     BalancedTree *bst2 = CreateBalancedBST();
     bst2->root = MergeBalancedBSTs(bst->root, bst1->root, cmpFunct);
-    balance(bst2->root);
+//    balance(bst2->root);
     PrintBalancedBST(bst2->root, 0, printData, stdout);
     printf("\nHeight of the three: %d\n", HeightBalancedBST(bst->root));
-    BalancedTree *bst3 = CreateBalancedBST();
-    bst3->root = MergeBalancedBSTs(bst1->root, bst->root, cmpFunct);
     DeleteBalancedBST(bst, cmpFunct);
     DeleteBalancedBST(bst1, cmpFunct);
     DeleteBalancedBST(bst2, cmpFunct);

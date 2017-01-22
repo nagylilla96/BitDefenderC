@@ -90,6 +90,12 @@
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/BST.h">
 			<Option target="libds"/>
 		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/BalancedBST.c">
+			<Option target="libds"/>
+		</Unit>
+		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/BalancedBST.h">
+			<Option target="libds"/>
+		</Unit>
 		<Unit filename="/home/lilla/Desktop/BitDefenderC/libds/HashTable.c">
 			<Option target="libds"/>
 		</Unit>

@@ -4,6 +4,9 @@
 CMakeFiles/libds.dir/BST.c.o: ../BST.c
 CMakeFiles/libds.dir/BST.c.o: ../BST.h
 
+CMakeFiles/libds.dir/BalancedBST.c.o: ../BalancedBST.c
+CMakeFiles/libds.dir/BalancedBST.c.o: ../BalancedBST.h
+
 CMakeFiles/libds.dir/HashTable.c.o: ../HashTable.c
 CMakeFiles/libds.dir/HashTable.c.o: ../HashTable.h
 CMakeFiles/libds.dir/HashTable.c.o: ../LinkedList.h

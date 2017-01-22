@@ -52,6 +52,8 @@ PreorderBST B
 PrintBST B
 MergeBSTs A B
 PrintBST C
+MergeBSTs B A
+PrintBST D
 DeleteBST A
 DeleteBST B
 DeleteBST C
