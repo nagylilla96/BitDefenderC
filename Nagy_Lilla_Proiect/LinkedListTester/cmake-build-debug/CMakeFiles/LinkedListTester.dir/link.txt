@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/LinkedListTester.dir/main.c.o CMakeFiles/LinkedListTester.dir/tester.c.o  -o LinkedListTester /home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/lib/liblibds.a 

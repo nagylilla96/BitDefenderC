@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/MinHeapTester.dir/main.c.o CMakeFiles/MinHeapTester.dir/MinHeapTester.c.o  -o MinHeapTester /home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/lib/liblibds.a 

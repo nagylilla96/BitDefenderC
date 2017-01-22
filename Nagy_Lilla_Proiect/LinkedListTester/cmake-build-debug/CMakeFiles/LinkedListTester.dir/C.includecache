@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/main.c
+tester.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/tester.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/tester.c
+LinkedList.h
+-
+tester.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/tester.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/tester.h
+LinkedList.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/LinkedListTester/LinkedList.h
+dirent.h
+-
+stdio.h
+-
+string.h
+-
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/include/LinkedList.h
+stdio.h
+-
+stdlib.h
+-
+

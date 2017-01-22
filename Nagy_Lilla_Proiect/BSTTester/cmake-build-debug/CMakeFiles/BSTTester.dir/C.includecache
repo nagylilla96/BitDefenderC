@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/BSTTester.c
+BST.h
+-
+BSTTester.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/BSTTester.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/BSTTester.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+dirent.h
+-
+BST.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/BST.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/main.c
+BSTTester.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BSTTester/BSTTester.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/include/BST.h
+stdio.h
+-
+stdlib.h
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/ArrayVectorTester.dir/main.c.o CMakeFiles/ArrayVectorTester.dir/tester.c.o  -o ArrayVectorTester /home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/lib/liblibds.a 

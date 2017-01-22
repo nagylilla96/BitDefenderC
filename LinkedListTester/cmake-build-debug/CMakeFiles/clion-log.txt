@@ -1,5 +1,0 @@
-/home/lilla/clion-2016.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lilla/Desktop/BitDefenderC/LinkedListTester
--- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
--- Configuring done
--- Generating done
--- Build files have been written to: /home/lilla/Desktop/BitDefenderC/LinkedListTester/cmake-build-debug

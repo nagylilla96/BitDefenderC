@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/BalancedBSTTester.dir/main.c.o CMakeFiles/BalancedBSTTester.dir/BalancedBSTTester.c.o  -o BalancedBSTTester /home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/libraries/lib/liblibds.a 
