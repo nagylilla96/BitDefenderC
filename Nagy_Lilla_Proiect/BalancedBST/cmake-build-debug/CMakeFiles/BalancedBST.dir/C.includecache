@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BalancedBST/BalancedBST.c
+BalancedBST.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BalancedBST/BalancedBST.h
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BalancedBST/BalancedBST.h
+stdio.h
+-
+stdlib.h
+-
+
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BalancedBST/main.c
+BalancedBST.h
+/home/lilla/Desktop/BitDefenderC/Nagy_Lilla_Proiect/BalancedBST/BalancedBST.h
+

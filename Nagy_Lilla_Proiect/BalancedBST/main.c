@@ -115,6 +115,12 @@ int main() {
     bst2->root = MergeBalancedBSTs(bst->root, bst1->root, cmpFunct);
     PrintBalancedBST(bst2->root, 0, printData, stdout);
     printf("\nHeight of the three: %d\n", HeightBalancedBST(bst->root));
+    DeleteBalancedBSTItem(bst2->root, elements[15], cmpFunct);
+    PrintBalancedBST(bst2->root, 0, printData, stdout);
+    DeleteBalancedBSTItem(bst2->root, elements[13], cmpFunct);
+    PrintBalancedBST(bst2->root, 0, printData, stdout);
+    DeleteBalancedBSTItem(bst2->root, elements[11], cmpFunct);
+    PrintBalancedBST(bst2->root, 0, printData, stdout);
     DeleteBalancedBST(bst, cmpFunct);
     DeleteBalancedBST(bst1, cmpFunct);
     DeleteBalancedBST(bst2, cmpFunct);
