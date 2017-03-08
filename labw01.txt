@@ -1,0 +1,6 @@
+ex. 2
+k = 3
+
+Criptare: c = (m + k) mod 26
+
+Decriptare: m = (c - k) mod 26
